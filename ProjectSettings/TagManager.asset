@@ -3,24 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Collectible1
+  - EnteringTrigger
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Collectible1
   - Water
   - UI
+  - Floor
+  - Furniture
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
