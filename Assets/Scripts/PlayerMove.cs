@@ -4,25 +4,37 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    public Rigidbody2D rb2d;
+
+    private float horizontal;
+    private float vertical;
+    [SerializeField] private float speed = 8f;
+
     private Vector2 moveInput;
 
-    private void Update()
+    Rigidbody2D thisRigidBody;
+    // Start is called before the first frame update
+    void Start()
+    {
+        thisRigidBody = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
-
-        // Normalize the input vector to ensure consistent speed
-        moveInput.Normalize();
-
-        // Snap the input to the closest cardinal direction
         moveInput = SnapToYX(moveInput);
-
-        rb2d.velocity = moveInput * moveSpeed;
     }
-    
-    //This is to snap the movement to only left, right, up, and down. 
+
+    private void FixedUpdate()
+    {
+
+        //the acceleration of the players movement
+        thisRigidBody.velocity = new Vector2(moveInput.x * speed, moveInput.y * speed);
+        //thisRigidBody.velocity = new Vector2(horizontal * speed, 0);
+        //thisRigidBody.velocity = new Vector2(0, vertical * speed);
+    }
+
     private Vector2 SnapToYX(Vector2 input)
     {
         // Calculate the absolute values for x and y components

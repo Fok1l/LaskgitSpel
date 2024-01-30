@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BookshelfCollectibles : MonoBehaviour
+using UnityEngine.UI;
+public class Bookshelf : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Canvas EPromptCanvas;
+    void OnTriggerEnter2D (Collider2D EnteringTrigger)
     {
-        
+        if (EnteringTrigger.tag == "Player")
+        {
+            Debug.Log("Player is by the Shelf");
+            EPromptCanvas.enabled = true;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D ExitTrigger)
     {
-        
+        if (ExitTrigger.tag == "Player")
+        {
+            Debug.Log("Player Leave Shelf");
+            EPromptCanvas.enabled = false;
+        }
+      
     }
 }
