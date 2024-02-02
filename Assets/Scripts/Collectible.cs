@@ -23,7 +23,6 @@ public class Collectible : MonoBehaviour
         {
             Collectible1Collected = true;
             Destroy(gameObject);
-            player.tag = "Collectible1";
         }
     }
 }
