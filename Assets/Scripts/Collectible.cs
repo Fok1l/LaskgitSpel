@@ -6,6 +6,7 @@ public class Collectible : MonoBehaviour
 {
     PlayerMove player;
 
+
     public bool Collectible1Collected = false;
 
     [SerializeField] GameObject CollectibleObject;
