@@ -8,13 +8,18 @@ public class Bookshelf : MonoBehaviour
     public Canvas EPromptCanvas;
     public Canvas InvCanvas;
     bool BookStay; // BookStay bool as a repalcer for ontriggerstay (Hopefully)
-    
-    private void OnTriggerStay2D(Collider2D EnteringTrigger) //Works, but needs to be OnTriggerStay2d, otherwise won't work.
+    bool TestOveride; //Test function to overide things.
+
+    private void Start()
+    {
+        TestOveride = false;
+    }
+    private void OnTriggerStay2D(Collider2D EnteringTrigger) //Works. Needs to be OnTriggerStay2d, otherwise won't work.
     {
         if (EnteringTrigger.tag == "Player")
         {
             if (Input.GetKey(KeyCode.E) && BookStay == false)
-            {
+          {
                 InvCanvas.enabled = true;
                 BookStay = true;
                 EPromptCanvas.enabled = false;
@@ -29,6 +34,7 @@ public class Bookshelf : MonoBehaviour
         if (EnteringTrigger.tag == "Player")
         {
             EPromptCanvas.enabled = true;
+            TestOveride = false;
         }
     }
 
@@ -40,6 +46,7 @@ public class Bookshelf : MonoBehaviour
             Debug.Log("Player Leave Shelf");
             EPromptCanvas.enabled = false;
             InvCanvas.enabled = false;
+            TestOveride = false;
         }
       
     }

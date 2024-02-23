@@ -6,7 +6,6 @@ public class Collectible : MonoBehaviour
 {
     PlayerMove player;
 
-
     public bool Collectible1Collected = false;
 
     [SerializeField] GameObject CollectibleObject;
@@ -15,7 +14,6 @@ public class Collectible : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerMove>();
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
