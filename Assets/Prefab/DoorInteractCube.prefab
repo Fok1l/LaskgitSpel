@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6031c0f6265c4d429332a1eb55938f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loader: {fileID: 0}
   EPromptCanvas: {fileID: 0}
 --- !u!1 &2989078483722200605
 GameObject:
