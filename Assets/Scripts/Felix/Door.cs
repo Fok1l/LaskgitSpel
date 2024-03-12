@@ -7,7 +7,6 @@ public class Door : MonoBehaviour
 {
     [SerializeField] SceneLoader loader;
     public Canvas EPromptCanvas;
-    Scene currentScene = SceneManager.GetActiveScene();
 
     void OnTriggerEnter2D(Collider2D EnteringTrigger) //This works, very nice. Don't change
     {

@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Collectible : MonoBehaviour
+public class NoteSystem : MonoBehaviour
 {
     PlayerMove player;
+    public Image Note1;
+    public bool NoteObject1 = false;
 
-    public bool Collectible1Collected = false;
-
-    [SerializeField] GameObject CollectibleObject;
+    [SerializeField] GameObject Paper1;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,8 @@ public class Collectible : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Collectible1Collected = true;
+            NoteObject1 = true;
+            Note1.enabled = true;
             Destroy(gameObject);
         }
     }

@@ -4,29 +4,20 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-
     private float horizontal;
     private float vertical;
     [SerializeField] private float speed = 8f;
 
-
-    Camera mainCam;
-    [SerializeField] private float maxXpos;
-    [SerializeField] private float maxYpos;
-    [SerializeField] private float minXpos;
-    [SerializeField] private float minYpos;
-
     private Vector2 moveInput;
+    private Rigidbody2D thisRigidBody;
+    private Transform characterTransform;
 
-    Rigidbody2D thisRigidBody;
-    // Start is called before the first frame update
     void Start()
     {
         thisRigidBody = GetComponent<Rigidbody2D>();
-        mainCam = Camera.main;
+        characterTransform = transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
@@ -36,29 +27,40 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        thisRigidBody.velocity = moveInput * speed;
 
-        //the acceleration of the players movement
-        thisRigidBody.velocity = new Vector2(moveInput.x * speed, moveInput.y * speed);
-        //thisRigidBody.velocity = new Vector2(horizontal * speed, 0);
-        //thisRigidBody.velocity = new Vector2(0, vertical * speed);
+        if (moveInput.x > 0) // Moving right (D key)
+        {
+            characterTransform.rotation = Quaternion.Euler(0, 0, 90f);
+        }
+        else if (moveInput.x < 0) // Moving left (A key)
+        {
+            characterTransform.rotation = Quaternion.Euler(0, 0, -90f);
+        }
+        else if (moveInput.y > 0) // Moving up (W key)
+        {
+            characterTransform.rotation = Quaternion.Euler(0, 0, -180f);
+        }
+        else if (moveInput.y < 0) // Moving down (S key)
+        {
+            characterTransform.rotation = Quaternion.Euler(0, 0, 0f);
+        }
     }
 
     private Vector2 SnapToYX(Vector2 input)
     {
-        // Calculate the absolute values for x and y components
         float absX = Mathf.Abs(input.x);
         float absY = Mathf.Abs(input.y);
 
-        // Snap the input to the closest cardinal direction
         if (absX > absY)
-        { // Up & Down
+        {
             return new Vector2(Mathf.Sign(input.x), 0f);
-        } // Left & Right
+        }
         else if (absY > absX)
         {
             return new Vector2(0f, Mathf.Sign(input.y));
         }
-        else //Acounts for no movement/Fixes bug making the character move up automatically
+        else
         {
             return Vector2.zero;
         }

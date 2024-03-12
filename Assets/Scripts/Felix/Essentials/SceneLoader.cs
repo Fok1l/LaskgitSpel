@@ -37,7 +37,7 @@ public class SceneLoader : MonoBehaviour
   //  }
 
 
-    // Everything below this might be completely useless, but I'm saving it just incase. But our new level load system feels miles easier to use.
+    // Everything below this might be completely useless, but I'm saving it just incase.
 
     public void LoadNextScene()
     {
