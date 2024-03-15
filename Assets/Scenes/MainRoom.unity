@@ -1152,9 +1152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727ab3766f68d754ab0530c575ccbdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Note1: {fileID: 885403449}
-  NoteObject1: 0
-  Paper1: {fileID: 939880276}
+  noteImages: []
+  noteObjects: 
+  papers: []
 --- !u!61 &939880280
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1822,6 +1822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2003302156}
+  - component: {fileID: 2003302157}
   m_Layer: 0
   m_Name: NoteObjects
   m_TagString: Untagged
@@ -1846,6 +1847,25 @@ Transform:
   - {fileID: 774502050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003302157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003302155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727ab3766f68d754ab0530c575ccbdd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteImages:
+  - {fileID: 885403449}
+  - {fileID: 347133287}
+  noteObjects: 0000
+  papers:
+  - {fileID: 939880276}
+  - {fileID: 774502049}
 --- !u!223 &2011174605 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 1746400944512506724, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
@@ -2112,6 +2132,10 @@ PrefabInstance:
     - target: {fileID: 3823777825658237504, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_ReferenceResolution.y
       value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070960421881324632, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_text
+      value: (E) Open
       objectReference: {fileID: 0}
     - target: {fileID: 5070960421881324632, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_fontSize

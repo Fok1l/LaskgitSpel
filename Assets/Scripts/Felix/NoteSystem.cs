@@ -42,8 +42,32 @@ public class NoteSystem : MonoBehaviour
             {
                 noteObjects[noteIndex] = true;
                 noteImages[noteIndex].enabled = true;
+                papers[noteIndex].SetActive(false); // Deactivate the paper GameObject
+                Destroy(papers[noteIndex], 1f); // Destroy the paper GameObject after 1 second
                 Destroy(gameObject);
             }
         }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            for (int i = 0; i < noteImages.Length; i++)
+            {
+                if (noteObjects[i] && noteImages[i].enabled)
+                {
+                    // Open the UI for the respective paper
+                    OpenPaperUI(i);
+                    break;
+                }
+            }
+        }
+    }
+
+    void OpenPaperUI(int paperIndex)
+    {
+        // Implement the logic to open the UI for the respective paper
+        Debug.Log("Opening UI for Paper " + paperIndex);
     }
 }
