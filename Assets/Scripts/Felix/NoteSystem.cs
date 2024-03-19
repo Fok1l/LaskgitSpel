@@ -8,7 +8,6 @@ public class NoteSystem : MonoBehaviour
     PlayerMove player;
 
     public Image[] noteImages; // Array of note UI Images
-    public bool[] noteObjects; // Array of boolean flags for each note (Helps in enbaling/disabling ui and papers)
 
     [SerializeField] GameObject[] papers; // Array of paper GameObjects
 
@@ -27,24 +26,21 @@ public class NoteSystem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Find the index of the first available note slot
-            int noteIndex = -1;
-            for (int i = 0; i < noteObjects.Length; i++)
+            int paperIndex = -1;
+            for (int i = 0; i < papers.Length; i++)
             {
-                if (!noteObjects[i])
+                if (papers[i] == gameObject)
                 {
-                    noteIndex = i;
+                    paperIndex = i;
                     break;
                 }
             }
 
-            if (noteIndex != -1)
+            if (paperIndex != -1 && !noteImages[paperIndex].enabled)
             {
-                noteObjects[noteIndex] = true;
-                noteImages[noteIndex].enabled = true;
-                papers[noteIndex].SetActive(false); // Deactivate the paper GameObject
-                Destroy(papers[noteIndex], 1f); // Destroy the paper GameObject after 1 second
-                Destroy(gameObject);
+                noteImages[paperIndex].enabled = true;
+                papers[paperIndex].SetActive(false); // Deactivate the paper GameObject
+                Destroy(papers[paperIndex], 1f); // Destroy the paper GameObject after 1 second
             }
         }
     }
@@ -55,7 +51,7 @@ public class NoteSystem : MonoBehaviour
         {
             for (int i = 0; i < noteImages.Length; i++)
             {
-                if (noteObjects[i] && noteImages[i].enabled)
+                if (noteImages[i].enabled)
                 {
                     // Open the UI for the respective paper
                     OpenPaperUI(i);
