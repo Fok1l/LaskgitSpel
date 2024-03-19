@@ -22,7 +22,7 @@ public class MouseClick : MonoBehaviour
             Debug.Log("hola");
             //cast a ray from the mouse to the scene
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            //RaycastHit hit;
             Debug.Log("oh mah gawd");
 
             //check if the raycast hits a object with "Dynamite" tag

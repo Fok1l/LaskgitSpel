@@ -102,6 +102,11 @@ public class SceneLoader : MonoBehaviour
         Application.Quit(3);
     }
 
+    public void LoadBladeScene()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void BladePuzzleComplete()
     {
         knives++;
@@ -109,6 +114,16 @@ public class SceneLoader : MonoBehaviour
         {
             SceneManager.LoadScene(3);
         }
+    }
+
+    public void ExitBladePuzzle()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void Teleporters(int teleportToLocation)
+    {
+        SceneManager.LoadScene(teleportToLocation);
     }
 
 
