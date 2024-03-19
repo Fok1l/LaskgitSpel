@@ -70,6 +70,7 @@ public class UpperBladeTest : MonoBehaviour
                         blade.GetComponent<Collider2D>().enabled = false;
                         transform.localScale = new Vector3(1f, 1f, 1f);
                         loader.BladePuzzleComplete();
+                        
 
 
                         break;

@@ -102,6 +102,11 @@ public class SceneLoader : MonoBehaviour
         Application.Quit(3);
     }
 
+    public void LoadBladeScene()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void BladePuzzleComplete()
     {
         knives++;
