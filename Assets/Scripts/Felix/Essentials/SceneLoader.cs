@@ -116,5 +116,15 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    public void ExitBladePuzzle()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void Teleporters(int teleportToLocation)
+    {
+        SceneManager.LoadScene(teleportToLocation);
+    }
+
 
 }
