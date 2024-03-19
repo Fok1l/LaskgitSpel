@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
+    [SerializeField] int teleportTo;
     [SerializeField] SceneLoader loader;
     public Canvas EPromptCanvas;
 
@@ -28,7 +29,7 @@ public class Door : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.E))
             {
                 {
-                    loader.LoadSecondRoom();
+                    loader.Teleporters(teleportTo);
                 }
             }
         }

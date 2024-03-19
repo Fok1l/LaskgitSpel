@@ -18,12 +18,15 @@ public class FelixMoveTest : MonoBehaviour
     [SerializeField] GameObject unlitFlashLight;
     [SerializeField] GameObject litFlashLight;
     [SerializeField] GameObject flashLightObject;
-    public bool tidningGained = false;
+    
+    GameSession gameSession;
     public bool usingFlashLight = false;
 
     [Header("Quest Book")]
     [SerializeField] GameObject uiBook;
     public bool usingBook = false;
+    [SerializeField] GameObject openBook;
+    [SerializeField] GameObject closeBook;
 
     [Header("Quests")]
     [SerializeField] GameObject testQuest;
@@ -34,6 +37,7 @@ public class FelixMoveTest : MonoBehaviour
     {
         //invCanvas = FindObjectOfType<GameObject>();
         invActive = false;
+        gameSession = FindObjectOfType<GameSession>();
         //invCanvas.SetActive(false);
     }
 
@@ -85,7 +89,7 @@ public class FelixMoveTest : MonoBehaviour
             //invCanvas.SetActive(true);
             Inventory_Canvas.gameObject.SetActive(true);
             invActive = true;
-            if (tidningGained == true)
+            if (gameSession.tidningGained == true)
             {
                 tidning.gameObject.SetActive(true);
                 testQuest.gameObject.SetActive(true);
@@ -94,15 +98,15 @@ public class FelixMoveTest : MonoBehaviour
 
         if (!usingFlashLight && Input.GetKeyUp(KeyCode.F))
         {
-            unlitFlashLight.gameObject.SetActive(false);
+            //unlitFlashLight.gameObject.SetActive(false);
             usingFlashLight = true;
-            litFlashLight.gameObject.SetActive(true);
+            //litFlashLight.gameObject.SetActive(true);
             flashLightObject.SetActive(true);
         }else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.F))
         {
-            unlitFlashLight.gameObject.SetActive(true);
+            //unlitFlashLight.gameObject.SetActive(true);
             usingFlashLight = false;
-            litFlashLight.gameObject.SetActive(false);
+            //litFlashLight.gameObject.SetActive(false);
             flashLightObject.SetActive(false);
         }
 
@@ -110,12 +114,15 @@ public class FelixMoveTest : MonoBehaviour
         {
             uiBook.gameObject.SetActive(true);
             usingBook = true;
-            invActive = false;
-            Inventory_Canvas.gameObject.SetActive(false);
-        }else if(usingBook == true && Input.GetKeyUp(KeyCode.M))
+            closeBook.gameObject.SetActive(false);
+            openBook.gameObject.SetActive(true);
+        }
+        else if(usingBook == true && Input.GetKeyUp(KeyCode.M))
         {
             uiBook.gameObject.SetActive(false);
             usingBook = false;
+            openBook.gameObject.SetActive(false);
+            closeBook.gameObject.SetActive(true);
         }
 
 
