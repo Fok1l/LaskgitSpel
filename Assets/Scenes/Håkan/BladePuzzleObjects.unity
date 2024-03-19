@@ -657,6 +657,12 @@ MonoBehaviour:
   worldPosition: {x: 0, y: 0}
   bladeSlot: {fileID: 1577468672}
   blade: {fileID: 204269333}
+  polygonCollider2D: {fileID: 0}
+  slotCollision: {fileID: 0}
+  loader: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
+  originalScale: {x: 0, y: 0, z: 0}
+  ifollow: 0
 --- !u!1 &297006959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1452,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e83ed3539285b4fad0f1150393e42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blade: {fileID: 0}
+  draggingPiece: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
+  originalScale: {x: 0, y: 0, z: 0}
 --- !u!1 &845495526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1677,12 @@ MonoBehaviour:
   worldPosition: {x: 0, y: 0}
   bladeSlot: {fileID: 1453661772}
   blade: {fileID: 845495526}
+  polygonCollider2D: {fileID: 0}
+  slotCollision: {fileID: 0}
+  loader: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
+  originalScale: {x: 0, y: 0, z: 0}
+  ifollow: 0
 --- !u!1 &856202699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2022,12 @@ MonoBehaviour:
   worldPosition: {x: 0, y: 0}
   bladeSlot: {fileID: 1074472625}
   blade: {fileID: 920628465}
+  polygonCollider2D: {fileID: 0}
+  slotCollision: {fileID: 0}
+  loader: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
+  originalScale: {x: 0, y: 0, z: 0}
+  ifollow: 0
 --- !u!1 &950285929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,6 +2984,12 @@ MonoBehaviour:
   worldPosition: {x: 0, y: 0}
   bladeSlot: {fileID: 1862880005}
   blade: {fileID: 1529253392}
+  polygonCollider2D: {fileID: 0}
+  slotCollision: {fileID: 0}
+  loader: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
+  originalScale: {x: 0, y: 0, z: 0}
+  ifollow: 0
 --- !u!1 &1577468672
 GameObject:
   m_ObjectHideFlags: 0
@@ -3736,6 +3764,7 @@ SceneRoots:
   - {fileID: 1082534749}
   - {fileID: 27101101}
   - {fileID: 808240096}
+  - {fileID: 586341467}
   - {fileID: 920628467}
   - {fileID: 1529253394}
   - {fileID: 845495528}
