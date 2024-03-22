@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
+    public bool tidningGained = false;
     SceneLoader loader;
 
     private void Awake()

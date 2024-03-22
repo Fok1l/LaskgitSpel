@@ -64,7 +64,7 @@ public class LLB : MonoBehaviour
                 {
                     if (collider.CompareTag("LowerLeftSlot") && blade.GetComponent<Collider2D>().enabled) //if mouse is inside the collider: && collider.bounds.Contains(mouseWorldPos)
                     {
-                        //snapp to the slot position
+                        //snap to the slot position
                         transform.position = collider.transform.position;
                         blade.GetComponent<Collider2D>().enabled = false;
                         transform.localScale = new Vector3(1f, 1f, 1f);

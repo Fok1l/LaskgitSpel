@@ -3546,6 +3546,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1141866743}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+      propertyPath: teleportTo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: EPromptCanvas
       value: 
       objectReference: {fileID: 2011174605}

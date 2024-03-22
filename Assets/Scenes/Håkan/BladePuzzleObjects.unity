@@ -766,11 +766,11 @@ Transform:
   m_GameObject: {fileID: 410955804}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.1399999, y: -0.73, z: 0}
+  m_LocalPosition: {x: -1.4999999, y: 3.24, z: -0.59901184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1074472626}
+  m_Father: {fileID: 967825364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &410955806
 PolygonCollider2D:
@@ -2121,6 +2121,7 @@ Transform:
   - {fileID: 1453661773}
   - {fileID: 1862880006}
   - {fileID: 1577468675}
+  - {fileID: 410955805}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1074472625
@@ -2153,8 +2154,7 @@ Transform:
   m_LocalPosition: {x: 1.64, y: 3.97, z: -0.59901184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 410955805}
+  m_Children: []
   m_Father: {fileID: 967825364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1074472627
