@@ -16,14 +16,17 @@ EditorBuildSettings:
     guid: e9652298c5932d24ebf2cc421b37e8e1
   - enabled: 1
     path: Assets/Scenes/Leon/ZapGameScene 1.unity
-    guid: 780d5a033ae003141960673d30752981
+    guid: d7b0e553eec89a04081002df18fc3c99
   - enabled: 1
     path: Assets/Scenes/Leon/ZapGameScene 2.unity
-    guid: a06e7127456ad8d4eb7808a123956cbb
+    guid: fcc6d85101c90e74c9acb5442be037bd
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: 3890c010786d4c441ac917ebfee49f0b
   - enabled: 1
     path: "Assets/Scenes/H\xE5kan/BladePuzzleObjects.unity"
     guid: 880ee403ea9896947bf0b5b92af7d126
+  - enabled: 1
+    path: "Assets/Scenes/H\xE5kan/MainKitchen.unity"
+    guid: 9b5c49555a6fda84b99b45897b7d17e6
   m_configObjects: {}
