@@ -40,6 +40,7 @@ public class KeyScript : MonoBehaviour
         {
             hasCompletedLevel = true;
 
+            gameSession.zapPuzzleKeyGained = true;
             sceneLoader.LoadNextScene();
         }
     }

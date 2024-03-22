@@ -179,8 +179,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 346133393
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 1da9dcb77d7695f4f90192df7d724c44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -511,8 +511,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 529720293
-  m_SortingLayer: 2
-  m_SortingOrder: 24
+  m_SortingLayer: 0
+  m_SortingOrder: 87
   m_Sprite: {fileID: 21300000, guid: 546ac6d9477ea7e4b93677628a78f915, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -989,8 +989,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 529720293
-  m_SortingLayer: 2
-  m_SortingOrder: 31
+  m_SortingLayer: 0
+  m_SortingOrder: 87
   m_Sprite: {fileID: 21300000, guid: 600b66587a70ab545b8a870b7d630e3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1504,8 +1504,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 529720293
-  m_SortingLayer: 2
-  m_SortingOrder: 20
+  m_SortingLayer: 0
+  m_SortingOrder: 87
   m_Sprite: {fileID: 21300000, guid: 2aa0142ce226f7b41b88eaf5d3ea4107, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1862,8 +1862,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 529720293
-  m_SortingLayer: 2
-  m_SortingOrder: 34
+  m_SortingLayer: 0
+  m_SortingOrder: 87
   m_Sprite: {fileID: 21300000, guid: c0db4662bf65a3e4f9fb51d3a5e262c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2788,8 +2788,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 529720293
-  m_SortingLayer: 2
-  m_SortingOrder: 24
+  m_SortingLayer: 0
+  m_SortingOrder: 87
   m_Sprite: {fileID: 21300000, guid: bca6ac059fcd3044591f026e2e1335d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

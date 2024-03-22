@@ -21,14 +21,9 @@ public class OpenKey : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D EnteringTrigger)
     {
-        if (EnteringTrigger.tag == "Player")
+        if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E))
         {
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                {
-                    loader.LoadKey();
-                }
-            }
+            loader.LoadKey();
         }
 
     }
