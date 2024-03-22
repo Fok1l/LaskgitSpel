@@ -695,6 +695,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5070960421881324632, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_text
+      value: (E) Open
+      objectReference: {fileID: 0}
     - target: {fileID: 7171709038060948100, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_Name
       value: Canvi
@@ -1247,6 +1251,10 @@ PrefabInstance:
       propertyPath: loader
       value: 
       objectReference: {fileID: 1503391396}
+    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+      propertyPath: teleportTo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: EPromptCanvas
       value: 
