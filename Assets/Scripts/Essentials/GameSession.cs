@@ -34,7 +34,6 @@ public class GameSession : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("Update");
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

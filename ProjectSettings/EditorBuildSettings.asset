@@ -26,19 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/H\xE5kan/BladePuzzleObjects.unity"
     guid: 880ee403ea9896947bf0b5b92af7d126
-  - enabled: 1
-    path: "Assets/Scenes/H\xE5kan/MainEntrance.unity"
-    guid: 8d25ecd6fad340b49ac1c5dffde8e95b
-  - enabled: 1
-    path: "Assets/Scenes/H\xE5kan/Corridor.unity"
-    guid: 0253f9f2e7c2a8e4cb9cf7c86edae19d
-  - enabled: 1
-    path: "Assets/Scenes/H\xE5kan/Kitchen.unity"
-    guid: f07e2b301a04f6843a9b880b9036932f
-  - enabled: 1
-    path: "Assets/Scenes/H\xE5kan/LivingRoom.unity"
-    guid: 6a52435bd023e82438e51984a5778ca9
-  - enabled: 1
-    path: "Assets/Scenes/H\xE5kan/LivingRoom 2.unity"
-    guid: 5f16cedf935d9ad4e90b7e6916e310ed
   m_configObjects: {}
