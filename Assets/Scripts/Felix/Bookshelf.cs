@@ -16,15 +16,12 @@ public class Bookshelf : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D EnteringTrigger) //Works. Needs to be OnTriggerStay2d, otherwise won't work.
     {
-        if (EnteringTrigger.tag == "Player")
+        if (BookStay == false && EnteringTrigger.tag == "Player" && Input.GetKey(KeyCode.E))
         {
-            if (Input.GetKey(KeyCode.E) && BookStay == false)
-          {
-                InvCanvas.enabled = true;
-                BookStay = true;
-                EPromptCanvas.enabled = false;
-            }
-            
+            InvCanvas.enabled = true;
+            BookStay = true;
+            EPromptCanvas.enabled = false;
+
         }
     }
 
