@@ -59,7 +59,6 @@ public class KeyScript : MonoBehaviour
         yield return new WaitForSeconds(deathCooldown);
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
         SceneManager.LoadScene(currentSceneIndex); // Reloading the scene
     }
 
@@ -85,8 +84,9 @@ public class KeyScript : MonoBehaviour
 
     void randomSpriteTrigger() // To spawn a random lightning when dying
     {
-        random = Random.Range(0, 4);
+        random = Random.Range(0, blixtar.Count);
         blixtar[random].SetActive(true);
         blixtar[random].GetComponent<Transform>().position = transform.position + transform.up;
     }
 }
+
