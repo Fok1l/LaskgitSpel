@@ -1316,7 +1316,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: 9cf5642eb2371f3479bec95bce91a97a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1737,6 +1737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4839cec0caa3d6246bc9b3d1061729df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zapPuzzleKeyGained: 0
   tidningGained: 0
 --- !u!1 &1803964380
 GameObject:
@@ -1988,6 +1989,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+      propertyPath: unlockedDoor
+      value: 
+      objectReference: {fileID: 1817338859}
+    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: EPromptCanvas
       value: 
       objectReference: {fileID: 833975491}
@@ -2104,6 +2109,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+--- !u!1 &1817338859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2603143467635386163, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+  m_PrefabInstance: {fileID: 1817338858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1856698382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,7 +2300,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 529720293
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ea1561bb3ec38904bbc9f99d15bf7330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2384,6 +2394,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 459241727}
+  - {fileID: 224917849}
   - {fileID: 2065461793}
   - {fileID: 1817338858}
   - {fileID: 1503391395}
@@ -2397,4 +2408,3 @@ SceneRoots:
   - {fileID: 375197218}
   - {fileID: 655272189}
   - {fileID: 1540385060}
-  - {fileID: 224917849}

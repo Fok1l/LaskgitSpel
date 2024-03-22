@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Collectible1
-  - EnteringTrigger
   - Resistance
   - Hazard
   - Key
@@ -13,11 +11,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Collectible1
+  - 
   - Water
   - UI
-  - Floor
-  - Furniture
+  - Hazard
+  - Key
   - Resistance
   - 
   - 
@@ -25,7 +23,7 @@ TagManager:
   - 
   - 
   - 
-  - Player
+  - 
   - 
   - 
   - 
@@ -43,15 +41,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1308495
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Floor
-    uniqueID: 346133393
+  - name: Hazard
+    uniqueID: 2499150005
     locked: 0
-  - name: Above Floor
-    uniqueID: 529720293
+  - name: Key
+    uniqueID: 1808032631
     locked: 0
-  - name: Player
-    uniqueID: 2332731339
+  - name: Resistance
+    uniqueID: 2845992341
     locked: 0

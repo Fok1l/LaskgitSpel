@@ -126,5 +126,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(teleportToLocation);
     }
 
+    public void LoadKitchen()
+    {
+        SceneManager.LoadScene(7);
+    }
+
 
 }

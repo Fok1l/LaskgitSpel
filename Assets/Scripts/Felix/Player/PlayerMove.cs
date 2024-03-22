@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D thisRigidBody;
     private Transform characterTransform;
 
+
     void Start()
     {
         thisRigidBody = GetComponent<Rigidbody2D>();

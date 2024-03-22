@@ -14,4 +14,5 @@ public class CameraMovement : MonoBehaviour
         Vector3 movePosition = target.position + offset; // Calculates the positon 
         transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, damping); //Smooths the camera.
     }
+    // Test
 }
