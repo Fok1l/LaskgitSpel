@@ -88,7 +88,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadKey()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     public void LoadSecondRoom()

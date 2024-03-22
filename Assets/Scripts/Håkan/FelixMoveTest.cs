@@ -84,7 +84,7 @@ public class FelixMoveTest : MonoBehaviour
 
     void AccessInventory()
     {
-        if (invActive == false && Input.GetKeyDown(KeyCode.I))
+        if (invActive == false && Input.GetKeyUp(KeyCode.I))
         {
             //invCanvas.SetActive(true);
             Inventory_Canvas.gameObject.SetActive(true);
@@ -94,6 +94,11 @@ public class FelixMoveTest : MonoBehaviour
                 tidning.gameObject.SetActive(true);
                 testQuest.gameObject.SetActive(true);
             }
+        } else if (invActive == true && Input.GetKeyUp(KeyCode.I))
+        {
+            //invCanvas.SetActive(false);
+            Inventory_Canvas.gameObject.SetActive(false);
+            invActive = false;
         }
 
         if (!usingFlashLight && Input.GetKeyUp(KeyCode.F))
@@ -127,12 +132,7 @@ public class FelixMoveTest : MonoBehaviour
 
 
 
-        if (invActive == true && Input.GetKey(KeyCode.U))
-        {
-            //invCanvas.SetActive(false);
-            Inventory_Canvas.gameObject.SetActive(false);
-            invActive = false;
-        }
+        
 
 
         if(lightGained == true)
