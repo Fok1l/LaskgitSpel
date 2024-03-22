@@ -8,7 +8,10 @@ public class Door : MonoBehaviour
     [SerializeField] int teleportTo;
     [SerializeField] SceneLoader loader;
     [SerializeField] GameObject kitchenDoor;
+    [SerializeField] GameObject unlockedDoor;
     public Canvas EPromptCanvas;
+
+    GameSession gameSession;
 
 
     void OnTriggerEnter2D(Collider2D EnteringTrigger) //This works, very nice. Don't change
@@ -21,15 +24,16 @@ public class Door : MonoBehaviour
     public void Start()
     {
         loader = FindObjectOfType<SceneLoader>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
 
     private void OnTriggerStay2D(Collider2D EnteringTrigger)
     {
-        if(gameObject == kitchenDoor)
+        if (gameSession.zapPuzzleKeyGained == true && gameObject == kitchenDoor)
         {
             loader.LoadKitchen();
-        }else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E))
+        }else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E) && gameObject == unlockedDoor)
         {
             loader.Teleporters(teleportTo);
 

@@ -807,9 +807,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 135425051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dceaf2f3df3a6674293431861cba6b1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4839cec0caa3d6246bc9b3d1061729df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zapPuzzleKeyGained: 0
+  tidningGained: 1
 --- !u!4 &135425053
 Transform:
   m_ObjectHideFlags: 0
@@ -4535,8 +4537,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.0826502, y: -2.0205002, z: 0}
-    m_Extent: {x: 7.26585, y: 4.8487, z: 0}
+    m_Center: {x: 2.08265, y: -2.01945, z: 0}
+    m_Extent: {x: 7.26495, y: 4.84945, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6845,8 +6847,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -5.976, y: 3.0905502, z: 0}
-    m_Extent: {x: 8.0241, y: 5.07545, z: 0}
+    m_Center: {x: -5.9770503, y: 3.0901003, z: 0}
+    m_Extent: {x: 8.02455, y: 5.0752, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
