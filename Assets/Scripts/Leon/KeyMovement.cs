@@ -32,4 +32,5 @@ public class KeyMovement : MonoBehaviour
         moveVertical = Input.GetAxis("Vertical");
         myRigidbody.velocity = new Vector2(0, 0); // To fix freeze movement when dead
     }
+    // test
 }
