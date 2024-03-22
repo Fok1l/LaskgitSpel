@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TidningPickup : MonoBehaviour
 {
-    FelixMoveTest move;
+    GameSession gameSession;
     // Start is called before the first frame update
     void Start()
     {
-        move = FindObjectOfType<FelixMoveTest>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class TidningPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        move.tidningGained = true;
+        gameSession.tidningGained = true;
         Destroy(gameObject);
     }
 }

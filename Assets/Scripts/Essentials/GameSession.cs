@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
+    public bool tidningGained = false;
     SceneLoader loader;
 
     private void Awake()
@@ -33,7 +34,6 @@ public class GameSession : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("Update");
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
