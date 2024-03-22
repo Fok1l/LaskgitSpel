@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NoteSystem : MonoBehaviour
 {
     PlayerMove player;
+    AudioManager audioManager;
 
     public Image[] noteImages; // Array of note UI Images
     bool[] isOpen; // Array of boolean flags to track if a note is open
@@ -34,6 +35,7 @@ public class NoteSystem : MonoBehaviour
             {
                 if (papers[i] == gameObject)
                 {
+                    AudioManager.
                     paperIndex = i;
                     break;
                 }
