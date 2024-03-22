@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
-    public bool tidningGained = false;
+    public bool zapPuzzleKeyGained = false;
+    public bool tidningGained = true;
     SceneLoader loader;
 
     private void Awake()

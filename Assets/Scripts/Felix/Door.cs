@@ -7,7 +7,9 @@ public class Door : MonoBehaviour
 {
     [SerializeField] int teleportTo;
     [SerializeField] SceneLoader loader;
+    [SerializeField] GameObject kitchenDoor;
     public Canvas EPromptCanvas;
+
 
     void OnTriggerEnter2D(Collider2D EnteringTrigger) //This works, very nice. Don't change
     {
@@ -24,38 +26,20 @@ public class Door : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D EnteringTrigger)
     {
-        if (EnteringTrigger.tag == "Player")
+        if(gameObject == kitchenDoor)
         {
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                {
-                    loader.Teleporters(teleportTo);
-                }
-            }
+            loader.LoadKitchen();
+        }else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E))
+        {
+            loader.Teleporters(teleportTo);
+
         }
        
     }
 
-    //   private void OnTriggerStay2D(Collider2D EnteringTrigger)
-    //  {
-    // if (EnteringTrigger.tag == "Player")
-    //  {
-    //    Scene currentScene = SceneManager.GetActiveScene();
-
-    //    if (Input.GetKey(KeyCode.E) && currentScene.buildIndex == 0)
-    //   {
-    //       loader.FadeToLevel(1);
-    //   }
-    //   else
-    //{
-    //     if (Input.GetKey(KeyCode.E))
-    //     {
-    //        loader.FadeToLevel(0);
-    //    }
-    //    }
-
     private void OnTriggerExit2D(Collider2D ExitTrigger)
     {
+
         if (ExitTrigger.tag == "Player")
         {
             Debug.Log("Player Leave Door");

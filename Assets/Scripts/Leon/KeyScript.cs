@@ -11,6 +11,7 @@ public class KeyScript : MonoBehaviour
     [SerializeField] float speed;
 
     SceneLoader sceneLoader;
+    GameSession gameSession;
 
     public bool isAlive = true;
 
@@ -24,6 +25,7 @@ public class KeyScript : MonoBehaviour
     private void Start()
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
     void Update()
