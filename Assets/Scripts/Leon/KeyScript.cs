@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class KeyScript : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class KeyScript : MonoBehaviour
     GameSession gameSession;
 
     public bool isAlive = true;
-    public Sprite[] spritePicture;
+
+    public List<GameObject> blixtar;
 
     private float moveVertical;
     private float moveHorizontal;
@@ -59,7 +61,6 @@ public class KeyScript : MonoBehaviour
         yield return new WaitForSeconds(deathCooldown);
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
         SceneManager.LoadScene(currentSceneIndex); // Reloading the scene
     }
 
@@ -85,8 +86,9 @@ public class KeyScript : MonoBehaviour
 
     void randomSpriteTrigger() // To spawn a random lightning when dying
     {
-        random = Random.Range(0, spritePicture.Length);
-        GetComponent<SpriteRenderer>().sprite = spritePicture[random];
+        random = Random.Range(0, blixtar.Count);
+        blixtar[random].SetActive(true);
+        blixtar[random].GetComponent<Transform>().position = transform.position + transform.up;
     }
 }
 

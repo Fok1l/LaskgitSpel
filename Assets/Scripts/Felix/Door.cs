@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     [SerializeField] GameObject kitchenDoor;
     public Canvas EPromptCanvas;
 
+
     void OnTriggerEnter2D(Collider2D EnteringTrigger) //This works, very nice. Don't change
     {
         if (EnteringTrigger.tag == "Player")
