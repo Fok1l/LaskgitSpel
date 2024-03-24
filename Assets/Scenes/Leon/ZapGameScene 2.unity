@@ -3312,8 +3312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1539770158}
-  damping: 0.36
-  offset: {x: 0, y: 0, z: 0}
+  damping: 0.5
+  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &529166031
 GameObject:
   m_ObjectHideFlags: 0
@@ -4537,8 +4537,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.08185, y: -2.0198998, z: 0}
-    m_Extent: {x: 7.26585, y: 4.8487, z: 0}
+    m_Center: {x: 2.0825002, y: -2.01935, z: 0}
+    m_Extent: {x: 7.2646, y: 4.84935, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6847,8 +6847,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -5.9761, y: 3.0904, z: 0}
-    m_Extent: {x: 8.0246, y: 5.0746, z: 0}
+    m_Center: {x: -5.9758, y: 3.0905998, z: 0}
+    m_Extent: {x: 8.0244, y: 5.0754995, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
