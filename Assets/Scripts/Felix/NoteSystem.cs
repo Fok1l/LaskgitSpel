@@ -35,7 +35,6 @@ public class NoteSystem : MonoBehaviour
             {
                 if (papers[i] == gameObject)
                 {
-                    AudioManager.
                     paperIndex = i;
                     break;
                 }
