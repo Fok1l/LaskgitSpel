@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  flashLightObject: {fileID: 0}
+  usingFlashLight: 0
 --- !u!50 &7776505853381894350
 Rigidbody2D:
   serializedVersion: 4
