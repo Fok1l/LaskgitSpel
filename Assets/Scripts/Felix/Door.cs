@@ -30,11 +30,11 @@ public class Door : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D EnteringTrigger)
     {
-        if (gameSession.zapPuzzleKeyGained == true && gameObject == kitchenDoor && Input.GetKeyUp(KeyCode.E))
-        {
-            loader.LoadKitchen();
-        }
-        else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E) && gameObject == unlockedDoor)
+        //if (gameSession.zapPuzzleKeyGained == true && gameObject == kitchenDoor && Input.GetKeyUp(KeyCode.E))
+        //{
+          //  loader.LoadKitchen();
+        //}
+        if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E) && gameObject == unlockedDoor)
         {
             loader.Teleporters(teleportTo);
 
