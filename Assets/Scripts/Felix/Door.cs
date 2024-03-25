@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
     GameSession gameSession;
 
 
-    void OnTriggerEnter2D(Collider2D EnteringTrigger) //This works, very nice. Don't change
+    void OnTriggerEnter2D(Collider2D EnteringTrigger)
     {
         if (EnteringTrigger.tag == "Player")
         {
@@ -32,13 +32,14 @@ public class Door : MonoBehaviour
     {
         if (gameSession.zapPuzzleKeyGained == true && gameObject == kitchenDoor && Input.GetKeyUp(KeyCode.E))
         {
-            loader.LoadKitchen(); 
-        }else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E) && gameObject == unlockedDoor)
+            loader.LoadKitchen();
+        }
+        else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E) && gameObject == unlockedDoor)
         {
             loader.Teleporters(teleportTo);
 
         }
-       
+
     }
 
     private void OnTriggerExit2D(Collider2D ExitTrigger)
