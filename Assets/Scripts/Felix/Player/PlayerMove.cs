@@ -8,6 +8,9 @@ public class PlayerMove : MonoBehaviour
     private float vertical;
     [SerializeField] private float speed = 8f;
 
+    [SerializeField] GameObject flashLightObject;
+    public bool usingFlashLight = false;
+
     private Vector2 moveInput;
     private Rigidbody2D thisRigidBody;
     private Transform characterTransform;
@@ -24,6 +27,7 @@ public class PlayerMove : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = SnapToYX(moveInput);
+        AccessInventory();
     }
 
     private void FixedUpdate()
@@ -45,6 +49,24 @@ public class PlayerMove : MonoBehaviour
         else if (moveInput.y < 0) // Moving down (S key)
         {
             characterTransform.rotation = Quaternion.Euler(0, 0, 0f);
+        }
+    }
+
+    void AccessInventory()
+    {
+        if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
+        {
+            //unlitFlashLight.gameObject.SetActive(false);
+            usingFlashLight = true;
+            //litFlashLight.gameObject.SetActive(true);
+            flashLightObject.SetActive(true);
+        }
+        else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.R))
+        {
+            //unlitFlashLight.gameObject.SetActive(true);
+            usingFlashLight = false;
+            //litFlashLight.gameObject.SetActive(false);
+            flashLightObject.SetActive(false);
         }
     }
 
