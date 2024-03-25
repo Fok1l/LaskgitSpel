@@ -4497,7 +4497,7 @@ GameObject:
   - component: {fileID: 686030654}
   - component: {fileID: 686030653}
   m_Layer: 0
-  m_Name: Light 2D Scene1
+  m_Name: Wire Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4537,8 +4537,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.08225, y: -2.0196, z: 0}
-    m_Extent: {x: 7.26615, y: 4.8487, z: 0}
+    m_Center: {x: 2.0826998, y: -2.0195003, z: 0}
+    m_Extent: {x: 7.2654, y: 4.8493, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4574,12 +4574,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686030652}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.75, y: 2.4959, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1722214195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &738336300
 GameObject:
@@ -6415,7 +6415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1167476532}
   m_Layer: 0
-  m_Name: Lights
+  m_Name: Star Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6429,7 +6429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167476531}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 4.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6511,7 +6511,7 @@ Transform:
   - {fileID: 1635644560}
   - {fileID: 63889724}
   - {fileID: 1586911720}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1722214195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1223273674
 GameObject:
@@ -6807,7 +6807,7 @@ GameObject:
   - component: {fileID: 1266765427}
   - component: {fileID: 1266765426}
   m_Layer: 0
-  m_Name: Light 2D Scene2
+  m_Name: Wire Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6847,8 +6847,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -5.97585, y: 3.0905, z: 0}
-    m_Extent: {x: 8.02485, y: 5.0748, z: 0}
+    m_Center: {x: -5.97635, y: 3.0898998, z: 0}
+    m_Extent: {x: 8.02565, y: 5.0748997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6886,12 +6886,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266765425}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.5744553, y: 6.1028094, z: 0.094990544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1722214195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1276819735
 GameObject:
@@ -8517,6 +8517,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1494897992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1722214194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1722214195}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1722214195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722214194}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1266765427}
+  - {fileID: 686030654}
+  - {fileID: 1167476532}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1814885780
 GameObject:
   m_ObjectHideFlags: 0
@@ -10005,8 +10039,6 @@ SceneRoots:
   - {fileID: 982162821}
   - {fileID: 1539770158}
   - {fileID: 815356962}
-  - {fileID: 686030654}
-  - {fileID: 1266765427}
-  - {fileID: 1167476532}
+  - {fileID: 1722214195}
   - {fileID: 1223273675}
   - {fileID: 1364324623}
