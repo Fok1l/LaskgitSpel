@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2242fccddaee4348ba06c5959c82b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 546319779}
+  target: {fileID: 55195862}
   offset: {x: 0, y: 0, z: -10}
   damping: 0.37
   maxXpos: 0
@@ -1085,16 +1085,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: karaktar
       objectReference: {fileID: 0}
+    - target: {fileID: 6535222693245956037, guid: b593bc9330c073248bd68464447ade1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b593bc9330c073248bd68464447ade1c, type: 3}
---- !u!4 &546319779 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2762070710456080612, guid: b593bc9330c073248bd68464447ade1c, type: 3}
-  m_PrefabInstance: {fileID: 546319778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &655272186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,7 +2639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1957715457965496916, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6193747847234891145, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: m_Sprite
