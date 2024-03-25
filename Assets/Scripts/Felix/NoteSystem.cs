@@ -15,6 +15,7 @@ public class NoteSystem : MonoBehaviour
 
     void Start()
     {
+        audioManager = GetComponent<AudioManager>();
         player = FindObjectOfType<PlayerMove>();
 
         // Disable all note images initially

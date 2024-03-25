@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2242fccddaee4348ba06c5959c82b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1872388518}
+  target: {fileID: 777335822}
   offset: {x: 0, y: 0, z: -10}
   damping: 0.37
   maxXpos: 7.34
@@ -1624,7 +1624,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e63bcf4661c2fde40a9135e54e8b065d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2944,11 +2944,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!4 &1872388518 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2762070710456080612, guid: b593bc9330c073248bd68464447ade1c, type: 3}
-  m_PrefabInstance: {fileID: 8730551518416207118}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888239182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4449,7 +4444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1957715457965496916, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4269075886245090813, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -4646,6 +4641,10 @@ PrefabInstance:
     - target: {fileID: 6535222693245956037, guid: b593bc9330c073248bd68464447ade1c, type: 3}
       propertyPath: m_Name
       value: karaktar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535222693245956037, guid: b593bc9330c073248bd68464447ade1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
