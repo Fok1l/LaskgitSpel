@@ -2218,7 +2218,7 @@ PrefabInstance:
       objectReference: {fileID: 1503391396}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: unlockedDoor
