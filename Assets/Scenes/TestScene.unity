@@ -1310,6 +1310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loader: {fileID: 1503391396}
   EPromptCanvas: {fileID: 833975491}
+  teleportTo: 3
 --- !u!1001 &833975490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2118,6 +2119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loader: {fileID: 1503391396}
   EPromptCanvas: {fileID: 833975491}
+  teleportTo: 6
 --- !u!1 &1808261917
 GameObject:
   m_ObjectHideFlags: 0

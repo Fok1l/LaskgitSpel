@@ -6,31 +6,39 @@ public class OpenKey : MonoBehaviour
 {
     [SerializeField] SceneLoader loader;
     public Canvas EPromptCanvas;
+    bool AtKeyTable = false;
+    [SerializeField] int teleportTo;
 
-    void OnTriggerEnter2D(Collider2D EnteringTrigger) //This works, very nice. Don't change
+    GameSession gameSession;
+
+
+    void OnTriggerEnter2D(Collider2D EnteringTrigger)
     {
         if (EnteringTrigger.tag == "Player")
         {
+            AtKeyTable = true;
             EPromptCanvas.enabled = true;
         }
     }
-
     public void Start()
     {
         loader = FindObjectOfType<SceneLoader>();
+        gameSession = FindObjectOfType<GameSession>();
     }
-    private void OnTriggerStay2D(Collider2D EnteringTrigger)
-    {
-        if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E))
-        {
-            loader.LoadKey();
-        }
 
+    private void FixedUpdate()
+    {
+        if (AtKeyTable == true && Input.GetKey(KeyCode.E))
+        {
+            loader.Teleporters(teleportTo);
+        }
     }
+
     private void OnTriggerExit2D(Collider2D ExitTrigger)
     {
         if (ExitTrigger.tag == "Player")
         {
+            AtKeyTable = false;
             EPromptCanvas.enabled = false;
         }
 
