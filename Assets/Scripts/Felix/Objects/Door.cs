@@ -11,8 +11,10 @@ public class Door : MonoBehaviour
    // [SerializeField] GameObject unlockedDoor;
     public Canvas EPromptCanvas;
     bool AtTheDoor = false;
+    [SerializeField] AudioClip doorSound;
 
     GameSession gameSession;
+
 
 
     void OnTriggerEnter2D(Collider2D EnteringTrigger)
@@ -33,6 +35,7 @@ public class Door : MonoBehaviour
     {
         if (AtTheDoor == true && Input.GetKey(KeyCode.E))
         {
+            PlayDoorSFX();
             loader.Teleporters(teleportTo);
         }
     }
@@ -46,6 +49,10 @@ public class Door : MonoBehaviour
             EPromptCanvas.enabled = false;
         }
 
+    }
+    void PlayDoorSFX()
+    {
+        AudioSource.PlayClipAtPoint(doorSound, Camera.main.transform.position);
     }
 }
 

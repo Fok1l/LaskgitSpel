@@ -1261,6 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727ab3766f68d754ab0530c575ccbdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paperSound: {fileID: 8300000, guid: e63bcf4661c2fde40a9135e54e8b065d, type: 3}
   noteImages:
   - {fileID: 885403449}
   - {fileID: 347133287}
@@ -1530,6 +1531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727ab3766f68d754ab0530c575ccbdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paperSound: {fileID: 8300000, guid: e63bcf4661c2fde40a9135e54e8b065d, type: 3}
   noteImages:
   - {fileID: 885403449}
   - {fileID: 347133287}
@@ -3614,6 +3616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727ab3766f68d754ab0530c575ccbdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paperSound: {fileID: 8300000, guid: e63bcf4661c2fde40a9135e54e8b065d, type: 3}
   noteImages:
   - {fileID: 885403449}
   - {fileID: 347133287}
@@ -3804,6 +3807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727ab3766f68d754ab0530c575ccbdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paperSound: {fileID: 8300000, guid: e63bcf4661c2fde40a9135e54e8b065d, type: 3}
   noteImages:
   - {fileID: 885403449}
   - {fileID: 347133287}
@@ -3990,6 +3994,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1141866743}
+    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
       value: 5
