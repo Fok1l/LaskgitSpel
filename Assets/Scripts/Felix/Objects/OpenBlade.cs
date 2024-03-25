@@ -6,31 +6,39 @@ public class OpenBlade : MonoBehaviour
 {
     [SerializeField] SceneLoader loader;
     public Canvas EPromptCanvas;
+    bool AtBladeTable = false;
+    [SerializeField] int teleportTo;
 
-    void OnTriggerEnter2D(Collider2D EnteringTrigger) //This works, very nice. Don't change
+    GameSession gameSession;
+
+
+    void OnTriggerEnter2D(Collider2D EnteringTrigger)
     {
         if (EnteringTrigger.tag == "Player")
         {
+            AtBladeTable = true;
             EPromptCanvas.enabled = true;
         }
     }
-
     public void Start()
     {
         loader = FindObjectOfType<SceneLoader>();
+        gameSession = FindObjectOfType<GameSession>();
     }
-    private void OnTriggerStay2D(Collider2D EnteringTrigger)
-    {
-        if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E))
-        {
-            loader.LoadNextScene();
-        }
 
+    private void FixedUpdate()
+    {
+        if (AtBladeTable == true && Input.GetKey(KeyCode.E))
+        {
+            loader.Teleporters(teleportTo);
+        }
     }
+
     private void OnTriggerExit2D(Collider2D ExitTrigger)
     {
         if (ExitTrigger.tag == "Player")
         {
+            AtBladeTable = false;
             EPromptCanvas.enabled = false;
         }
 
