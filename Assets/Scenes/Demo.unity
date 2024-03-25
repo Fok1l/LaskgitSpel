@@ -2982,6 +2982,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1503391396}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
+    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
       value: 5
       objectReference: {fileID: 0}
