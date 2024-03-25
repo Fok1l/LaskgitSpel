@@ -7,15 +7,25 @@ public class Door : MonoBehaviour
 {
     [SerializeField] int teleportTo;
     [SerializeField] SceneLoader loader;
-  //  [SerializeField] GameObject kitchenDoor;
-   // [SerializeField] GameObject unlockedDoor;
     public Canvas EPromptCanvas;
     bool AtTheDoor = false;
     [SerializeField] AudioClip doorSound;
 
     GameSession gameSession;
 
+    GameObject soundObject; // Reference to the persistent sound object
+    AudioSource soundSource; // Reference to the AudioSource component
 
+    void Awake()
+    {
+        // Create the persistent sound object if it doesn't exist
+        if (soundObject == null)
+        {
+            soundObject = new GameObject("DoorSoundObject");
+            DontDestroyOnLoad(soundObject);
+            soundSource = soundObject.AddComponent<AudioSource>();
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D EnteringTrigger)
     {
@@ -25,6 +35,7 @@ public class Door : MonoBehaviour
             EPromptCanvas.enabled = true;
         }
     }
+
     public void Start()
     {
         loader = FindObjectOfType<SceneLoader>();
@@ -33,7 +44,7 @@ public class Door : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (AtTheDoor == true && Input.GetKey(KeyCode.E))
+        if (AtTheDoor && Input.GetKey(KeyCode.E))
         {
             PlayDoorSFX();
             loader.Teleporters(teleportTo);
@@ -48,11 +59,11 @@ public class Door : MonoBehaviour
             AtTheDoor = false;
             EPromptCanvas.enabled = false;
         }
-
     }
+
     void PlayDoorSFX()
     {
-        AudioSource.PlayClipAtPoint(doorSound, Camera.main.transform.position);
+        soundSource.PlayOneShot(doorSound);
     }
 }
 
