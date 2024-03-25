@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource AudioSource;
-    public AudioClip AudioClip;
+    public AudioSource source;
+    public AudioClip clip;
 }

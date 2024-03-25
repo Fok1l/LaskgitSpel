@@ -35,6 +35,7 @@ public class NoteSystem : MonoBehaviour
             {
                 if (papers[i] == gameObject)
                 {
+                    
                     paperIndex = i;
                     break;
                 }
