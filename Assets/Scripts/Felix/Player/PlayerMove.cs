@@ -15,15 +15,21 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D thisRigidBody;
     private Transform characterTransform;
 
+    Animator myAnimator;
+    PlayerAnimations playerAnimations;
+
 
     void Start()
     {
+        myAnimator = GetComponent<Animator>();
         thisRigidBody = GetComponent<Rigidbody2D>();
+        playerAnimations = GetComponent<PlayerAnimations>();
         characterTransform = transform;
     }
 
     void Update()
     {
+        playerAnimations.WalkingAnim();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = SnapToYX(moveInput);
