@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class NoteSystem : MonoBehaviour
 {
     PlayerMove player;
-    AudioManager audioManager;
-
+    [SerializeField] AudioClip paperSound;
     public Image[] noteImages; // Array of note UI Images
     bool[] isOpen; // Array of boolean flags to track if a note is open
 
@@ -15,7 +14,7 @@ public class NoteSystem : MonoBehaviour
 
     void Start()
     {
-        audioManager = GetComponent<AudioManager>();
+       // audioManager = GetComponent<AudioManager>(); 
         player = FindObjectOfType<PlayerMove>();
 
         // Disable all note images initially
@@ -36,7 +35,6 @@ public class NoteSystem : MonoBehaviour
             {
                 if (papers[i] == gameObject)
                 {
-                    
                     paperIndex = i;
                     break;
                 }
@@ -46,6 +44,7 @@ public class NoteSystem : MonoBehaviour
             {
                 noteImages[paperIndex].enabled = true;
                 isOpen[paperIndex] = true;
+                PlayPaperSFX();
                 papers[paperIndex].SetActive(false); // Deactivate the paper GameObject
                 Destroy(papers[paperIndex], 1f); // Destroy the paper GameObject after 1 second
             }
@@ -96,5 +95,10 @@ public class NoteSystem : MonoBehaviour
             // Implement the logic to close the UI for the respective paper
             Debug.Log("Closing UI for Paper " + paperIndex);
         }
+    }
+
+    void PlayPaperSFX()
+    {
+        AudioSource.PlayClipAtPoint(paperSound, Camera.main.transform.position);
     }
 }

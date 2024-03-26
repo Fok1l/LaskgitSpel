@@ -6,4 +6,9 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource source;
     public AudioClip clip;
+
+    public void PaperSound()
+    {
+        source.PlayOneShot(clip);
+    }
 }
