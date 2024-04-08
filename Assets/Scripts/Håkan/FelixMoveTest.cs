@@ -84,7 +84,7 @@ public class FelixMoveTest : MonoBehaviour
 
     void AccessInventory()
     {
-        if (invActive == false && Input.GetKeyUp(KeyCode.I))
+        if (invActive == false && Input.GetKeyDown(KeyCode.I))
         {
             //invCanvas.SetActive(true);
             Inventory_Canvas.gameObject.SetActive(true);
@@ -94,20 +94,20 @@ public class FelixMoveTest : MonoBehaviour
                 tidning.gameObject.SetActive(true);
                 testQuest.gameObject.SetActive(true);
             }
-        } else if (invActive == true && Input.GetKeyUp(KeyCode.I))
+        } else if (invActive == true && Input.GetKeyDown(KeyCode.I))
         {
             //invCanvas.SetActive(false);
             Inventory_Canvas.gameObject.SetActive(false);
             invActive = false;
         }
 
-        if (!usingFlashLight && Input.GetKeyUp(KeyCode.F))
+        if (!usingFlashLight && Input.GetKeyDown(KeyCode.F))
         {
             //unlitFlashLight.gameObject.SetActive(false);
             usingFlashLight = true;
             //litFlashLight.gameObject.SetActive(true);
             flashLightObject.SetActive(true);
-        }else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.F))
+        }else if (usingFlashLight == true && Input.GetKeyDown(KeyCode.F))
         {
             //unlitFlashLight.gameObject.SetActive(true);
             usingFlashLight = false;
@@ -115,14 +115,14 @@ public class FelixMoveTest : MonoBehaviour
             flashLightObject.SetActive(false);
         }
 
-        if (!usingBook && Input.GetKeyUp(KeyCode.M))
+        if (!usingBook && Input.GetKeyDown(KeyCode.M))
         {
             uiBook.gameObject.SetActive(true);
             usingBook = true;
             closeBook.gameObject.SetActive(false);
             openBook.gameObject.SetActive(true);
         }
-        else if(usingBook == true && Input.GetKeyUp(KeyCode.M))
+        else if(usingBook == true && Input.GetKeyDown(KeyCode.M))
         {
             uiBook.gameObject.SetActive(false);
             usingBook = false;
