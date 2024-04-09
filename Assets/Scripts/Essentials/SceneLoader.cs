@@ -17,6 +17,18 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Sceneloader Found GameSesh");
     }
 
+    public void Teleporters(int teleportToLocation)
+    {
+        SceneManager.LoadScene(teleportToLocation);
+    }
+
+    // OR
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void FadeToLevel(int LevelIndex)
     {
         leveltoload = LevelIndex;
@@ -27,6 +39,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(leveltoload);
     }
+
+
 
     
   //  private void Update()
@@ -53,48 +67,8 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Prev Scene Loaded");
     }
 
-    public void LoadMainSceneFromLoss()
-    {
-        gameSession = FindObjectOfType<GameSession>();
-        if (gameSession != null)
-        {
-            Debug.Log("Script Excecuted");
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex - 2);
-            Debug.Log("Script Completed");
-        }
-        else
-        {
-            Debug.LogError("GameSession not found!");
-        }
-    }
 
-    public void LoadLossFromMainScene()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 2);
-    }
-
-    public void LoadMainMenu()
-    {
-        gameSession.ResetGame();
-        SceneManager.LoadScene(0);
-    }
-
-    public void LoadBlade()
-    {
-        SceneManager.LoadScene(4);
-    }
-
-    public void LoadKey()
-    {
-        SceneManager.LoadScene(3);
-    }
-
-    public void LoadSecondRoom()
-    {
-        SceneManager.LoadScene(3);
-    }
+   
     public void QuitGame()
     {
         // Only works in built version of game, not in editor
@@ -102,33 +76,14 @@ public class SceneLoader : MonoBehaviour
         Application.Quit(3);
     }
 
-    public void LoadBladeScene()
-    {
-        SceneManager.LoadScene(6);
-    }
 
     public void BladePuzzleComplete()
     {
         knives++;
         if (knives == 5)
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(3);
         }
-    }
-
-    public void ExitBladePuzzle()
-    {
-        SceneManager.LoadScene(5);
-    }
-
-    public void Teleporters(int teleportToLocation)
-    {
-        SceneManager.LoadScene(teleportToLocation);
-    }
-
-    public void LoadKitchen()
-    {
-        SceneManager.LoadScene(7);
     }
 
 
