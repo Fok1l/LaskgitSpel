@@ -22,13 +22,6 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(teleportToLocation);
     }
 
-    // OR
-
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-
     public void FadeToLevel(int LevelIndex)
     {
         leveltoload = LevelIndex;
