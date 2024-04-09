@@ -656,7 +656,7 @@ MonoBehaviour:
   maxYpos: 7.34
   minXpos: -7.34
   minYpos: -7.34
-  CutSceneOveride: 0
+  CameraCutSceneOveride: 0
 --- !u!1 &588330486
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,7 +4001,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: unlockedDoor
