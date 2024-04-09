@@ -5,14 +5,28 @@ public class PlayerMove : MonoBehaviour
     private float horizontal;
     private float vertical;
     [SerializeField] private float speed = 8f;
+    PlayerCamera cam;
 
-   // [SerializeField] GameObject flashLightObject;
-   // public bool usingFlashLight = false;
+
+    [Header("Inventory & Flashlight")]
+    public bool usingFlashLight = false;
+    //[SerializeField] GameObject unlitFlashLight;
+    //[SerializeField] GameObject litFlashLight;
+    [SerializeField] GameObject flashLightObject;
+
+    [Header("Quest Book")]
+    [SerializeField] GameObject uiBook;
+    public bool usingBook = false;
+    //[SerializeField] GameObject openBook;
+    //[SerializeField] GameObject closeBook;
+
 
     private Vector2 moveInput;
     private Rigidbody2D thisRigidBody;
     private Transform characterTransform;
-
+    [SerializeField] public float StoredX;
+    [SerializeField] public float StoredY;
+    public bool PlayerCutSceneOveride = false;
    // Animator myAnimator;
    // PlayerAnimations playerAnimations;
 
@@ -26,6 +40,8 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         faceMouse();
+        AccessInventory();
+        AccessQuestBook();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
     }
@@ -33,25 +49,40 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         MoveCharacter();
+        if (Input.GetKey(KeyCode.G))
+        {
+            StoredX = transform.position.x;
+            StoredY = transform.position.y;
+        }
     }
 
     void faceMouse()
     {
-        Vector3 mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        if (PlayerCutSceneOveride == false)
+        {
+            Vector3 mousePos = Input.mousePosition;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        Vector2 direction = new Vector2
-        (
-            mousePos.x - transform.position.x,
-            mousePos.y - transform.position.y
-        );
+            Vector2 direction = new Vector2
+            (
+                mousePos.x - transform.position.x,
+                mousePos.y - transform.position.y
+            );
 
-        transform.up = direction;
+            transform.up = direction;
+        }
+        else { }
     }
 
     void MoveCharacter()
     {
-        thisRigidBody.velocity = moveInput * speed;
+        {
+            if (PlayerCutSceneOveride == false)
+            {
+            thisRigidBody.velocity = moveInput * speed;
+            }
+            else { }
+        }
     }
 
 
@@ -59,22 +90,40 @@ public class PlayerMove : MonoBehaviour
 
 
 
-    //void AccessInventory()
-    // {
-    //     if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
-    //     {
+    void AccessInventory()
+     {
+         if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
+         {
     //unlitFlashLight.gameObject.SetActive(false);
-    //       usingFlashLight = true;
+           usingFlashLight = true;
     //litFlashLight.gameObject.SetActive(true);
-    //        flashLightObject.SetActive(true);
-    //    }
-    //    else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.R))
-    //   {
+            flashLightObject.SetActive(true);
+        }
+        else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.R))
+       {
     //unlitFlashLight.gameObject.SetActive(true);
-    //      usingFlashLight = false;
+          usingFlashLight = false;
     //litFlashLight.gameObject.SetActive(false);
-    //    flashLightObject.SetActive(false);
-    //    }
-    //}
+        flashLightObject.SetActive(false);
+        }
+    }
+
+    void AccessQuestBook()
+    {
+        if (!usingBook && Input.GetKeyDown(KeyCode.M))
+        {
+            uiBook.gameObject.SetActive(true);
+            usingBook = true;
+            //closeBook.gameObject.SetActive(false);
+            //openBook.gameObject.SetActive(true);
+        }
+        else if (usingBook == true && Input.GetKeyDown(KeyCode.M))
+        {
+            uiBook.gameObject.SetActive(false);
+            usingBook = false;
+            //openBook.gameObject.SetActive(false);
+            //closeBook.gameObject.SetActive(true);
+        }
+    }
 }
 

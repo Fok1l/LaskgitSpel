@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
     [SerializeField] AudioClip doorSound;
 
     GameSession gameSession;
-
+    PlayerMove player;
     GameObject soundObject; // Reference to the persistent sound object
     AudioSource soundSource; // Reference to the AudioSource component
 
