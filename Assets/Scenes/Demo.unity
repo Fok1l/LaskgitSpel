@@ -691,7 +691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575352685}
   - component: {fileID: 575352684}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Light 2D (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +718,7 @@ MonoBehaviour:
   m_Intensity: 0.28
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 4ff7130000000000b500f6947763c46b9565a2a9
+  m_ApplyToSortingLayers: 
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -773,7 +773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 581562607}
   - component: {fileID: 581562606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Intensity: 0.28
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 4ff7130000000000b500f6947763c46b9565a2a9
+  m_ApplyToSortingLayers: 
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1403,14 +1403,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817083230}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.70624495, y: 0.70796764, z: -0, w: 0}
-  m_LocalPosition: {x: -0.45, y: -0.45, z: 0}
+  m_LocalRotation: {x: 0.7183169, y: 0.6957161, z: -0, w: 0}
+  m_LocalPosition: {x: 0.40669107, y: 0.7200005, z: 0}
   m_LocalScale: {x: 0.075, y: 0.099999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1238681155}
   m_Father: {fileID: 590426706}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -89.86}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 91.831}
 --- !u!212 &817083232
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2177,13 +2177,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327692733}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.708942, w: 0.70526683}
-  m_LocalPosition: {x: -0.13, y: 0.12, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.71565664, w: 0.6984523}
+  m_LocalPosition: {x: -0.04, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 590426706}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -91.394}
 --- !u!114 &1327692735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2823,7 +2823,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: kitchenDoor
@@ -3111,7 +3111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885287168}
   - component: {fileID: 1885287167}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Light 2D (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3138,7 +3138,7 @@ MonoBehaviour:
   m_Intensity: 0.28
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 4ff7130000000000b500f6947763c46b9565a2a9
+  m_ApplyToSortingLayers: 
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3193,7 +3193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044553775}
   - component: {fileID: 2044553774}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

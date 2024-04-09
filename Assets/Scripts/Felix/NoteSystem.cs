@@ -51,9 +51,9 @@ public class NoteSystem : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKey(KeyCode.F))
         {
             for (int i = 0; i < noteImages.Length; i++)
             {
@@ -66,7 +66,7 @@ public class NoteSystem : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape))
         {
             for (int i = 0; i < noteImages.Length; i++)
             {
