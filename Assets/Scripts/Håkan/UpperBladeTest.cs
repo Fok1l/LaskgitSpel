@@ -10,6 +10,11 @@ public class UpperBladeTest : MonoBehaviour
     [SerializeField] GameObject bladeSlot;
     [SerializeField] GameObject blade;
 
+    [Header("Slot position")]
+    [SerializeField] Vector2 bladeSlotPosition;
+    //[SerializeField]GameObject[] bladeSlotTags;
+    [SerializeField] string slotName;
+
 
     PolygonCollider2D polygonCollider2D;
     ItemSlotCollision slotCollision;
@@ -60,17 +65,19 @@ public class UpperBladeTest : MonoBehaviour
                 transform.localScale = originalScale;
                 transform.position = originalPosition;
 
+                bladeSlot.GetComponent<Collider>();
+
                 Collider2D[] colliders = Physics2D.OverlapPointAll(mouseWorldPos);
                 foreach (Collider2D collider in colliders)
                 {
-                    if (collider.CompareTag("UpperLeftSlot") && blade.GetComponent<Collider2D>().enabled) //if mouse is inside the collider: && collider.bounds.Contains(mouseWorldPos)
+                    if (collider.CompareTag(slotName) && blade.GetComponent<Collider2D>().enabled) //if mouse is inside the collider: && collider.bounds.Contains(mouseWorldPos) 
                     {
                         //snapp to the slot position
-                        transform.position = collider.transform.position;
+                        transform.position = bladeSlotPosition;
                         blade.GetComponent<Collider2D>().enabled = false;
                         transform.localScale = new Vector3(1f, 1f, 1f);
                         loader.BladePuzzleComplete();
-                        
+
 
 
                         break;
