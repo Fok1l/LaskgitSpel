@@ -5,6 +5,7 @@ public class PlayerMove : MonoBehaviour
     private float horizontal;
     private float vertical;
     [SerializeField] private float speed = 8f;
+    PlayerCamera cam;
 
    // [SerializeField] GameObject flashLightObject;
    // public bool usingFlashLight = false;
@@ -12,7 +13,9 @@ public class PlayerMove : MonoBehaviour
     private Vector2 moveInput;
     private Rigidbody2D thisRigidBody;
     private Transform characterTransform;
-
+    [SerializeField] public float StoredX;
+    [SerializeField] public float StoredY;
+    public bool PlayerCutSceneOveride = false;
    // Animator myAnimator;
    // PlayerAnimations playerAnimations;
 
@@ -33,25 +36,40 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         MoveCharacter();
+        if (Input.GetKey(KeyCode.G))
+        {
+            StoredX = transform.position.x;
+            StoredY = transform.position.y;
+        }
     }
 
     void faceMouse()
     {
-        Vector3 mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        if (PlayerCutSceneOveride == false)
+        {
+            Vector3 mousePos = Input.mousePosition;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        Vector2 direction = new Vector2
-        (
-            mousePos.x - transform.position.x,
-            mousePos.y - transform.position.y
-        );
+            Vector2 direction = new Vector2
+            (
+                mousePos.x - transform.position.x,
+                mousePos.y - transform.position.y
+            );
 
-        transform.up = direction;
+            transform.up = direction;
+        }
+        else { }
     }
 
     void MoveCharacter()
     {
-        thisRigidBody.velocity = moveInput * speed;
+        {
+            if (PlayerCutSceneOveride == false)
+            {
+            thisRigidBody.velocity = moveInput * speed;
+            }
+            else { }
+        }
     }
 
 

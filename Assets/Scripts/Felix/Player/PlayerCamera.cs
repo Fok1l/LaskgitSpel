@@ -12,15 +12,22 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float maxYpos;
     [SerializeField] private float minXpos;
     [SerializeField] private float minYpos;
-    private Vector3 velocity = Vector3.zero; //Make variable velocity and initalizes it to 0
+    private Vector3 velocity = Vector3.zero; //Make variable velocity and initalizes it to 
+    public bool CutSceneOveride = false; // Mainly for Cutscenes
 
 
-    bool CameraOveride;
 
     void FixedUpdate()
     {
-        Vector3 movePosition = target.position + offset; // Calculates the positon 
-        transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, damping); //Updates it using a smooth damp. The Transform.positon sets the positon of the object and Vector3.SmoothDamp calculates the new positon. 
+        if (CutSceneOveride == false)
+        {
+            Vector3 movePosition = target.position + offset; // Calculates the positon 
+            transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, damping); //Updates it using a smooth damp. The Transform.positon sets the positon of the object and Vector3.SmoothDamp calculates the new positon. 
+        }
+        else 
+        { 
+
+        }
     }
 
 
