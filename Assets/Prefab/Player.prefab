@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20eaa71c57d0024da6e0f0a9adc9d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
+  StoredX: 0
+  StoredY: 0
+  PlayerCutSceneOveride: 0
 --- !u!50 &7776505853381894350
 Rigidbody2D:
   serializedVersion: 4
