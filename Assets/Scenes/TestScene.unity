@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loader: {fileID: 1503391396}
   EPromptCanvas: {fileID: 833975491}
-  teleportTo: 3
+  teleportTo: 1
 --- !u!1001 &833975490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1687,14 +1687,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298007385}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: -0, w: 0}
-  m_LocalPosition: {x: -0.39000034, y: -0.55999994, z: 0}
+  m_LocalRotation: {x: 0.7080023, y: 0.7062102, z: -0, w: 0}
+  m_LocalPosition: {x: 0.378, y: 0.658, z: 0}
   m_LocalScale: {x: 0.074999996, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2138632911}
   m_Father: {fileID: 55195862}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90.145}
 --- !u!1 &1330821768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,8 +1746,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.2094, y: -0.079300046, z: 0}
-    m_Extent: {x: 1.6412001, y: 1.1788, z: 0}
+    m_Center: {x: -0.20994997, y: -0.07954997, z: 0}
+    m_Extent: {x: 1.64045, y: 1.1795499, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2357,8 +2357,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.2094, y: -0.078999996, z: 0}
-    m_Extent: {x: 0.7007, y: 0.2396, z: 0}
+    m_Center: {x: -0.20905001, y: -0.07875001, z: 0}
+    m_Extent: {x: 0.70095, y: 0.23955, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2537,7 +2537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loader: {fileID: 1503391396}
   EPromptCanvas: {fileID: 833975491}
-  teleportTo: 6
+  teleportTo: 4
 --- !u!1 &1808261917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,7 +2640,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: unlockedDoor
@@ -3217,7 +3217,7 @@ PrefabInstance:
     - target: {fileID: 6193747847234891145, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9b98be0019ca31249bfcbe8949c9035c, type: 3}
+      objectReference: {fileID: 21300000, guid: 98624f2b39ab2c24ba92d007fbb5aa05, type: 3}
     - target: {fileID: 6193747847234891145, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: m_SortingOrder
       value: 24

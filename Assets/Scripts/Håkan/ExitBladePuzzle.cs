@@ -6,6 +6,7 @@ public class ExitBladePuzzle : MonoBehaviour
 {
 
     SceneLoader loader;
+    [SerializeField] int teleportTo;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class ExitBladePuzzle : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.Q))
         {
-            loader.ExitBladePuzzle();
+            loader.Teleporters(teleportTo);
         }
     }
 }

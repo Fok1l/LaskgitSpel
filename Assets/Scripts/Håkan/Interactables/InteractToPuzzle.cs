@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractToPuzzle : MonoBehaviour
 {
     SceneLoader loader;
+    [SerializeField] int teleportTo;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class InteractToPuzzle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            loader.LoadBladeScene();
+            loader.Teleporters(teleportTo);
         }
     }
 }
