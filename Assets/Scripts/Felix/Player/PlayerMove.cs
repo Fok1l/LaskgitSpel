@@ -21,9 +21,12 @@ public class PlayerMove : MonoBehaviour
     //[SerializeField] GameObject closeBook;
 
 
+    
     private Vector2 moveInput;
     private Rigidbody2D thisRigidBody;
     private Transform characterTransform;
+
+    [Header("Doors & Cutscene")]
     [SerializeField] public float StoredX;
     [SerializeField] public float StoredY;
     public bool PlayerCutSceneOveride = false;
