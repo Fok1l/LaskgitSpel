@@ -108,7 +108,7 @@ public class PlayerMove : MonoBehaviour
             float storedY = PlayerPrefs.GetFloat(playerYKey);
 
             // Teleport the player to the stored position
-            TeleportPlayer(storedX, storedY);
+            characterTransform.position = new Vector3(storedX, storedY, characterTransform.position.z);
 
             // Clear the stored position
             PlayerPrefs.DeleteKey(playerXKey);
