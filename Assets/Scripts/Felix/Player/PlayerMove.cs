@@ -69,7 +69,6 @@ public class PlayerMove : MonoBehaviour
         faceMouse();
         UseFlashlight();
         AccessQuestBook();
-        AccessInventory();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         MoveCharacter();

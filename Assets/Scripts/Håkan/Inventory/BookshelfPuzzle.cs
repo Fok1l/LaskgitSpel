@@ -11,41 +11,38 @@ public class BookshelfPuzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //gameObject.transform.Find("ChildName");
         foreach (Transform eachChild in transform)
         {
             if (eachChild.name == bookshelfItem)
             {
-                AddShelfItems();
-                RemoveComponent();
+                AddShelfItem();
+                RemoveComponent(eachChild);
             }
         }
     }
 
-    void AddShelfItems()
+    void AddShelfItem()
     {
         numberOfItems++;
-        if(numberOfItems == 10)
+        if (numberOfItems == 10)
         {
             exitDoor.SetActive(false);
         }
     }
 
-    void RemoveShelfItems()
+    void RemoveShelfItem()
     {
         numberOfItems--;
     }
 
-    void RemoveComponent()
+    void RemoveComponent(Transform child)
     {
-
+        Destroy(child.gameObject);
     }
-
-
 }
