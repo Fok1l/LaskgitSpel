@@ -1,3 +1,4 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -16,7 +17,7 @@ public class PlayerMove : MonoBehaviour
     //[SerializeField] GameObject litFlashLight;
     [SerializeField] GameObject flashLightObject;
 
-    [Header("Quest Book")]
+   
     [SerializeField] GameObject uiBook;
     public bool usingBook = false;
     //[SerializeField] GameObject openBook;
@@ -35,37 +36,54 @@ public class PlayerMove : MonoBehaviour
     /// Felix Stuff
     /// </summary>
     [Header("Doors & Cutscene")]
-    [SerializeField] public float StoredX;
-    [SerializeField] public float StoredY;
     public bool PlayerCutSceneOveride = false;
-    private string playerXKey = "PlayerX";
-    private string playerYKey = "PlayerY";
     // Animator myAnimator;
     // PlayerAnimations playerAnimations;
+    public float storedX;
+    public float storedY;
+    private PlayerPositionManager positionManager;
 
 
     void Start()
     {
         thisRigidBody = GetComponent<Rigidbody2D>();
         characterTransform = transform;
+        positionManager = GameObject.FindObjectOfType<PlayerPositionManager>();
+        if (positionManager == null)
+        {
+            // Create a new PlayerPositionManager object
+            GameObject managerObject = new GameObject("PlayerPositionManager");
+            positionManager = managerObject.AddComponent<PlayerPositionManager>();
+        }
+
     }
 
     void Update()
     {
+
         faceMouse();
         AccessInventory();
         AccessQuestBook();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
-    }
-
-    private void FixedUpdate()
-    {
         MoveCharacter();
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            StoredX = transform.position.x;
-            StoredY = transform.position.y;
+            FetchPlayerPosition();
+        }
+
+        if (Input.GetKey(KeyCode.H))
+        {
+            Vector3 storedPosition = positionManager.RetrievePosition();
+            if (storedPosition != Vector3.zero)
+            {
+                Debug.Log("1Log" + storedPosition);
+                // Teleport the player to the stored position
+                TeleportToPosition(storedPosition);
+                Debug.Log("2Log" + storedPosition);
+                // Clear the stored position
+                positionManager.StorePosition(Vector3.zero);
+            }
         }
     }
 
@@ -98,23 +116,34 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    void TeleportPlayerToStoredPos()
+    void TeleportPlayerToStoredPosition() // Big ass function to be able to teleport the player on demand
     {
 
-        if (PlayerPrefs.HasKey(playerXKey) && PlayerPrefs.HasKey(playerYKey))
+        positionManager = FindObjectOfType<PlayerPositionManager>();
+        characterTransform = transform;
+
+        // Check if there is a stored position
+        Vector3 storedPosition = positionManager.RetrievePosition();
+        if (storedPosition != Vector3.zero)
         {
-            // Retrieve the stored X and Y positions
-            float storedX = PlayerPrefs.GetFloat(playerXKey);
-            float storedY = PlayerPrefs.GetFloat(playerYKey);
+            // Teleport player to stored position
+            characterTransform.position = storedPosition;
 
-            // Teleport the player to the stored position
-            characterTransform.position = new Vector3(storedX, storedY, characterTransform.position.z);
-
-            // Clear the stored position
-            PlayerPrefs.DeleteKey(playerXKey);
-            PlayerPrefs.DeleteKey(playerYKey);
+            // Clear stored position
+            positionManager.StorePosition(Vector3.zero);
 
         }
+
+    }
+    private void FetchPlayerPosition()
+    {
+        Vector3 currentPlayerPosition = characterTransform.position;
+        Debug.Log("Player Position: " + currentPlayerPosition);
+    }
+
+    private void TeleportToPosition(Vector3 targetPosition)
+    {
+        characterTransform.position = targetPosition;
     }
 
 
@@ -162,4 +191,3 @@ public class PlayerMove : MonoBehaviour
         }
     }
 }
-
