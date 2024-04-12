@@ -1931,8 +1931,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12040001, y: -0.82490003, z: 0}
-    m_Extent: {x: 1.8055, y: 2.9910998, z: 0}
+    m_Center: {x: 0.12075001, y: -0.82525, z: 0}
+    m_Extent: {x: 1.80515, y: 2.9900498, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3439,6 +3439,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6712051712486461734, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1608441210}
+    - targetCorrespondingSourceObject: {fileID: 6712051712486461734, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1644977805}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6297891588121963402, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       insertIndex: -1
@@ -3921,8 +3924,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.0013001, y: 0.37075007, z: 0}
-    m_Extent: {x: 1.8044, y: 2.99185, z: 0}
+    m_Center: {x: 1.0014999, y: 0.3707999, z: 0}
+    m_Extent: {x: 1.8046, y: 2.9913, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5548,6 +5551,7 @@ Transform:
   - {fileID: 1881210102}
   - {fileID: 977613746}
   - {fileID: 952115210}
+  - {fileID: 507825862}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435857355
@@ -5625,7 +5629,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435857355}
   m_CullTransparentMesh: 1
-  - {fileID: 507825862}
 --- !u!1 &1470560014
 GameObject:
   m_ObjectHideFlags: 0
@@ -6344,6 +6347,7 @@ GameObject:
   - component: {fileID: 1608441211}
   - component: {fileID: 1608441213}
   - component: {fileID: 1608441214}
+  - component: {fileID: 1608441215}
   m_Layer: 5
   m_Name: BookSlot
   m_TagString: Untagged
@@ -6444,6 +6448,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504252910efd41f4c85c9e377d4968e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1608441215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608441209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20e2bcd85c74394d8f5cdd4c4223f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookshelfItem: MissingPoster (1)
+  numberOfItems: 0
+  exitDoor: {fileID: 0}
 --- !u!1 &1625775779
 GameObject:
   m_ObjectHideFlags: 0
@@ -6556,6 +6575,135 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625775779}
+  m_CullTransparentMesh: 1
+--- !u!1 &1644977804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1644977805}
+  - component: {fileID: 1644977810}
+  - component: {fileID: 1644977809}
+  - component: {fileID: 1644977808}
+  - component: {fileID: 1644977807}
+  - component: {fileID: 1644977806}
+  m_Layer: 5
+  m_Name: BookSlot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1644977805
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644977804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1220826973}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.4, y: 3.1}
+  m_SizeDelta: {x: 240, y: 330}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1644977806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644977804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20e2bcd85c74394d8f5cdd4c4223f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookshelfItem: 
+  numberOfItems: 0
+  exitDoor: {fileID: 0}
+--- !u!114 &1644977807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644977804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504252910efd41f4c85c9e377d4968e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1644977808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644977804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 5
+    m_Right: 0
+    m_Top: 70
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 175, y: 175}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &1644977809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644977804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 00b0f3c1e84839b46ac62551738f82fa, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1644977810
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644977804}
   m_CullTransparentMesh: 1
 --- !u!1001 &1652413333
 PrefabInstance:
