@@ -2462,13 +2462,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866387947}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.102724746, y: 0.04842311, z: 0.69953364, w: 0.705518}
-  m_LocalPosition: {x: -8.61, y: -1.24, z: -4.06}
+  m_LocalRotation: {x: 0.10331842, y: 0.047143098, z: 0.70824504, w: 0.69677246}
+  m_LocalPosition: {x: -8.36, y: -1.21, z: -4.11}
   m_LocalScale: {x: 0.3026867, y: 0.3566804, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 937188204}
-  m_LocalEulerAnglesHint: {x: 4.428, y: 12.279, z: 89.988}
+  m_LocalEulerAnglesHint: {x: 4.428, y: 12.279, z: 91.412}
 --- !u!61 &866387949
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2743,8 +2743,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.00115, y: 0.37105, z: 0}
-    m_Extent: {x: 1.80455, y: 2.9917498, z: 0}
+    m_Center: {x: 1.00115, y: 0.3721, z: 0}
+    m_Extent: {x: 1.80485, y: 2.9916, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
