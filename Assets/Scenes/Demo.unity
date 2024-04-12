@@ -2592,7 +2592,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.42594147, y: -1.6784294}
+  m_Offset: {x: 0.42594147, y: -0.42306983}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2603,7 +2603,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.3287363, y: 4.6031413}
+  m_Size: {x: 5.3287363, y: 2.0924206}
   m_EdgeRadius: 0
 --- !u!1 &866387947
 GameObject:
@@ -2911,8 +2911,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.0013499, y: 0.37145007, z: 0}
-    m_Extent: {x: 1.80475, y: 2.99235, z: 0}
+    m_Center: {x: 1.0022, y: 0.37120008, z: 0}
+    m_Extent: {x: 1.8043, y: 2.9921, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3649,7 +3649,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: kitchenDoor
@@ -3787,16 +3787,36 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2603143467635386163, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1241084343}
   m_SourcePrefab: {fileID: 100100000, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
 --- !u!1 &1241084342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2603143467635386163, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
   m_PrefabInstance: {fileID: 1241084341}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1241084343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241084342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20de3b63c9816fb43ac1c2305ab44871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportTo: 6
+  loader: {fileID: 1503391396}
+  EPromptCanvas: {fileID: 833975491}
+  doorSound: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
 --- !u!1 &1242418994
 GameObject:
   m_ObjectHideFlags: 0
