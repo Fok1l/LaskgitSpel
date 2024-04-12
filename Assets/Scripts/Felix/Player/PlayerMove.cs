@@ -7,7 +7,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed = 8f;
     PlayerCamera cam;
 
-
+    /// <summary>
+    /// Inventory Stuff
+    /// </summary>
     [Header("Inventory & Flashlight")]
     public bool usingFlashLight = false;
     //[SerializeField] GameObject unlitFlashLight;
@@ -21,17 +23,25 @@ public class PlayerMove : MonoBehaviour
     //[SerializeField] GameObject closeBook;
 
 
-    
+    /// <summary>
+    /// BASE
+    /// </summary>
     private Vector2 moveInput;
     private Rigidbody2D thisRigidBody;
     private Transform characterTransform;
 
+
+    /// <summary>
+    /// Felix Stuff
+    /// </summary>
     [Header("Doors & Cutscene")]
     [SerializeField] public float StoredX;
     [SerializeField] public float StoredY;
     public bool PlayerCutSceneOveride = false;
-   // Animator myAnimator;
-   // PlayerAnimations playerAnimations;
+    private string playerXKey = "PlayerX";
+    private string playerYKey = "PlayerY";
+    // Animator myAnimator;
+    // PlayerAnimations playerAnimations;
 
 
     void Start()
@@ -88,11 +98,34 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    void TeleportPlayerToStoredPos()
+    {
+
+        if (PlayerPrefs.HasKey(playerXKey) && PlayerPrefs.HasKey(playerYKey))
+        {
+            // Retrieve the stored X and Y positions
+            float storedX = PlayerPrefs.GetFloat(playerXKey);
+            float storedY = PlayerPrefs.GetFloat(playerYKey);
+
+            // Teleport the player to the stored position
+            characterTransform.position = new Vector3(storedX, storedY, characterTransform.position.z);
+
+            // Clear the stored position
+            PlayerPrefs.DeleteKey(playerXKey);
+            PlayerPrefs.DeleteKey(playerYKey);
+
+        }
+    }
 
 
 
 
 
+
+
+    /// <summary>
+    /// HÅKAN SAKER
+    /// </summary>
     void AccessInventory()
      {
          if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
