@@ -728,8 +728,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.02579999, y: -0.62525, z: 0}
-    m_Extent: {x: 0.7605, y: 1.36605, z: 0}
+    m_Center: {x: 0.026299983, y: -0.6264, z: 0}
+    m_Extent: {x: 0.7602, y: 1.3661, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1623,156 +1623,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9198745246554306539, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
   m_PrefabInstance: {fileID: 521225125}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &556470245
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: loader
-      value: 
-      objectReference: {fileID: 1336728388}
-    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: teleportTo
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: kitchenDoor
-      value: 
-      objectReference: {fileID: 556470246}
-    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: unlockedDoor
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238139156368681572, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2316441
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238139156368681572, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5305436
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238139156368681572, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238139156368681572, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238139156368681572, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238139156368681572, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238139156368681572, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238139156368681572, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603143467635386163, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_Name
-      value: DoorInteractCube (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.305677
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.76386
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -32.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687322933872110309, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131033224704958962, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_Size.x
-      value: 3.7593155
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131033224704958962, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_Size.y
-      value: 0.52553564
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131033224704958962, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.048127174
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131033224704958962, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.23723218
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131033224704958962, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131033224704958962, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5074343862913339525, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f989fce9db171ea4db91a311f79effad, type: 3}
-    - target: {fileID: 5074343862913339525, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-      propertyPath: m_SortingOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
---- !u!1 &556470246 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2603143467635386163, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
-  m_PrefabInstance: {fileID: 556470245}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &570339320
 GameObject:
@@ -4015,7 +3865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loader: {fileID: 1336728388}
   EPromptCanvas: {fileID: 2038022931}
-  teleportTo: 4
+  teleportTo: 5
 --- !u!61 &1733435162
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4349,6 +4199,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1336728388}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
+    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
       value: 2
       objectReference: {fileID: 0}
@@ -4356,6 +4210,10 @@ PrefabInstance:
       propertyPath: unlockedDoor
       value: 
       objectReference: {fileID: 2102975102}
+    - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
+      propertyPath: EPromptCanvas
+      value: 
+      objectReference: {fileID: 2038022931}
     - target: {fileID: 1238139156368681572, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2316441
@@ -4495,7 +4353,6 @@ SceneRoots:
   - {fileID: 1626912505}
   - {fileID: 1831992912}
   - {fileID: 2102975101}
-  - {fileID: 556470245}
   - {fileID: 493817840}
   - {fileID: 787239560}
   - {fileID: 899784853}
