@@ -21,6 +21,7 @@ public class BookshelfPuzzle : MonoBehaviour
         {
             if (eachChild.name == bookshelfItem)
             {
+                AddShelfItems();
                 AddShelfItem();
                 RemoveComponent(eachChild);
             }
@@ -34,6 +35,10 @@ public class BookshelfPuzzle : MonoBehaviour
         {
             exitDoor.SetActive(false);
         }
+        if (numberOfItems == numberOfItems++)
+        {
+            RemoveComponent();
+        }
     }
 
     void RemoveShelfItem()
@@ -43,6 +48,7 @@ public class BookshelfPuzzle : MonoBehaviour
 
     void RemoveComponent(Transform child)
     {
+        //Destroy(this);
         Destroy(child.gameObject);
     }
 }

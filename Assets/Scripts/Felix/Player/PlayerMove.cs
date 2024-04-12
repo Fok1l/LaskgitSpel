@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
     //[SerializeField] GameObject litFlashLight;
     [SerializeField] GameObject flashLightObject;
 
-   
+    [Header("Quest")]
     [SerializeField] GameObject uiBook;
     public bool usingBook = false;
     //[SerializeField] GameObject openBook;
@@ -193,6 +193,22 @@ public class PlayerMove : MonoBehaviour
             usingBook = false;
             //openBook.gameObject.SetActive(false);
             //closeBook.gameObject.SetActive(true);
+        }
+    }
+
+    void AccessInventory()
+    {
+        if (invActive == false && Input.GetKeyDown(KeyCode.I))
+        {
+            //invCanvas.SetActive(true);
+            Inventory_Canvas.gameObject.SetActive(true);
+            invActive = true;
+        }
+        else if (invActive == true && Input.GetKeyDown(KeyCode.I))
+        {
+            //invCanvas.SetActive(false);
+            Inventory_Canvas.gameObject.SetActive(false);
+            invActive = false;
         }
     }
 }
