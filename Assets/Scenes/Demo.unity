@@ -2480,8 +2480,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.00115, y: 0.37115002, z: 0}
-    m_Extent: {x: 1.80465, y: 2.99225, z: 0}
+    m_Center: {x: 1.0016999, y: 0.37185, z: 0}
+    m_Extent: {x: 1.8041, y: 2.99175, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4698,7 +4698,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: kitchenDoor
