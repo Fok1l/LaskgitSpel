@@ -98,8 +98,24 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    void 
+    void TeleportPlayerToStoredPos()
+    {
 
+        if (PlayerPrefs.HasKey(playerXKey) && PlayerPrefs.HasKey(playerYKey))
+        {
+            // Retrieve the stored X and Y positions
+            float storedX = PlayerPrefs.GetFloat(playerXKey);
+            float storedY = PlayerPrefs.GetFloat(playerYKey);
+
+            // Teleport the player to the stored position
+            TeleportPlayer(storedX, storedY);
+
+            // Clear the stored position
+            PlayerPrefs.DeleteKey(playerXKey);
+            PlayerPrefs.DeleteKey(playerYKey);
+
+        }
+    }
 
 
 
