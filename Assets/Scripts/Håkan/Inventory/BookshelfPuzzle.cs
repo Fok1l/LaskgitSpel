@@ -47,7 +47,7 @@ public class BookshelfPuzzle : MonoBehaviour
 
     void RemoveComponent()
     {
-        Destroy(this);
+        //Destroy(this);
     }
 
 
