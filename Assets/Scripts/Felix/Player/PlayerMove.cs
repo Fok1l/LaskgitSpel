@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class PlayerMove : MonoBehaviour
     public bool usingBook = false;
     //[SerializeField] GameObject openBook;
     //[SerializeField] GameObject closeBook;
+
+    [Header("Inventory")]
+    bool invActive = false;
+    public Canvas Inventory_Canvas;
 
 
     /// <summary>
@@ -53,8 +58,9 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         faceMouse();
-        AccessInventory();
+        UseFlashlight();
         AccessQuestBook();
+        AccessInventory();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
     }
@@ -126,7 +132,7 @@ public class PlayerMove : MonoBehaviour
     /// <summary>
     /// HÅKAN SAKER
     /// </summary>
-    void AccessInventory()
+    void UseFlashlight()
      {
          if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
          {
@@ -159,6 +165,27 @@ public class PlayerMove : MonoBehaviour
             usingBook = false;
             //openBook.gameObject.SetActive(false);
             //closeBook.gameObject.SetActive(true);
+        }
+    }
+
+    void AccessInventory()
+    {
+        if (invActive == false && Input.GetKeyDown(KeyCode.I))
+        {
+            //invCanvas.SetActive(true);
+            Inventory_Canvas.gameObject.SetActive(true);
+            invActive = true;
+            //if (gameSession.tidningGained == true)
+            //{
+                //tidning.gameObject.SetActive(true);
+                //testQuest.gameObject.SetActive(true);
+            //}
+        }
+        else if (invActive == true && Input.GetKeyDown(KeyCode.I))
+        {
+            //invCanvas.SetActive(false);
+            Inventory_Canvas.gameObject.SetActive(false);
+            invActive = false;
         }
     }
 }
