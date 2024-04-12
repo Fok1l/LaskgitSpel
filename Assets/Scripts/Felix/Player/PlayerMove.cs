@@ -1,5 +1,6 @@
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class PlayerMove : MonoBehaviour
     public bool usingBook = false;
     //[SerializeField] GameObject openBook;
     //[SerializeField] GameObject closeBook;
+
+    [Header("Inventory")]
+    bool invActive = false;
+    public Canvas Inventory_Canvas;
 
 
     /// <summary>
@@ -62,8 +67,9 @@ public class PlayerMove : MonoBehaviour
     {
 
         faceMouse();
-        AccessInventory();
+        UseFlashlight();
         AccessQuestBook();
+        AccessInventory();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         MoveCharacter();
@@ -153,9 +159,9 @@ public class PlayerMove : MonoBehaviour
 
 
     /// <summary>
-    /// HÅKAN SAKER
+    /// Hï¿½KAN SAKER
     /// </summary>
-    void AccessInventory()
+    void UseFlashlight()
      {
          if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
          {
