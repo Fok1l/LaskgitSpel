@@ -1048,6 +1048,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &438070580 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+  m_PrefabInstance: {fileID: 710381592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &461385678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,16 +1517,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: karaktar
       objectReference: {fileID: 0}
+    - target: {fileID: 6535222693245956037, guid: b593bc9330c073248bd68464447ade1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b593bc9330c073248bd68464447ade1c, type: 3}
---- !u!4 &631419685 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2762070710456080612, guid: b593bc9330c073248bd68464447ade1c, type: 3}
-  m_PrefabInstance: {fileID: 631419684}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &652210153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +1601,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652210153}
   m_CullTransparentMesh: 1
+--- !u!1001 &710381592
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1957715457965496916, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193747847234891145, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.81791246
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0825772
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610951001236809836, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
 --- !u!1 &787239557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,13 +2156,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2242fccddaee4348ba06c5959c82b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 631419685}
+  target: {fileID: 438070580}
   offset: {x: 0, y: 0, z: -10}
   damping: 0.37
   maxXpos: 7.34
   maxYpos: 7.34
   minXpos: -7.34
   minYpos: -7.34
+  CameraCutSceneOveride: 0
 --- !u!1 &1149067833
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,3 +3338,4 @@ SceneRoots:
   - {fileID: 2011643476}
   - {fileID: 1192227035}
   - {fileID: 631419684}
+  - {fileID: 710381592}
