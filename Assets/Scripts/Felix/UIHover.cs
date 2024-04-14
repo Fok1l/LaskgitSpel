@@ -1,23 +1,39 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 public class UIHover : MonoBehaviour
 {
-    public GameObject UIOutline;
-    private bool isTouchingUI;
-   [SerializeField] private Button currentButton;
+    private Button currentButton;
+    private Image currentOutline; 
 
+    private AudioSource audioSource;
+    public AudioClip hoverSound;
     private void Start()
     {
-        isTouchingUI = false;
+        currentButton = null;
+        currentOutline = null;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
     }
 
     public void MouseEnter(Button button)
     {
-        currentButton = button; // Set the current button to the hovered button
+        currentButton = button;
+        currentOutline = button.GetComponentInChildren<Image>(); 
+        currentOutline.enabled = true; 
+        if (hoverSound != null)
+        {
+            audioSource.clip = hoverSound; 
+            audioSource.Play(); 
+        }
     }
-
+    
+ 
     public void MouseLeave()
     {
-        currentButton = null; // Clear the reference to the current button
+        currentOutline.enabled = false;
+        currentOutline = null; 
+        currentButton = null; 
     }
+
 }
