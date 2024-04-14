@@ -9,19 +9,12 @@ public class BookshelfPuzzle : MonoBehaviour
     [SerializeField] int numberOfItems;
     [SerializeField] GameObject exitDoor;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         foreach (Transform eachChild in transform)
         {
             if (eachChild.name == bookshelfItem)
             {
-                AddShelfItems();
                 AddShelfItem();
                 RemoveComponent(eachChild);
             }
@@ -35,10 +28,6 @@ public class BookshelfPuzzle : MonoBehaviour
         {
             exitDoor.SetActive(false);
         }
-        if (numberOfItems == numberOfItems++)
-        {
-            RemoveComponent();
-        }
     }
 
     void RemoveShelfItem()
@@ -48,7 +37,7 @@ public class BookshelfPuzzle : MonoBehaviour
 
     void RemoveComponent(Transform child)
     {
-        //Destroy(this);
         Destroy(child.gameObject);
     }
+
 }
