@@ -8,11 +8,14 @@ public class GameSession : MonoBehaviour
     public bool zapPuzzleKeyGained = false;
     public bool tidningGained = true;
     SceneLoader loader;
+    public Canvas PauseCanvas;
+    bool PauseOveride;
 
     private void Awake()
     {
         int gameSessionCount = FindObjectsOfType<GameSession>().Length;
         Debug.Log("gameSession found it self");
+        PauseCanvas.enabled = false;
 
         if (gameSessionCount > 1)
         {
@@ -28,6 +31,7 @@ public class GameSession : MonoBehaviour
     public void Start()
     {
            loader = FindObjectOfType<SceneLoader>();
+
     }
     public void ResetGame()
     {
@@ -35,11 +39,11 @@ public class GameSession : MonoBehaviour
     }
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
-            Debug.Log("QuitGame");
+            PauseOveride = true;
+            PauseCanvas.enabled = true;
+            Time.timeScale = 0f;
         }
     }
 }

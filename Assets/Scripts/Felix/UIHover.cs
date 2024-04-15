@@ -3,11 +3,12 @@ using UnityEngine.UI;
 
 public class UIHover : MonoBehaviour
 {
-    private Button currentButton;
-    private Image currentOutline; 
+   private Button currentButton;
+   private Image currentOutline; 
 
     private AudioSource audioSource;
     public AudioClip hoverSound;
+    public Canvas PauseCanvas;
     private void Start()
     {
         currentButton = null;
@@ -34,6 +35,12 @@ public class UIHover : MonoBehaviour
         currentOutline.enabled = false;
         currentOutline = null; 
         currentButton = null; 
+    }
+
+    public void ResumeGame()
+    {
+        PauseCanvas.enabled = false;
+        Time.timeScale = 1.0f;
     }
 
 }
