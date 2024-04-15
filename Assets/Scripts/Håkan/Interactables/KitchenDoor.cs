@@ -9,6 +9,8 @@ public class KitchenDoor : MonoBehaviour
     public Canvas EPromptCanvas;
     bool AtTheDoor = false;
     [SerializeField] AudioClip doorSound;
+    [SerializeField] AudioClip doorLockedSound;
+
 
     GameSession gameSession;
     PlayerMove player;
@@ -41,15 +43,18 @@ public class KitchenDoor : MonoBehaviour
         gameSession = FindObjectOfType<GameSession>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (AtTheDoor && Input.GetKey(KeyCode.E) && gameSession.zapPuzzleKeyGained == true)
         {
             PlayDoorSFX();
             loader.Teleporters(teleportTo);
         }
+        else if (AtTheDoor && Input.GetKeyDown(KeyCode.E))
+        {
+            PlayDoorLockedSFX();
+        }
     }
-
     private void OnTriggerExit2D(Collider2D ExitTrigger)
     {
         if (ExitTrigger.tag == "Player")
@@ -64,6 +69,12 @@ public class KitchenDoor : MonoBehaviour
     {
         soundSource.PlayOneShot(doorSound);
     }
+
+    void PlayDoorLockedSFX()
+    {
+        soundSource.PlayOneShot(doorLockedSound);
+    }
+    //private void OnTriggerStay2D(Collider2D Ent
     //private void OnTriggerStay2D(Collider2D EnteringTrigger)
     // {
     //     if (gameSession.zapPuzzleKeyGained == true && gameObject == kitchenDoor && Input.GetKeyUp(KeyCode.E))
