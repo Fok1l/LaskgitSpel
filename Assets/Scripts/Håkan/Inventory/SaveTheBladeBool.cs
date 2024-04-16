@@ -5,8 +5,8 @@ using UnityEngine;
 public class SaveTheBladeBool : MonoBehaviour
 {
     public static SaveTheBladeBool Instance;
-
-    public public bool theBladeTestIsCompleted = false;
+    
+    public bool theBladeTestIsCompleted = false;
 
     private void Awake()
     {
