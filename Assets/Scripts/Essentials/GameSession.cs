@@ -45,13 +45,14 @@ public class GameSession : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseOveride = true;
-            pauseMenuCanvas.enabled = true;
-            Time.timeScale = 0f;
-        }
-    }
+
+   // private void Update()
+  //  {
+  //      if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        PauseOveride = true;
+     //       pauseMenuCanvas.enabled = true;
+    //        Time.timeScale = 0f;
+     //   }
+    //}
 }
