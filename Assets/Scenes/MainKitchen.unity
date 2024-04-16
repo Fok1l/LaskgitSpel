@@ -730,6 +730,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0.026050001, y: -0.62549996, z: 0}
     m_Extent: {x: 0.75905, y: 1.3671, z: 0}
+    m_Center: {x: 0.025849998, y: -0.62535, z: 0}
+    m_Extent: {x: 0.75985, y: 1.36665, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2019,6 +2021,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: -0.03854996, y: -0.70675004, z: 0}
     m_Extent: {x: 1.7479501, y: 2.7824502, z: 0}
+    m_Center: {x: -0.039200008, y: -0.7068, z: 0}
+    m_Extent: {x: 1.7484, y: 2.7819, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4416,7 +4420,7 @@ PrefabInstance:
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: doorSound
       value: 
-      objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
+      objectReference: {fileID: 8300000, guid: 78c711a28ebc8414daf5ba8294571869, type: 3}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
       value: 1

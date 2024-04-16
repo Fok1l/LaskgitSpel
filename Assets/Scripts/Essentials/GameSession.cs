@@ -28,6 +28,8 @@ public class GameSession : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+
+
     }
 
     private void Start()
@@ -39,6 +41,10 @@ public class GameSession : MonoBehaviour
         {
             Debug.LogError("PauseMenu_Canvas not found!");
         }
+      //  if (pauseMenuCanvas == null)
+       // {
+       //     Debug.LogError("PauseMenu_Canvas not found!");
+       // }
     }
 
     public void ResetGame()
