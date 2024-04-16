@@ -728,8 +728,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.026499987, y: -0.6262, z: 0}
-    m_Extent: {x: 0.7593, y: 1.3659999, z: 0}
+    m_Center: {x: 0.026250005, y: -0.62535, z: 0}
+    m_Extent: {x: 0.76005, y: 1.36615, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2017,8 +2017,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.038999975, y: -0.70645, z: 0}
-    m_Extent: {x: 1.7475, y: 2.78335, z: 0}
+    m_Center: {x: -0.039499998, y: -0.70659995, z: 0}
+    m_Extent: {x: 1.7487, y: 2.783, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2061,6 +2061,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1570526441}
     - target: {fileID: 1171637112798770963, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c3dd88eabaa71164db91b6c5345a359f, type: 3}
+    - target: {fileID: 1171637112798770963, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: flashLightObject
       value: 
       objectReference: {fileID: 421055055}
@@ -2068,6 +2072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4536114633560422992, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c3dd88eabaa71164db91b6c5345a359f, type: 3}
     - target: {fileID: 6193747847234891145, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: m_SortingOrder
       value: 10
