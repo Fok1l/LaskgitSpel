@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/Scenes/H\xE5kan/Menu.unity"
-    guid: de0032c0d5f10e2419ea748f35ca2bd6
+    path: Assets/Scenes/Menu.unity
+    guid: 4aab3c738817ae746a95f7e4fb1937ae
   - enabled: 1
     path: Assets/Scenes/Demo.unity
     guid: ade77d00cad5cc343ae90bba66c49c39
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/H\xE5kan/BladePuzzleObjects.unity"
     guid: 880ee403ea9896947bf0b5b92af7d126
+  - enabled: 1
+    path: Assets/Scenes/MainKitchen.unity
+    guid: 9b5c49555a6fda84b99b45897b7d17e6
   m_configObjects: {}

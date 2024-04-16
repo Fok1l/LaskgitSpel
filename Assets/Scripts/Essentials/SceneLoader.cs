@@ -18,17 +18,34 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Sceneloader Found GameSesh");
     }
 
+   
+
+    void Awake()  // Needed for UI click sounds
+    {
+        // Create the persistent sound object if it doesn't exist
+        if (soundObject == null)
+        {
+            soundObject = new GameObject("UISoundObject");
+            DontDestroyOnLoad(soundObject);
+            soundSource = soundObject.AddComponent<AudioSource>(); // Unimplemented
+        }
+    }
+
     public void Teleporters(int teleportToLocation)
     {
         SceneManager.LoadScene(teleportToLocation);
     }
-
+    
     public void FadeToLevel(int LevelIndex)
     {
         leveltoload = LevelIndex;
         animator.SetTrigger("FadeOut");
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void OnFadeComplete()    
     {
         SceneManager.LoadScene(leveltoload);
@@ -54,6 +71,8 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Next Scene Loaded");
     }
 
+
+
     public void LoadPreviousScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -76,7 +95,7 @@ public class SceneLoader : MonoBehaviour
         knives++;
         if (knives == 5)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(6);
         }
     }
 

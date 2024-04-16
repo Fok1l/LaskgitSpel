@@ -1,4 +1,6 @@
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -16,11 +18,15 @@ public class PlayerMove : MonoBehaviour
     //[SerializeField] GameObject litFlashLight;
     [SerializeField] GameObject flashLightObject;
 
-    [Header("Quest Book")]
+    [Header("Quest")]
     [SerializeField] GameObject uiBook;
     public bool usingBook = false;
     //[SerializeField] GameObject openBook;
     //[SerializeField] GameObject closeBook;
+
+    [Header("Inventory")]
+    bool invActive = false;
+    public Canvas Inventory_Canvas;
 
 
     /// <summary>
@@ -35,131 +41,175 @@ public class PlayerMove : MonoBehaviour
     /// Felix Stuff
     /// </summary>
     [Header("Doors & Cutscene")]
-    [SerializeField] public float StoredX;
-    [SerializeField] public float StoredY;
     public bool PlayerCutSceneOveride = false;
-    private string playerXKey = "PlayerX";
-    private string playerYKey = "PlayerY";
     // Animator myAnimator;
     // PlayerAnimations playerAnimations;
+    public float storedX;
+    public float storedY;
+    private PlayerPositionManager positionManager;
 
 
     void Start()
     {
         thisRigidBody = GetComponent<Rigidbody2D>();
         characterTransform = transform;
+        positionManager = GameObject.FindObjectOfType<PlayerPositionManager>();
+        if (positionManager == null)
+        {
+            // Create a new PlayerPositionManager object
+            GameObject managerObject = new GameObject("PlayerPositionManager");
+            positionManager = managerObject.AddComponent<PlayerPositionManager>();
+        }
+
     }
 
     void Update()
     {
+
         faceMouse();
-        AccessInventory();
+        UseFlashlight();
         AccessQuestBook();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
-    }
-
-    private void FixedUpdate()
-    {
         MoveCharacter();
-        if (Input.GetKey(KeyCode.G))
-        {
-            StoredX = transform.position.x;
-            StoredY = transform.position.y;
-        }
-    }
+        // if (Input.GetKeyDown(KeyCode.G))
+        //{
+        //     FetchPlayerPosition();
+        // }
 
-    void faceMouse()
-    {
-        if (PlayerCutSceneOveride == false)
-        {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        // if (Input.GetKey(KeyCode.H))
+        //{
+        //     Vector3 storedPosition = positionManager.RetrievePosition();
+        //     if (storedPosition != Vector3.zero)
+        //      {
+        //        Debug.Log("1Log" + storedPosition);
+        // Teleport the player to the stored position
+        //        TeleportToPosition(storedPosition);
+        //      Debug.Log("2Log" + storedPosition);
+        // Clear the stored position
+        //    positionManager.StorePosition(Vector3.zero);
+        // }
+        //  }
+        // }
 
-            Vector2 direction = new Vector2
-            (
-                mousePos.x - transform.position.x,
-                mousePos.y - transform.position.y
-            );
-
-            transform.up = direction;
-        }
-        else { }
-    }
-
-    void MoveCharacter()
-    {
+        void faceMouse()
         {
             if (PlayerCutSceneOveride == false)
             {
-            thisRigidBody.velocity = moveInput * speed;
+                Vector3 mousePos = Input.mousePosition;
+                mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+                Vector2 direction = new Vector2
+                (
+                    mousePos.x - transform.position.x,
+                    mousePos.y - transform.position.y
+                );
+
+                transform.up = direction;
             }
             else { }
         }
-    }
 
-    void TeleportPlayerToStoredPos()
-    {
-
-        if (PlayerPrefs.HasKey(playerXKey) && PlayerPrefs.HasKey(playerYKey))
+        void MoveCharacter()
         {
-            // Retrieve the stored X and Y positions
-            float storedX = PlayerPrefs.GetFloat(playerXKey);
-            float storedY = PlayerPrefs.GetFloat(playerYKey);
-
-            // Teleport the player to the stored position
-            characterTransform.position = new Vector3(storedX, storedY, characterTransform.position.z);
-
-            // Clear the stored position
-            PlayerPrefs.DeleteKey(playerXKey);
-            PlayerPrefs.DeleteKey(playerYKey);
-
+            {
+                if (PlayerCutSceneOveride == false)
+                {
+                    thisRigidBody.velocity = moveInput * speed;
+                }
+                else { }
+            }
         }
-    }
 
-
-
-
-
-
-
-    /// <summary>
-    /// HÅKAN SAKER
-    /// </summary>
-    void AccessInventory()
-     {
-         if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
-         {
-    //unlitFlashLight.gameObject.SetActive(false);
-           usingFlashLight = true;
-    //litFlashLight.gameObject.SetActive(true);
-            flashLightObject.SetActive(true);
-        }
-        else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.R))
-       {
-    //unlitFlashLight.gameObject.SetActive(true);
-          usingFlashLight = false;
-    //litFlashLight.gameObject.SetActive(false);
-        flashLightObject.SetActive(false);
-        }
-    }
-
-    void AccessQuestBook()
-    {
-        if (!usingBook && Input.GetKeyDown(KeyCode.M))
+        void TeleportPlayerToStoredPosition() // Big ass function to be able to teleport the player on demand
         {
-            uiBook.gameObject.SetActive(true);
-            usingBook = true;
-            //closeBook.gameObject.SetActive(false);
-            //openBook.gameObject.SetActive(true);
+
+            positionManager = FindObjectOfType<PlayerPositionManager>();
+            characterTransform = transform;
+
+            // Check if there is a stored position
+            Vector3 storedPosition = positionManager.RetrievePosition();
+            if (storedPosition != Vector3.zero)
+            {
+                // Teleport player to stored position
+                characterTransform.position = storedPosition;
+
+                // Clear stored position
+                positionManager.StorePosition(Vector3.zero);
+
+            }
+
         }
-        else if (usingBook == true && Input.GetKeyDown(KeyCode.M))
+        // private void FetchPlayerPosition()
+        // {
+        //     Vector3 currentPlayerPosition = characterTransform.position;
+        //     Debug.Log("Player Position: " + currentPlayerPosition);
+        // }
+
+        //private void TeleportToPosition(Vector3 targetPosition)
+        // {
+        //     characterTransform.position = targetPosition;
+        // }
+
+
+
+
+
+
+
+        /// <summary>
+        /// Hï¿½KAN SAKER
+        /// </summary>
+        void UseFlashlight()
         {
-            uiBook.gameObject.SetActive(false);
-            usingBook = false;
-            //openBook.gameObject.SetActive(false);
-            //closeBook.gameObject.SetActive(true);
+            if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
+            {
+                //unlitFlashLight.gameObject.SetActive(false);
+                usingFlashLight = true;
+                //litFlashLight.gameObject.SetActive(true);
+                flashLightObject.SetActive(true);
+            }
+            else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.R))
+            {
+                //unlitFlashLight.gameObject.SetActive(true);
+                usingFlashLight = false;
+                //litFlashLight.gameObject.SetActive(false);
+                flashLightObject.SetActive(false);
+            }
+        }
+
+        void AccessQuestBook()
+        {
+            if (!usingBook && Input.GetKeyDown(KeyCode.M))
+            {
+                uiBook.gameObject.SetActive(true);
+                usingBook = true;
+                //closeBook.gameObject.SetActive(false);
+                //openBook.gameObject.SetActive(true);
+            }
+            else if (usingBook == true && Input.GetKeyDown(KeyCode.M))
+            {
+                uiBook.gameObject.SetActive(false);
+                usingBook = false;
+                //openBook.gameObject.SetActive(false);
+                //closeBook.gameObject.SetActive(true);
+            }
+        }
+
+        void AccessInventory()
+        {
+            if (invActive == false && Input.GetKeyDown(KeyCode.I))
+            {
+                //invCanvas.SetActive(true);
+                Inventory_Canvas.gameObject.SetActive(true);
+                invActive = true;
+            }
+            else if (invActive == true && Input.GetKeyDown(KeyCode.I))
+            {
+                //invCanvas.SetActive(false);
+                Inventory_Canvas.gameObject.SetActive(false);
+                invActive = false;
+            }
         }
     }
 }
-

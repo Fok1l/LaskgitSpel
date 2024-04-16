@@ -15,7 +15,10 @@ public class PlayerCamera : MonoBehaviour
     private Vector3 velocity = Vector3.zero; //Make variable velocity and initalizes it to 
     public bool CameraCutSceneOveride = false; // Mainly for Cutscenes
 
-
+    private void Start()
+    {
+       mainCam = GetComponent<Camera>();
+    }
 
     void FixedUpdate()
     {

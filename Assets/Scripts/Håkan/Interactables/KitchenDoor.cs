@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Door : MonoBehaviour
+public class KitchenDoor : MonoBehaviour
 {
     [SerializeField] int teleportTo;
     [SerializeField] SceneLoader loader;
     public Canvas EPromptCanvas;
     bool AtTheDoor = false;
     [SerializeField] AudioClip doorSound;
+    [SerializeField] AudioClip doorLockedSound;
+
 
     GameSession gameSession;
     PlayerMove player;
@@ -44,13 +45,16 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if (AtTheDoor && Input.GetKey(KeyCode.E))
+        if (AtTheDoor && Input.GetKey(KeyCode.E) && gameSession.zapPuzzleKeyGained == true)
         {
             PlayDoorSFX();
             loader.Teleporters(teleportTo);
         }
+        else if (AtTheDoor && Input.GetKeyDown(KeyCode.E))
+        {
+            PlayDoorLockedSFX();
+        }
     }
-
     private void OnTriggerExit2D(Collider2D ExitTrigger)
     {
         if (ExitTrigger.tag == "Player")
@@ -65,17 +69,21 @@ public class Door : MonoBehaviour
     {
         soundSource.PlayOneShot(doorSound);
     }
+
+    void PlayDoorLockedSFX()
+    {
+        soundSource.PlayOneShot(doorLockedSound);
+    }
+    //private void OnTriggerStay2D(Collider2D Ent
+    //private void OnTriggerStay2D(Collider2D EnteringTrigger)
+    // {
+    //     if (gameSession.zapPuzzleKeyGained == true && gameObject == kitchenDoor && Input.GetKeyUp(KeyCode.E))
+    //     {
+    //        loader.LoadKitchen();
+    //    }
+    //   else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E) && gameObject == unlockedDoor)
+    //   {
+    //       loader.Teleporters(teleportTo);
+    //   }
+    // }
 }
-
-
-//private void OnTriggerStay2D(Collider2D EnteringTrigger)
-// {
-//     if (gameSession.zapPuzzleKeyGained == true && gameObject == kitchenDoor && Input.GetKeyUp(KeyCode.E))
-//     {
-//        loader.LoadKitchen();
-//    }
-//   else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E) && gameObject == unlockedDoor)
-//   {
-//       loader.Teleporters(teleportTo);
-//   }
-// }

@@ -17,7 +17,6 @@ public class UpperBladeTest : MonoBehaviour
 
 
     PolygonCollider2D polygonCollider2D;
-    ItemSlotCollision slotCollision;
     SceneLoader loader;
 
 
@@ -33,7 +32,6 @@ public class UpperBladeTest : MonoBehaviour
         originalScale = transform.localScale;
 
 
-        slotCollision = GetComponent<ItemSlotCollision>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         loader = FindObjectOfType<SceneLoader>();
 
