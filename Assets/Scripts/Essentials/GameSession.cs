@@ -37,6 +37,10 @@ public class GameSession : MonoBehaviour
            loader = FindObjectOfType<SceneLoader>();
         upperBladeTest = FindObjectOfType<UpperBladeTest>();
 
+        //if (pauseMenuCanvas == null)
+        {
+            Debug.LogError("PauseMenu_Canvas not found!");
+        }
       //  if (pauseMenuCanvas == null)
        // {
        //     Debug.LogError("PauseMenu_Canvas not found!");
