@@ -865,9 +865,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9198745246554306539, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1034839303}
-    - targetCorrespondingSourceObject: {fileID: 9198745246554306539, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1204837671}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
 --- !u!4 &242079380 stripped
@@ -1675,10 +1672,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12159997, y: -0.8247999, z: 0}
-    m_Extent: {x: 1.8048, y: 2.9906, z: 0}
-    m_Center: {x: 0.12064999, y: -0.8248, z: 0}
-    m_Extent: {x: 1.80545, y: 2.9904, z: 0}
+    m_Center: {x: 0.12045002, y: -0.8259001, z: 0}
+    m_Extent: {x: 1.80425, y: 2.9907, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3202,7 +3197,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 242079380}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 200948510043747722, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3246,15 +3241,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3922905
+      value: 1.3255765
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.13285916
+      value: 0.14892511
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6235561
+      value: 0.0043958426
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3960,10 +3955,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.0022999, y: 0.37129998, z: 0}
-    m_Extent: {x: 1.8045, y: 2.9921, z: 0}
-    m_Center: {x: 1.00265, y: 0.37090003, z: 0}
-    m_Extent: {x: 1.8045499, y: 2.9915, z: 0}
+    m_Center: {x: 1.002, y: 0.37099993, z: 0}
+    m_Extent: {x: 1.8047, y: 2.9917998, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6441,7 +6434,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookshelfItem: Jar
   numberOfItems: 0
-  exitDoor: {fileID: 0}
 --- !u!1 &1625775779
 GameObject:
   m_ObjectHideFlags: 0
@@ -7595,7 +7587,7 @@ PrefabInstance:
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: doorSound
       value: 
-      objectReference: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
+      objectReference: {fileID: 8300000, guid: 78c711a28ebc8414daf5ba8294571869, type: 3}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
       value: 4
@@ -8801,6 +8793,7 @@ SceneRoots:
   - {fileID: 1241084341}
   - {fileID: 242079379}
   - {fileID: 1503391395}
+  - {fileID: 833975490}
   - {fileID: 937188204}
   - {fileID: 167191416}
   - {fileID: 1333640249}
