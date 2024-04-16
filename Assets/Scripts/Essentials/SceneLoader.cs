@@ -10,6 +10,7 @@ public class SceneLoader : MonoBehaviour
     public Animator animator;
     private int leveltoload;
     [SerializeField]int knives;
+    public Canvas transitionCanvas;
 
     GameObject soundObject; // Needed for UI click sounds
     AudioSource soundSource; // Needed for UI click sounds
@@ -99,6 +100,11 @@ public class SceneLoader : MonoBehaviour
         {
             SceneManager.LoadScene(6);
         }
+    }
+
+    public void LoadEndingScene()
+    {
+        SceneManager.LoadScene(7);
     }
 
 
