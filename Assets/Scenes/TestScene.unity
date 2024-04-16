@@ -1071,7 +1071,7 @@ MonoBehaviour:
   maxYpos: 0
   minXpos: 0
   minYpos: 0
-  CameraCutSceneOveride: 0
+  Overide: 0
 --- !u!114 &459241729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,6 +1631,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1120152471142286105, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1746400944512506724, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2219,8 +2223,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.20950001, y: -0.07920003, z: 0}
-    m_Extent: {x: 1.6412001, y: 1.1797, z: 0}
+    m_Center: {x: -0.20969999, y: -0.07925004, z: 0}
+    m_Extent: {x: 1.6406, y: 1.1803501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2400,7 +2404,7 @@ SpriteRenderer:
   m_Size: {x: 10.78, y: 6.45}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1485440533
@@ -2896,8 +2900,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.2084, y: -0.07995, z: 0}
-    m_Extent: {x: 0.6999, y: 0.24024999, z: 0}
+    m_Center: {x: -0.20835, y: -0.08014999, z: 0}
+    m_Extent: {x: 0.69935, y: 0.23945, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3338,8 +3342,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000050008297, y: -0.80705, z: 0}
-    m_Extent: {x: 1.79305, y: 2.98965, z: 0}
+    m_Center: {x: 0, y: -0.8062501, z: 0}
+    m_Extent: {x: 1.7941, y: 2.98875, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
