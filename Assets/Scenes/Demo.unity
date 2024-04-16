@@ -628,6 +628,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1034839299}
     - target: {fileID: 1171637112798770963, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c3dd88eabaa71164db91b6c5345a359f, type: 3}
+    - target: {fileID: 1171637112798770963, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: FlashLightClick
+      value: 
+      objectReference: {fileID: 8300000, guid: 48fb3b87a84b8804b86b9283fe498ea0, type: 3}
+    - target: {fileID: 1171637112798770963, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: Inventory_Canvas
       value: 
       objectReference: {fileID: 1254295864}
@@ -1672,8 +1680,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12080002, y: -0.8247, z: 0}
-    m_Extent: {x: 1.8051, y: 2.9905, z: 0}
+    m_Center: {x: 0.12144995, y: -0.82495, z: 0}
+    m_Extent: {x: 1.80495, y: 2.99085, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4000,8 +4008,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.00175, y: 0.37120008, z: 0}
-    m_Extent: {x: 1.8046501, y: 2.9923, z: 0}
+    m_Center: {x: 1.00195, y: 0.37135005, z: 0}
+    m_Extent: {x: 1.80495, y: 2.99085, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
