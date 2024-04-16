@@ -25,6 +25,7 @@ public class Door : MonoBehaviour
             DontDestroyOnLoad(soundObject);
             soundSource = soundObject.AddComponent<AudioSource>();
         }
+
     }
 
     void OnTriggerEnter2D(Collider2D EnteringTrigger)
