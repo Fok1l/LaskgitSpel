@@ -61,9 +61,8 @@ public class Door : MonoBehaviour
             AtTheDoor = false;
 
             if(EPromptCanvas != null)
-                {
+            {
                 EPromptCanvas.enabled = false;
-
             }
         }
     }
