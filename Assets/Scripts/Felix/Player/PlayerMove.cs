@@ -14,8 +14,6 @@ public class PlayerMove : MonoBehaviour
     /// </summary>
     [Header("Inventory & Flashlight")]
     public bool usingFlashLight = false;
-    //[SerializeField] GameObject unlitFlashLight;
-    //[SerializeField] GameObject litFlashLight;
     [SerializeField] GameObject flashLightObject;
 
     [Header("Quest")]
@@ -51,6 +49,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerPositionManager positionManager;
     private AudioSource audioSource;
     public AudioClip walkSound;
+    public AudioClip FlashLightClick;
 
 
     void Start()
@@ -179,20 +178,27 @@ public class PlayerMove : MonoBehaviour
         /// </summary>
         void UseFlashlight()
         {
-            if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
+            if (!usingFlashLight && Input.GetKeyUp(KeyCode.F))
             {
                 //unlitFlashLight.gameObject.SetActive(false);
                 usingFlashLight = true;
                 //litFlashLight.gameObject.SetActive(true);
+                PlayFlashLightClickSFX();
                 flashLightObject.SetActive(true);
             }
-            else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.R))
+            else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.F))
             {
                 //unlitFlashLight.gameObject.SetActive(true);
                 usingFlashLight = false;
                 //litFlashLight.gameObject.SetActive(false);
+                PlayFlashLightClickSFX();
                 flashLightObject.SetActive(false);
             }
+        }
+
+        void PlayFlashLightClickSFX()
+        {
+            audioSource.PlayOneShot(FlashLightClick);
         }
 
         void AccessQuestBook()

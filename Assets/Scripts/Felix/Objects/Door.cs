@@ -27,14 +27,6 @@ public class Door : MonoBehaviour
             DontDestroyOnLoad(soundObject);
             soundSource = soundObject.AddComponent<AudioSource>();
         }
-        if (FadeCanvas != null)
-        {
-            animator = FadeCanvas.GetComponent<Animator>();
-        }
-        else
-        {
-            Debug.LogError("Could not find DoorFade_Canvas");
-        }
     }
 
     void OnTriggerEnter2D(Collider2D EnteringTrigger)
