@@ -13,7 +13,10 @@ public class BookshelfPuzzle : MonoBehaviour
     {
         foreach (Transform eachChild in transform)
         {
-            if (eachChild.name == bookshelfItem)
+            if (eachChild.name == bookshelfItem && !gameObject.activeInHierarchy)
+            {
+
+            } else
             {
                 AddShelfItem();
                 RemoveComponent(eachChild);
@@ -23,6 +26,7 @@ public class BookshelfPuzzle : MonoBehaviour
 
     void AddShelfItem()
     {
+        gameObject.SetActive(true);
         numberOfItems++;
         if (numberOfItems == 10)
         {
