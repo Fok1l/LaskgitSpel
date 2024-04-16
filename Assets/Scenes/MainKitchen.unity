@@ -728,10 +728,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.026050001, y: -0.62549996, z: 0}
-    m_Extent: {x: 0.75905, y: 1.3671, z: 0}
-    m_Center: {x: 0.025849998, y: -0.62535, z: 0}
-    m_Extent: {x: 0.75985, y: 1.36665, z: 0}
+    m_Center: {x: 0.026500016, y: -0.6256, z: 0}
+    m_Extent: {x: 0.7599, y: 1.3672, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2019,10 +2017,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.03854996, y: -0.70675004, z: 0}
-    m_Extent: {x: 1.7479501, y: 2.7824502, z: 0}
-    m_Center: {x: -0.039200008, y: -0.7068, z: 0}
-    m_Extent: {x: 1.7484, y: 2.7819, z: 0}
+    m_Center: {x: -0.039650023, y: -0.7068, z: 0}
+    m_Extent: {x: 1.7472501, y: 2.783, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2655,7 +2651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1fdb5e6d9370b69429bfff486f96b6d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ed4a20be1095fc4bac3b5e149b79d75, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3786,8 +3782,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570526441}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.61916023}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:

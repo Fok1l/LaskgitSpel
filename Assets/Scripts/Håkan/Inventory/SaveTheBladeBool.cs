@@ -7,6 +7,7 @@ public class SaveTheBladeBool : MonoBehaviour
     public static SaveTheBladeBool Instance;
     
     public bool theBladeTestIsCompleted = false;
+    public bool tutorialText = false;
 
     private void Awake()
     {
