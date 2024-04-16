@@ -31,7 +31,7 @@ public class SetObjectAsChild : MonoBehaviour
 
     void CreateJarItem()
     {
-        if (saveTheBladeBool.theBladeTestIsCompleted == true && bookshelf.SpawnAJar == true)
+        if (saveTheBladeBool.theBladeTestIsCompleted == true && bookshelf.spawnAJar == true)
         {
             Debug.Log("hello");
             Instantiate(childObject, transform );
