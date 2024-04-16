@@ -102,12 +102,10 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D EnteringTrigger)
+    public void LoadEndingScene()
     {
-        if (EnteringTrigger.tag == "Player")
-        {
-            transitionCanvas.enabled = true;
-            Debug.Log("It's Working!");
-        }
+        SceneManager.LoadScene(7);
     }
+
+
 }

@@ -26,6 +26,8 @@ public class GameSession : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+
+
     }
 
     public void Start()
