@@ -7,13 +7,13 @@ public class SetObjectAsChild : MonoBehaviour
 
     [SerializeField] GameObject childObject;
     GameSession gameSession;
-    Bookshelf bookshelf;
+    SaveTheBladeBool saveTheBladeBool;
     
     // Start is called before the first frame update
     void Start()
     {
         gameSession = FindObjectOfType<GameSession>();
-        bookshelf = FindObjectOfType<Bookshelf>();
+        saveTheBladeBool = FindObjectOfType<SaveTheBladeBool>();
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class SetObjectAsChild : MonoBehaviour
 
     void CreateJarItem()
     {
-        if (gameSession.spawnTheBookPuzzleJar == true && bookshelf.SpawnAJar == true)
+        if (gameSession.spawnTheBookPuzzleJar == true && saveTheBladeBool.theBladeTestIsCompleted == true)
         {
             Instantiate(childObject, transform );
         }     

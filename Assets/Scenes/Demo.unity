@@ -1675,10 +1675,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12159997, y: -0.8247999, z: 0}
-    m_Extent: {x: 1.8048, y: 2.9906, z: 0}
-    m_Center: {x: 0.12064999, y: -0.8248, z: 0}
-    m_Extent: {x: 1.80545, y: 2.9904, z: 0}
+    m_Center: {x: 0.12109995, y: -0.82575, z: 0}
+    m_Extent: {x: 1.8053, y: 2.99095, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1836,6 +1834,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575878501}
   m_CullTransparentMesh: 1
+--- !u!1 &577709875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577709877}
+  - component: {fileID: 577709876}
+  m_Layer: 0
+  m_Name: SavingBladeBool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &577709876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577709875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6facd58dc8c8ca441a42fd80bd365ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theBladeTestIsCompleted: 0
+--- !u!4 &577709877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577709875}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &581562605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3960,10 +4003,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.0022999, y: 0.37129998, z: 0}
-    m_Extent: {x: 1.8045, y: 2.9921, z: 0}
-    m_Center: {x: 1.00265, y: 0.37090003, z: 0}
-    m_Extent: {x: 1.8045499, y: 2.9915, z: 0}
+    m_Center: {x: 1.002, y: 0.37109995, z: 0}
+    m_Extent: {x: 1.8043, y: 2.9923, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6441,7 +6482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookshelfItem: Jar
   numberOfItems: 0
-  exitDoor: {fileID: 0}
 --- !u!1 &1625775779
 GameObject:
   m_ObjectHideFlags: 0
@@ -8806,3 +8846,4 @@ SceneRoots:
   - {fileID: 1333640249}
   - {fileID: 1652413333}
   - {fileID: 509035075}
+  - {fileID: 577709877}

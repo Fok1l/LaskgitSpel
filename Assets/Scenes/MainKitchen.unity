@@ -728,8 +728,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.025950015, y: -0.62555003, z: 0}
-    m_Extent: {x: 0.75895, y: 1.36605, z: 0}
+    m_Center: {x: 0.026050001, y: -0.62549996, z: 0}
+    m_Extent: {x: 0.75905, y: 1.3671, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -955,6 +955,10 @@ PrefabInstance:
     - target: {fileID: 3823777825658237504, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_ReferenceResolution.y
       value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827024654599027816, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5070960421881324632, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_text
@@ -2013,8 +2017,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0388, y: -0.70695007, z: 0}
-    m_Extent: {x: 1.748, y: 2.78365, z: 0}
+    m_Center: {x: -0.03854996, y: -0.70675004, z: 0}
+    m_Extent: {x: 1.7479501, y: 2.7824502, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2822,7 +2826,7 @@ MonoBehaviour:
   maxYpos: 7.34
   minXpos: -7.34
   minYpos: -7.34
-  CameraCutSceneOveride: 0
+  Overide: 0
 --- !u!1 &1149067833
 GameObject:
   m_ObjectHideFlags: 0
