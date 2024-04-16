@@ -6,11 +6,14 @@ public class SetObjectAsChild : MonoBehaviour
 {
 
     [SerializeField] GameObject childObject;
-    UpperBladeTest upperBladeTest;
+    GameSession gameSession;
+    Bookshelf bookshelf;
+    
     // Start is called before the first frame update
     void Start()
     {
-        upperBladeTest = FindObjectOfType<UpperBladeTest>();
+        gameSession = FindObjectOfType<GameSession>();
+        bookshelf = FindObjectOfType<Bookshelf>();
     }
 
     // Update is called once per frame
@@ -26,12 +29,9 @@ public class SetObjectAsChild : MonoBehaviour
 
     void CreateJarItem()
     {
-        //if (//!upperBladeTest.theBladeTestIsCompleted)
+        if (gameSession.spawnTheBookPuzzleJar == true && bookshelf.SpawnAJar == true)
         {
             Instantiate(childObject, transform );
-
-        }
-        
-        
+        }     
     }
 }

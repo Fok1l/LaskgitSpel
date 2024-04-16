@@ -8,7 +8,6 @@ public class BookshelfPuzzle : MonoBehaviour
     [SerializeField] string bookshelfItem;
     [SerializeField] int numberOfItems;
     int trueNumberOfItems = 1;
-    [SerializeField] GameObject exitDoor;
     SceneLoader sceneLoader;
 
     private void Start()
@@ -37,7 +36,6 @@ public class BookshelfPuzzle : MonoBehaviour
         numberOfItems++;
         if (numberOfItems == 1)
         {
-            exitDoor.SetActive(false);
             sceneLoader.LoadEndingScene();
         }
         if (numberOfItems > 1)
