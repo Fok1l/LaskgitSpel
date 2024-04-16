@@ -17,7 +17,7 @@ public class GameSession : MonoBehaviour
     {
         int gameSessionCount = FindObjectsOfType<GameSession>().Length;
         Debug.Log("gameSession found it self");
-        pauseMenuCanvas.enabled = false;
+        //pauseMenuCanvas.enabled = false;
 
         if (gameSessionCount > 1)
         {
@@ -29,12 +29,6 @@ public class GameSession : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-        if(upperBladeTest.theBladeTestIsCompleted == true)
-        {
-            Debug.Log("IT WORKS!");
-            spawnTheBookPuzzleJar = true;
-        }
-
 
     }
 
@@ -43,10 +37,10 @@ public class GameSession : MonoBehaviour
            loader = FindObjectOfType<SceneLoader>();
         upperBladeTest = FindObjectOfType<UpperBladeTest>();
 
-        if (pauseMenuCanvas == null)
-        {
-            Debug.LogError("PauseMenu_Canvas not found!");
-        }
+      //  if (pauseMenuCanvas == null)
+       // {
+       //     Debug.LogError("PauseMenu_Canvas not found!");
+       // }
     }
 
     public void ResetGame()
