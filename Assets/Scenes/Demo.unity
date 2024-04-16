@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -631,9 +631,6 @@ PrefabInstance:
       propertyPath: tutorialText
       value: 
       objectReference: {fileID: 1686151142}
-      propertyPath: walkSound
-      value: 
-      objectReference: {fileID: 8300000, guid: c3dd88eabaa71164db91b6c5345a359f, type: 3}
     - target: {fileID: 1171637112798770963, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: FlashLightClick
       value: 
@@ -1047,7 +1044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -46, y: 7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315712216
@@ -1070,7 +1067,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press M
+  m_text: Press M to open tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
   m_sharedMaterial: {fileID: -5131586050574193111, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
@@ -1133,7 +1130,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -0.8908081, y: 0, z: -181.71863, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1297,7 +1294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: 450}
+  m_AnchoredPosition: {x: 475, y: 465}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373739829
@@ -1376,8 +1373,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6fb5685de938ceb4c89c4ff3b73badfa, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1817,8 +1814,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12010002, y: -0.82500005, z: 0}
-    m_Extent: {x: 1.8052, y: 2.991, z: 0}
+    m_Center: {x: 0.12039995, y: -0.82554996, z: 0}
+    m_Extent: {x: 1.8053, y: 2.9900498, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4149,8 +4146,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.002, y: 0.37179995, z: 0}
-    m_Extent: {x: 1.8045, y: 2.9916, z: 0}
+    m_Center: {x: 1.002, y: 0.37049997, z: 0}
+    m_Extent: {x: 1.8043, y: 2.9917002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5359,7 +5356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20de3b63c9816fb43ac1c2305ab44871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportTo: 6
+  teleportTo: 7
   loader: {fileID: 1503391396}
   EPromptCanvas: {fileID: 833975491}
   doorSound: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
@@ -7886,7 +7883,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 78c711a28ebc8414daf5ba8294571869, type: 3}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: teleportTo
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 480596286174666793, guid: dedcf51bc52ad394f99e170a3be95107, type: 3}
       propertyPath: kitchenDoor

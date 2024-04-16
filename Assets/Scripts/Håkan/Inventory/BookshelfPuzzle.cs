@@ -4,7 +4,6 @@ public class BookshelfPuzzle : MonoBehaviour
 {
     [SerializeField] string bookshelfItem;
     [SerializeField] int numberOfItems;
-    int trueNumberOfItems = 1;
     SceneLoader sceneLoader;
 
     private void Start()
