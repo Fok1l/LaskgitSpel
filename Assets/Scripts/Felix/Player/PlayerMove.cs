@@ -18,7 +18,9 @@ public class PlayerMove : MonoBehaviour
 
     [Header("Quest")]
     [SerializeField] GameObject uiBook;
+    [SerializeField] GameObject tutorialText;
     public bool usingBook = false;
+    SaveTheBladeBool saveTheBladeBool;
     //[SerializeField] GameObject openBook;
     //[SerializeField] GameObject closeBook;
 
@@ -52,6 +54,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        saveTheBladeBool = FindObjectOfType<SaveTheBladeBool>();
         thisRigidBody = GetComponent<Rigidbody2D>();
         characterTransform = transform;
         positionManager = GameObject.FindObjectOfType<PlayerPositionManager>();
@@ -73,6 +76,7 @@ public class PlayerMove : MonoBehaviour
         faceMouse();
         UseFlashlight();
         AccessQuestBook();
+        DestroyTheTutorialText();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         MoveCharacter();
@@ -205,6 +209,7 @@ public class PlayerMove : MonoBehaviour
                 usingBook = true;
                 //closeBook.gameObject.SetActive(false);
                 //openBook.gameObject.SetActive(true);
+                saveTheBladeBool.tutorialText = true;
             }
             else if (usingBook == true && Input.GetKeyDown(KeyCode.M))
             {
@@ -215,19 +220,27 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        void AccessInventory()
-        {
-            if (invActive == false && Input.GetKeyDown(KeyCode.I))
-            {
+        //void AccessInventory()
+        //{
+            //if (invActive == false && Input.GetKeyDown(KeyCode.I))
+            //{
                 //invCanvas.SetActive(true);
-                Inventory_Canvas.gameObject.SetActive(true);
-                invActive = true;
-            }
-            else if (invActive == true && Input.GetKeyDown(KeyCode.I))
+            //    Inventory_Canvas.gameObject.SetActive(true);
+            //    invActive = true;
+            //}
+            //else if (invActive == true && Input.GetKeyDown(KeyCode.I))
+            //{
+            //    //invCanvas.SetActive(false);
+            //    Inventory_Canvas.gameObject.SetActive(false);
+            //    invActive = false;
+            //}
+        //}
+
+        void DestroyTheTutorialText()
+        {
+            if(saveTheBladeBool.tutorialText == true)
             {
-                //invCanvas.SetActive(false);
-                Inventory_Canvas.gameObject.SetActive(false);
-                invActive = false;
+                Destroy(tutorialText);
             }
         }
     }
