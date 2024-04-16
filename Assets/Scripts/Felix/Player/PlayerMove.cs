@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
     //[SerializeField] GameObject closeBook;
 
     [Header("Inventory")]
-    bool invActive = false;
+    //bool invActive = false;
     public Canvas Inventory_Canvas;
 
 

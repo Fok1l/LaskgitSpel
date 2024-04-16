@@ -98,13 +98,13 @@ public class SceneLoader : MonoBehaviour
         knives++;
         if (knives == 5)
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(11);
         }
     }
 
     public void LoadEndingScene()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(8);
     }
 
 
