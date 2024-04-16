@@ -38,9 +38,9 @@ public class GameSession : MonoBehaviour
         upperBladeTest = FindObjectOfType<UpperBladeTest>();
 
         //if (pauseMenuCanvas == null)
-        {
-            Debug.LogError("PauseMenu_Canvas not found!");
-        }
+       // {
+        //    Debug.LogError("PauseMenu_Canvas not found!");
+     //   }
       //  if (pauseMenuCanvas == null)
        // {
        //     Debug.LogError("PauseMenu_Canvas not found!");
