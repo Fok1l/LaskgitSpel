@@ -57,7 +57,12 @@ public class Door : MonoBehaviour
         {
             Debug.Log("Player Leave Door");
             AtTheDoor = false;
-            EPromptCanvas.enabled = false;
+
+            if(EPromptCanvas != null)
+                {
+                EPromptCanvas.enabled = false;
+
+            }
         }
     }
 

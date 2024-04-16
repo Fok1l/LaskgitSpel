@@ -17,7 +17,7 @@ public class GameSession : MonoBehaviour
     {
         int gameSessionCount = FindObjectsOfType<GameSession>().Length;
         Debug.Log("gameSession found it self");
-        PauseCanvas.enabled = false;
+        pauseMenuCanvas.enabled = false;
 
         if (gameSessionCount > 1)
         {
@@ -38,12 +38,17 @@ public class GameSession : MonoBehaviour
 
     }
 
-    public void Start()
+    private void Start()
     {
            loader = FindObjectOfType<SceneLoader>();
         upperBladeTest = FindObjectOfType<UpperBladeTest>();
 
+        if (pauseMenuCanvas == null)
+        {
+            Debug.LogError("PauseMenu_Canvas not found!");
+        }
     }
+
     public void ResetGame()
     {
         Destroy(gameObject);
@@ -53,7 +58,7 @@ public class GameSession : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseOveride = true;
-            PauseCanvas.enabled = true;
+            pauseMenuCanvas.enabled = true;
             Time.timeScale = 0f;
         }
     }
