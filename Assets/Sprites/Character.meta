@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Character.meta
 guid: 7db834eb8466131449cf64e053ed03f0
 folderAsset: yes
 DefaultImporter:
+========
+guid: 5be752796e6d4b940b5e2342f7a62a62
+NativeFormatImporter:
+>>>>>>>> 7d20cd4b9315fb288740c509a23632d1abde6f37:Assets/arm_1b.controller.meta
   externalObjects: {}
+  mainObjectFileID: 9100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

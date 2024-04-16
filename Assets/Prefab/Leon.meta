@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefab/Leon.meta
 guid: 810ce61809ea1de42b915fd1de96339f
 folderAsset: yes
 DefaultImporter:
+========
+guid: 34f4ef0cf833a374fbf8a2b0250f81bb
+PrefabImporter:
+>>>>>>>> 7d20cd4b9315fb288740c509a23632d1abde6f37:Assets/Prefab/PositionManager.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

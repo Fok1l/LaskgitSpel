@@ -11,6 +11,9 @@ public class SceneLoader : MonoBehaviour
     private int leveltoload;
     [SerializeField]int knives;
     public Canvas transitionCanvas;
+
+    GameObject soundObject; // Needed for UI click sounds
+    AudioSource soundSource; // Needed for UI click sounds
     private void Start()
     {
 
