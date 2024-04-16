@@ -7,7 +7,14 @@ public class BookshelfPuzzle : MonoBehaviour
 {
     [SerializeField] string bookshelfItem;
     [SerializeField] int numberOfItems;
+    int trueNumberOfItems = 1;
     [SerializeField] GameObject exitDoor;
+    SceneLoader sceneLoader;
+
+    private void Start()
+    {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+    }
     // Start is called before the first frame update
     void FixedUpdate()
     {
@@ -28,9 +35,14 @@ public class BookshelfPuzzle : MonoBehaviour
     {
         gameObject.SetActive(true);
         numberOfItems++;
-        if (numberOfItems == 10)
+        if (numberOfItems == 1)
         {
             exitDoor.SetActive(false);
+            sceneLoader.LoadEndingScene();
+        }
+        if (numberOfItems > 1)
+        {
+            numberOfItems--;
         }
     }
 
@@ -41,7 +53,6 @@ public class BookshelfPuzzle : MonoBehaviour
 
     void RemoveComponent(Transform child)
     {
-        Destroy(child.gameObject);
+        //Destroy(child.gameObject);
     }
-
 }

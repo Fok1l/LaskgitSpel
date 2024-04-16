@@ -101,5 +101,10 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    public void LoadEndingScene()
+    {
+        SceneManager.LoadScene(7);
+    }
+
 
 }
