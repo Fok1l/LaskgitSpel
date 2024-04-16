@@ -26,7 +26,7 @@ public class SetObjectAsChild : MonoBehaviour
 
     void CreateJarItem()
     {
-        if (!upperBladeTest.theBladeTestIsCompleted)
+        //if (//!upperBladeTest.theBladeTestIsCompleted)
         {
             Instantiate(childObject, transform );
 
