@@ -525,6 +525,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4536114633560422992, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536114633560422992, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536114633560422992, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c3dd88eabaa71164db91b6c5345a359f, type: 3}
+    - target: {fileID: 4536114633560422992, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536114633560422992, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6193747847234891145, guid: 6ede6eb6cb02c834db099578014875dc, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -863,6 +883,10 @@ PrefabInstance:
       propertyPath: PauseCanvas
       value: 
       objectReference: {fileID: 1752398383}
+    - target: {fileID: 6574437964341797655, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
+      propertyPath: pauseMenuCanvas
+      value: 
+      objectReference: {fileID: 1752398383}
     - target: {fileID: 8739605875670054759, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
       propertyPath: m_Name
       value: GameSession
@@ -916,6 +940,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9198745246554306539, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1034839303}
+    - targetCorrespondingSourceObject: {fileID: 9198745246554306539, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1204837671}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
 --- !u!4 &242079380 stripped
@@ -1522,7 +1549,7 @@ MonoBehaviour:
   maxYpos: 0
   minXpos: 0
   minYpos: 0
-  CameraCutSceneOveride: 0
+  Overide: 0
 --- !u!114 &459241729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1935,8 +1962,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12110001, y: -0.82500005, z: 0}
-    m_Extent: {x: 1.8046999, y: 2.991, z: 0}
+    m_Center: {x: 0.12159997, y: -0.8247999, z: 0}
+    m_Extent: {x: 1.8048, y: 2.9906, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3310,7 +3337,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 242079380}
     m_Modifications:
     - target: {fileID: 200948510043747722, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3354,15 +3381,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3255765
+      value: 1.3922905
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14892511
+      value: -0.13285916
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.004395867
+      value: 0.6235561
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3370,15 +3397,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3984,8 +4011,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.002, y: 0.37110007, z: 0}
-    m_Extent: {x: 1.8047, y: 2.9917998, z: 0}
+    m_Center: {x: 1.0022999, y: 0.37129998, z: 0}
+    m_Extent: {x: 1.8045, y: 2.9921, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8834,7 +8861,6 @@ SceneRoots:
   - {fileID: 1241084341}
   - {fileID: 242079379}
   - {fileID: 1503391395}
-  - {fileID: 833975490}
   - {fileID: 937188204}
   - {fileID: 167191416}
   - {fileID: 1333640249}

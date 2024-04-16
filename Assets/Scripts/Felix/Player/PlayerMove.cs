@@ -47,6 +47,8 @@ public class PlayerMove : MonoBehaviour
     public float storedX;
     public float storedY;
     private PlayerPositionManager positionManager;
+    private AudioSource audioSource;
+    public AudioClip walkSound;
 
 
     void Start()
@@ -54,12 +56,15 @@ public class PlayerMove : MonoBehaviour
         thisRigidBody = GetComponent<Rigidbody2D>();
         characterTransform = transform;
         positionManager = GameObject.FindObjectOfType<PlayerPositionManager>();
+        cam = GameObject.FindObjectOfType<PlayerCamera>();
         if (positionManager == null)
         {
             // Create a new PlayerPositionManager object
             GameObject managerObject = new GameObject("PlayerPositionManager");
             positionManager = managerObject.AddComponent<PlayerPositionManager>();
         }
+        audioSource = GetComponent<AudioSource>();
+        audioSource.enabled = false;
 
     }
 
@@ -72,29 +77,37 @@ public class PlayerMove : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         MoveCharacter();
-        // if (Input.GetKeyDown(KeyCode.G))
-        //{
-        //     FetchPlayerPosition();
-        // }
-
-        // if (Input.GetKey(KeyCode.H))
-        //{
-        //     Vector3 storedPosition = positionManager.RetrievePosition();
-        //     if (storedPosition != Vector3.zero)
-        //      {
-        //        Debug.Log("1Log" + storedPosition);
-        // Teleport the player to the stored position
-        //        TeleportToPosition(storedPosition);
-        //      Debug.Log("2Log" + storedPosition);
-        // Clear the stored position
-        //    positionManager.StorePosition(Vector3.zero);
-        // }
-        //  }
-        // }
-
-        void faceMouse()
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            if (PlayerCutSceneOveride == false)
+            audioSource.enabled = true;
+        }
+        else
+        {
+            audioSource.enabled = false; 
+        }
+                // if (Input.GetKeyDown(KeyCode.G))
+                //{
+                //     FetchPlayerPosition();
+                // }
+
+                // if (Input.GetKey(KeyCode.H))
+                //{
+                //     Vector3 storedPosition = positionManager.RetrievePosition();
+                //     if (storedPosition != Vector3.zero)
+                //      {
+                //        Debug.Log("1Log" + storedPosition);
+                // Teleport the player to the stored position
+                //        TeleportToPosition(storedPosition);
+                //      Debug.Log("2Log" + storedPosition);
+                // Clear the stored position
+                //    positionManager.StorePosition(Vector3.zero);
+                // }
+                //  }
+                // }
+
+          void faceMouse()
+         {
+            if (cam.Overide == false)
             {
                 Vector3 mousePos = Input.mousePosition;
                 mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -108,16 +121,16 @@ public class PlayerMove : MonoBehaviour
                 transform.up = direction;
             }
             else { }
-        }
+         }
 
         void MoveCharacter()
         {
             {
-                if (PlayerCutSceneOveride == false)
+                if (cam.Overide == false)
                 {
                     thisRigidBody.velocity = moveInput * speed;
                 }
-                else { }
+                else { audioSource.enabled = false; }
             }
         }
 
