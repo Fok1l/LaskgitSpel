@@ -8,6 +8,7 @@ public class Bookshelf : MonoBehaviour
     public Canvas EPromptCanvas;
     public Canvas InvCanvas;
     bool BookStay = false; // BookStay bool as a repalcer for ontriggerstay
+    public bool SpawnAJar = false; //To spawn the jar for the puzzle
  
     private void OnTriggerStay2D(Collider2D EnteringTrigger) //Works. Needs to be OnTriggerStay2d, otherwise won't work.
     {
@@ -26,6 +27,7 @@ public class Bookshelf : MonoBehaviour
         {
             InvCanvas.enabled = true;
             EPromptCanvas.enabled = false;
+            SpawnAJar = true;
         }
     }
 

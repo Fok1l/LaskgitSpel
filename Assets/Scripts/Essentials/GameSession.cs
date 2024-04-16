@@ -8,7 +8,9 @@ public class GameSession : MonoBehaviour
     public bool zapPuzzleKeyGained = false;
     public bool tidningGained = true;
     SceneLoader loader;
-    [SerializeField]public Canvas pauseMenuCanvas;
+    UpperBladeTest upperBladeTest;
+    public Canvas PauseCanvas;
+    [SerializeField] public bool spawnTheBookPuzzleJar = false;
     bool PauseOveride;
 
     private void Awake()
@@ -27,13 +29,19 @@ public class GameSession : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
+        if(upperBladeTest.theBladeTestIsCompleted == true)
+        {
+            Debug.Log("IT WORKS!");
+            spawnTheBookPuzzleJar = true;
+        }
+
 
     }
 
     private void Start()
     {
-        loader = FindObjectOfType<SceneLoader>();
-        pauseMenuCanvas = GameObject.Find("PauseMenu_Canvas").GetComponent<Canvas>();
+           loader = FindObjectOfType<SceneLoader>();
+        upperBladeTest = FindObjectOfType<UpperBladeTest>();
 
         if (pauseMenuCanvas == null)
         {
