@@ -784,6 +784,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6574437964341797655, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
+      propertyPath: PauseCanvas
+      value: 
+      objectReference: {fileID: 1752398383}
     - target: {fileID: 8739605875670054759, guid: 5eda2dbbec4749d46bb997d48d015be0, type: 3}
       propertyPath: m_Name
       value: GameSession
@@ -3171,6 +3175,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 200948510043747722, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 200948510043747722, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 200948510043747722, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 200948510043747722, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 200948510043747722, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 200948510043747722, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 1000789030471345182, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -3182,6 +3210,10 @@ PrefabInstance:
     - target: {fileID: 1000789030471345182, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_ReferenceResolution.y
       value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120152471142286105, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1936069762866010152, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3259,6 +3291,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8c9b468ff26c43344b49cf876d64ef83, type: 3}
+    - target: {fileID: 6337286631661938541, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337286631661938541, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337286631661938541, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 6712051712486461734, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 925
@@ -4977,6 +5021,7 @@ MonoBehaviour:
   loader: {fileID: 1503391396}
   EPromptCanvas: {fileID: 833975491}
   doorSound: {fileID: 8300000, guid: 5b926bc945f346b46bdeb777b9c926ec, type: 3}
+  doorLockedSound: {fileID: 8300000, guid: 39ad88af3ed3c1444a14b8fc89ab87f4, type: 3}
 --- !u!1 &1242418994
 GameObject:
   m_ObjectHideFlags: 0
@@ -6544,6 +6589,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 193cebeeafacbc4429cb258db5b56469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1664460878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6782364211389896256, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+  m_PrefabInstance: {fileID: 833975490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3797360200c4b8f4eb322554768fb0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1702343992
 GameObject:
   m_ObjectHideFlags: 0
@@ -6703,6 +6759,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 937188204}
   m_LocalEulerAnglesHint: {x: 0.001, y: 0.777, z: -90.101}
+--- !u!223 &1752398383 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 1120152471142286105, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+  m_PrefabInstance: {fileID: 833975490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1757939584
 GameObject:
   m_ObjectHideFlags: 0

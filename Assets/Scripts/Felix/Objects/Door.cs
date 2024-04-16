@@ -42,7 +42,7 @@ public class Door : MonoBehaviour
         gameSession = FindObjectOfType<GameSession>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (AtTheDoor && Input.GetKey(KeyCode.E))
         {

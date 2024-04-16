@@ -37,13 +37,17 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(teleportToLocation);
     }
-
+    
     public void FadeToLevel(int LevelIndex)
     {
         leveltoload = LevelIndex;
         animator.SetTrigger("FadeOut");
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void OnFadeComplete()    
     {
         SceneManager.LoadScene(leveltoload);
