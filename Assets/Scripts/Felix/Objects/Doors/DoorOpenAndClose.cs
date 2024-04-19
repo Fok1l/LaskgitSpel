@@ -5,8 +5,11 @@ using UnityEngine;
 public class DoorOpenAndClose : MonoBehaviour
 {
     [Header("Objects & Bools")]
-    [SerializeField] GameObject opendDoor;
     [SerializeField] GameObject closedDoor;
+    [SerializeField] Vector3 doorRotation;
+    [SerializeField] Vector3 doorPosition;
+    [SerializeField] Vector3 originalPosition;
+    [SerializeField] Vector3 originalRotation;
     bool doorOpen = false;
     bool AtTheDoor = false;
     public Canvas EPromptCanvas;
@@ -29,7 +32,7 @@ public class DoorOpenAndClose : MonoBehaviour
     }
     void Start()
     {
-        loader = FindObjectOfType<SceneLoader>();
+        loader = FindObjectOfType<SceneLoader>(); 
     }
 
     // Update is called once per frame
@@ -38,13 +41,13 @@ public class DoorOpenAndClose : MonoBehaviour
         if (AtTheDoor = true && Input.GetKeyDown(KeyCode.E) && closedDoor.activeSelf == true && doorOpen == true)
         {
             PlayDoorSFX();
-            closedDoor.SetActive(false);
-            opendDoor.SetActive(true);
+            closedDoor.transform.position = doorPosition;
+            closedDoor.transform.Rotate(doorRotation);
         }else if (AtTheDoor = true && Input.GetKeyDown(KeyCode.E) && closedDoor.activeSelf == false && doorOpen == true)
         {
             PlayDoorSFX();
-            closedDoor.SetActive(true);
-            opendDoor.SetActive(false);
+            closedDoor.transform.position = originalPosition;
+            closedDoor.transform.Rotate(originalRotation);
         }
     }
 
@@ -66,7 +69,6 @@ public class DoorOpenAndClose : MonoBehaviour
             Debug.Log("Player Leave Door");
             AtTheDoor = false;
             closedDoor.SetActive(true);
-            opendDoor.SetActive(false);
             doorOpen = false;
             if (EPromptCanvas != null)
             {
