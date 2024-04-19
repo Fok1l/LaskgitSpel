@@ -91,6 +91,5 @@ public class DoorOpenAndClose : MonoBehaviour
     {
         PlayDoorSFX();
         closedDoor.SetActive(true);
-        opendDoor.SetActive(false);
     }
 }
