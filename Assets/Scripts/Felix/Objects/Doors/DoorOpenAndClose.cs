@@ -48,6 +48,11 @@ public class DoorOpenAndClose : MonoBehaviour
             PlayDoorSFX();
             closedDoor.transform.position = originalPosition;
             closedDoor.transform.Rotate(originalRotation);
+            CloseOpenDoor();
+        }
+        else if (AtTheDoor = true && Input.GetKeyDown(KeyCode.E) && closedDoor.activeSelf == false && doorOpen == true)
+        {
+            CloseOpenDoor();
         }
     }
 
@@ -80,5 +85,12 @@ public class DoorOpenAndClose : MonoBehaviour
     void PlayDoorSFX()
     {
         soundSource.PlayOneShot(doorSound);
+    }
+
+    void CloseOpenDoor()
+    {
+        PlayDoorSFX();
+        closedDoor.SetActive(true);
+        opendDoor.SetActive(false);
     }
 }
