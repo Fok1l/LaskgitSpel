@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     private float horizontal;
     private float vertical;
     [SerializeField] private float speed = 8f;
-    PlayerCamera cam;
+    public CutsceneManager CutsceneManager;
 
     /// <summary>
     /// Inventory Stuff
@@ -41,7 +41,6 @@ public class PlayerMove : MonoBehaviour
     /// Felix Stuff
     /// </summary>
     [Header("Doors & Cutscene")]
-    public bool PlayerCutSceneOveride = false;
     // Animator myAnimator;
     // PlayerAnimations playerAnimations;
     public float storedX;
@@ -58,7 +57,7 @@ public class PlayerMove : MonoBehaviour
         thisRigidBody = GetComponent<Rigidbody2D>();
         characterTransform = transform;
         positionManager = GameObject.FindObjectOfType<PlayerPositionManager>();
-        cam = GameObject.FindObjectOfType<PlayerCamera>();
+        CutsceneManager = GameObject.FindObjectOfType<CutsceneManager>();
         if (positionManager == null)
         {
             // Create a new PlayerPositionManager object
@@ -110,7 +109,7 @@ public class PlayerMove : MonoBehaviour
 
           void faceMouse()
          {
-            if (cam.Overide == false)
+            if (CutsceneManager.Overide == false)
             {
                 Vector3 mousePos = Input.mousePosition;
                 mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -129,7 +128,7 @@ public class PlayerMove : MonoBehaviour
         void MoveCharacter()
         {
             {
-                if (cam.Overide == false)
+                if (CutsceneManager.Overide == false)
                 {
                     thisRigidBody.velocity = moveInput * speed;
                 }
