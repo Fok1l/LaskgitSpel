@@ -53,7 +53,7 @@ public class NoteSystem : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.Escape))
         {
             for (int i = 0; i < noteImages.Length; i++)
             {

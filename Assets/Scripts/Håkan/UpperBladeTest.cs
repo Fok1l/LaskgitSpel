@@ -9,6 +9,7 @@ public class UpperBladeTest : MonoBehaviour
     [SerializeField] Vector2 worldPosition;
     [SerializeField] GameObject bladeSlot;
     [SerializeField] GameObject blade;
+    SaveTheBladeBool saveTheBladeBool;
 
     [Header("Slot position")]
     [SerializeField] Vector2 bladeSlotPosition;
@@ -25,7 +26,7 @@ public class UpperBladeTest : MonoBehaviour
 
     private bool ifollow;
 
-    public bool theBladeTestIsCompleted = false;
+    //public bool theBladeTestIsCompleted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class UpperBladeTest : MonoBehaviour
 
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         loader = FindObjectOfType<SceneLoader>();
+        saveTheBladeBool = FindObjectOfType<SaveTheBladeBool>();
 
         new Vector2(-1.3f, 7.2f);
 
@@ -77,7 +79,7 @@ public class UpperBladeTest : MonoBehaviour
                         blade.GetComponent<Collider2D>().enabled = false;
                         transform.localScale = new Vector3(1f, 1f, 1f);
                         loader.BladePuzzleComplete();
-                        theBladeTestIsCompleted = true;
+                        saveTheBladeBool.theBladeTestIsCompleted = true;
 
 
 

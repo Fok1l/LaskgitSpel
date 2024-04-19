@@ -15,6 +15,8 @@ public class Door : MonoBehaviour
     PlayerMove player;
     GameObject soundObject; // Reference to the persistent sound object
     AudioSource soundSource; // Reference to the AudioSource component
+    Animator animator;
+    Canvas FadeCanvas;
 
     void Awake()
     {
@@ -57,7 +59,11 @@ public class Door : MonoBehaviour
         {
             Debug.Log("Player Leave Door");
             AtTheDoor = false;
-            EPromptCanvas.enabled = false;
+
+            if(EPromptCanvas != null)
+            {
+                EPromptCanvas.enabled = false;
+            }
         }
     }
 
@@ -66,16 +72,3 @@ public class Door : MonoBehaviour
         soundSource.PlayOneShot(doorSound);
     }
 }
-
-
-//private void OnTriggerStay2D(Collider2D EnteringTrigger)
-// {
-//     if (gameSession.zapPuzzleKeyGained == true && gameObject == kitchenDoor && Input.GetKeyUp(KeyCode.E))
-//     {
-//        loader.LoadKitchen();
-//    }
-//   else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E) && gameObject == unlockedDoor)
-//   {
-//       loader.Teleporters(teleportTo);
-//   }
-// }

@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 public class UIHover : MonoBehaviour
 {
-   private Button currentButton;
-   private Image currentOutline; 
+ [SerializeField] private Button currentButton;
+  [SerializeField] private Image currentOutline; 
 
     private AudioSource audioSource;
     public AudioClip hoverSound;
     public Canvas PauseCanvas;
+    PlayerCamera cam;
     private void Start()
     {
         currentButton = null;

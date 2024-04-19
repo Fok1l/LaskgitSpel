@@ -14,18 +14,18 @@ public class PlayerMove : MonoBehaviour
     /// </summary>
     [Header("Inventory & Flashlight")]
     public bool usingFlashLight = false;
-    //[SerializeField] GameObject unlitFlashLight;
-    //[SerializeField] GameObject litFlashLight;
     [SerializeField] GameObject flashLightObject;
 
     [Header("Quest")]
     [SerializeField] GameObject uiBook;
+    [SerializeField] GameObject tutorialText;
     public bool usingBook = false;
+    SaveTheBladeBool saveTheBladeBool;
     //[SerializeField] GameObject openBook;
     //[SerializeField] GameObject closeBook;
 
     [Header("Inventory")]
-    bool invActive = false;
+    //bool invActive = false;
     public Canvas Inventory_Canvas;
 
 
@@ -47,19 +47,26 @@ public class PlayerMove : MonoBehaviour
     public float storedX;
     public float storedY;
     private PlayerPositionManager positionManager;
+    private AudioSource audioSource;
+    public AudioClip walkSound;
+    public AudioClip FlashLightClick;
 
 
     void Start()
     {
+        saveTheBladeBool = FindObjectOfType<SaveTheBladeBool>();
         thisRigidBody = GetComponent<Rigidbody2D>();
         characterTransform = transform;
         positionManager = GameObject.FindObjectOfType<PlayerPositionManager>();
+        cam = GameObject.FindObjectOfType<PlayerCamera>();
         if (positionManager == null)
         {
             // Create a new PlayerPositionManager object
             GameObject managerObject = new GameObject("PlayerPositionManager");
             positionManager = managerObject.AddComponent<PlayerPositionManager>();
         }
+        audioSource = GetComponent<AudioSource>();
+        audioSource.enabled = false;
 
     }
 
@@ -69,32 +76,41 @@ public class PlayerMove : MonoBehaviour
         faceMouse();
         UseFlashlight();
         AccessQuestBook();
+        //DestroyTheTutorialText();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         MoveCharacter();
-        // if (Input.GetKeyDown(KeyCode.G))
-        //{
-        //     FetchPlayerPosition();
-        // }
-
-        // if (Input.GetKey(KeyCode.H))
-        //{
-        //     Vector3 storedPosition = positionManager.RetrievePosition();
-        //     if (storedPosition != Vector3.zero)
-        //      {
-        //        Debug.Log("1Log" + storedPosition);
-        // Teleport the player to the stored position
-        //        TeleportToPosition(storedPosition);
-        //      Debug.Log("2Log" + storedPosition);
-        // Clear the stored position
-        //    positionManager.StorePosition(Vector3.zero);
-        // }
-        //  }
-        // }
-
-        void faceMouse()
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            if (PlayerCutSceneOveride == false)
+            audioSource.enabled = true;
+        }
+        else
+        {
+            audioSource.enabled = false; 
+        }
+                // if (Input.GetKeyDown(KeyCode.G))
+                //{
+                //     FetchPlayerPosition();
+                // }
+
+                // if (Input.GetKey(KeyCode.H))
+                //{
+                //     Vector3 storedPosition = positionManager.RetrievePosition();
+                //     if (storedPosition != Vector3.zero)
+                //      {
+                //        Debug.Log("1Log" + storedPosition);
+                // Teleport the player to the stored position
+                //        TeleportToPosition(storedPosition);
+                //      Debug.Log("2Log" + storedPosition);
+                // Clear the stored position
+                //    positionManager.StorePosition(Vector3.zero);
+                // }
+                //  }
+                // }
+
+          void faceMouse()
+         {
+            if (cam.Overide == false)
             {
                 Vector3 mousePos = Input.mousePosition;
                 mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -108,16 +124,16 @@ public class PlayerMove : MonoBehaviour
                 transform.up = direction;
             }
             else { }
-        }
+         }
 
         void MoveCharacter()
         {
             {
-                if (PlayerCutSceneOveride == false)
+                if (cam.Overide == false)
                 {
                     thisRigidBody.velocity = moveInput * speed;
                 }
-                else { }
+                else { audioSource.enabled = false; }
             }
         }
 
@@ -162,20 +178,27 @@ public class PlayerMove : MonoBehaviour
         /// </summary>
         void UseFlashlight()
         {
-            if (!usingFlashLight && Input.GetKeyUp(KeyCode.R))
+            if (!usingFlashLight && Input.GetKeyUp(KeyCode.F))
             {
                 //unlitFlashLight.gameObject.SetActive(false);
                 usingFlashLight = true;
                 //litFlashLight.gameObject.SetActive(true);
+                PlayFlashLightClickSFX();
                 flashLightObject.SetActive(true);
             }
-            else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.R))
+            else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.F))
             {
                 //unlitFlashLight.gameObject.SetActive(true);
                 usingFlashLight = false;
                 //litFlashLight.gameObject.SetActive(false);
+                PlayFlashLightClickSFX();
                 flashLightObject.SetActive(false);
             }
+        }
+
+        void PlayFlashLightClickSFX()
+        {
+            audioSource.PlayOneShot(FlashLightClick);
         }
 
         void AccessQuestBook()
@@ -186,6 +209,7 @@ public class PlayerMove : MonoBehaviour
                 usingBook = true;
                 //closeBook.gameObject.SetActive(false);
                 //openBook.gameObject.SetActive(true);
+                saveTheBladeBool.tutorialText = true;
             }
             else if (usingBook == true && Input.GetKeyDown(KeyCode.M))
             {
@@ -196,19 +220,27 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        void AccessInventory()
-        {
-            if (invActive == false && Input.GetKeyDown(KeyCode.I))
-            {
+        //void AccessInventory()
+        //{
+            //if (invActive == false && Input.GetKeyDown(KeyCode.I))
+            //{
                 //invCanvas.SetActive(true);
-                Inventory_Canvas.gameObject.SetActive(true);
-                invActive = true;
-            }
-            else if (invActive == true && Input.GetKeyDown(KeyCode.I))
+            //    Inventory_Canvas.gameObject.SetActive(true);
+            //    invActive = true;
+            //}
+            //else if (invActive == true && Input.GetKeyDown(KeyCode.I))
+            //{
+            //    //invCanvas.SetActive(false);
+            //    Inventory_Canvas.gameObject.SetActive(false);
+            //    invActive = false;
+            //}
+        //}
+
+        void DestroyTheTutorialText()
+        {
+            if(saveTheBladeBool.tutorialText == true)
             {
-                //invCanvas.SetActive(false);
-                Inventory_Canvas.gameObject.SetActive(false);
-                invActive = false;
+                Destroy(tutorialText);
             }
         }
     }
