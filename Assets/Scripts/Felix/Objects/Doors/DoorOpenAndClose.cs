@@ -37,14 +37,11 @@ public class DoorOpenAndClose : MonoBehaviour
     {
         if (AtTheDoor = true && Input.GetKeyDown(KeyCode.E) && closedDoor.activeSelf == true && doorOpen == true)
         {
-            PlayDoorSFX();
-            closedDoor.SetActive(false);
-            opendDoor.SetActive(true);
-        }else if (AtTheDoor = true && Input.GetKeyDown(KeyCode.E) && closedDoor.activeSelf == false && doorOpen == true)
+            CloseOpenDoor();
+        }
+        else if (AtTheDoor = true && Input.GetKeyDown(KeyCode.E) && closedDoor.activeSelf == false && doorOpen == true)
         {
-            PlayDoorSFX();
-            closedDoor.SetActive(true);
-            opendDoor.SetActive(false);
+            CloseOpenDoor();
         }
     }
 
@@ -78,5 +75,12 @@ public class DoorOpenAndClose : MonoBehaviour
     void PlayDoorSFX()
     {
         soundSource.PlayOneShot(doorSound);
+    }
+
+    void CloseOpenDoor()
+    {
+        PlayDoorSFX();
+        closedDoor.SetActive(true);
+        opendDoor.SetActive(false);
     }
 }
