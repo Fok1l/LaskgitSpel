@@ -3220,6 +3220,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
+    m_Center: {x: 0.12099999, y: -0.82505, z: 0}
+    m_Extent: {x: 1.8046999, y: 2.99025, z: 0}
     m_Center: {x: 0.1207, y: -0.8248, z: 0}
     m_Extent: {x: 1.8042, y: 2.9904, z: 0}
     m_Center: {x: 0.12055004, y: -0.82570004, z: 0}
@@ -6572,6 +6574,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
+    m_Center: {x: 1.00235, y: 0.37150002, z: 0}
+    m_Extent: {x: 1.80505, y: 2.9923, z: 0}
     m_Center: {x: 1.00125, y: 0.37160003, z: 0}
     m_Extent: {x: 1.8046501, y: 2.9923, z: 0}
     m_Center: {x: 1.002, y: 0.37125003, z: 0}
@@ -9060,6 +9064,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
+    m_Center: {x: -0.21034998, y: -0.07924998, z: 0}
+    m_Extent: {x: 1.64095, y: 1.17905, z: 0}
     m_Center: {x: -0.21015, y: -0.07959998, z: 0}
     m_Extent: {x: 1.64145, y: 1.1797, z: 0}
     m_Center: {x: -0.21015, y: -0.07929999, z: 0}
@@ -9261,6 +9267,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
+    m_Center: {x: 0.025399983, y: -0.62584996, z: 0}
+    m_Extent: {x: 0.7594, y: 1.36695, z: 0}
     m_Center: {x: 0.02669999, y: -0.62565, z: 0}
     m_Extent: {x: 0.75960004, y: 1.3657501, z: 0}
     m_Center: {x: 0.026449978, y: -0.6249, z: 0}
@@ -9345,6 +9353,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
+    m_Center: {x: -0.039650023, y: -0.70655, z: 0}
+    m_Extent: {x: 1.7486501, y: 2.78295, z: 0}
     m_Center: {x: -0.03975004, y: -0.70755005, z: 0}
     m_Extent: {x: 1.7479501, y: 2.78305, z: 0}
     m_Center: {x: -0.03969997, y: -0.707, z: 0}
@@ -12506,6 +12516,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
+    m_Center: {x: -0.20925002, y: -0.07975, z: 0}
+    m_Extent: {x: 0.70005, y: 0.23995, z: 0}
     m_Center: {x: -0.2089, y: -0.08, z: 0}
     m_Extent: {x: 0.6996, y: 0.2395, z: 0}
     m_Center: {x: -0.20855, y: -0.079749994, z: 0}
