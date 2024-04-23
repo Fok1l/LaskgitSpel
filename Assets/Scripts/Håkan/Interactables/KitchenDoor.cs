@@ -6,6 +6,8 @@ public class KitchenDoor : MonoBehaviour
 {
     //Rigidbody2D childsRigidbody;
     GameSession gameSession;
+    [SerializeField] GameObject lockedDoor;
+    [SerializeField] GameObject unlockedDoor;
 
     private void Start()
     {
@@ -17,8 +19,10 @@ public class KitchenDoor : MonoBehaviour
     {
         if (gameSession.zapPuzzleKeyGained == true)
         {
-            gameObject.transform.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            //gameObject.transform.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             //childsRigidbody.bodyType;
+            lockedDoor.SetActive(false);
+            unlockedDoor.SetActive(true);
         }
     }
 
