@@ -179,17 +179,13 @@ public class PlayerMove : MonoBehaviour
         {
             if (!usingFlashLight && Input.GetKeyUp(KeyCode.F))
             {
-                //unlitFlashLight.gameObject.SetActive(false);
                 usingFlashLight = true;
-                //litFlashLight.gameObject.SetActive(true);
                 PlayFlashLightClickSFX();
                 flashLightObject.SetActive(true);
             }
             else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.F))
             {
-                //unlitFlashLight.gameObject.SetActive(true);
                 usingFlashLight = false;
-                //litFlashLight.gameObject.SetActive(false);
                 PlayFlashLightClickSFX();
                 flashLightObject.SetActive(false);
             }
@@ -206,16 +202,12 @@ public class PlayerMove : MonoBehaviour
             {
                 uiBook.gameObject.SetActive(true);
                 usingBook = true;
-                //closeBook.gameObject.SetActive(false);
-                //openBook.gameObject.SetActive(true);
                 saveTheBladeBool.tutorialText = true;
             }
             else if (usingBook == true && Input.GetKeyDown(KeyCode.M))
             {
                 uiBook.gameObject.SetActive(false);
                 usingBook = false;
-                //openBook.gameObject.SetActive(false);
-                //closeBook.gameObject.SetActive(true);
             }
         }
 
