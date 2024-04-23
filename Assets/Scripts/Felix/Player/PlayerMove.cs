@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     private float horizontal;
     private float vertical;
     [SerializeField] private float speed = 8f;
-    PlayerCamera cam;
+    public CutsceneManager CutsceneManager;
 
     /// <summary>
     /// Inventory Stuff
@@ -41,7 +41,6 @@ public class PlayerMove : MonoBehaviour
     /// Felix Stuff
     /// </summary>
     [Header("Doors & Cutscene")]
-    public bool PlayerCutSceneOveride = false;
     // Animator myAnimator;
     // PlayerAnimations playerAnimations;
     public float storedX;
@@ -58,7 +57,7 @@ public class PlayerMove : MonoBehaviour
         thisRigidBody = GetComponent<Rigidbody2D>();
         characterTransform = transform;
         positionManager = GameObject.FindObjectOfType<PlayerPositionManager>();
-        cam = GameObject.FindObjectOfType<PlayerCamera>();
+        CutsceneManager = GameObject.FindObjectOfType<CutsceneManager>();
         if (positionManager == null)
         {
             // Create a new PlayerPositionManager object
@@ -110,7 +109,7 @@ public class PlayerMove : MonoBehaviour
 
           void faceMouse()
          {
-            if (cam.Overide == false)
+            if (CutsceneManager.Overide == false)
             {
                 Vector3 mousePos = Input.mousePosition;
                 mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -129,7 +128,7 @@ public class PlayerMove : MonoBehaviour
         void MoveCharacter()
         {
             {
-                if (cam.Overide == false)
+                if (CutsceneManager.Overide == false)
                 {
                     thisRigidBody.velocity = moveInput * speed;
                 }
@@ -180,17 +179,13 @@ public class PlayerMove : MonoBehaviour
         {
             if (!usingFlashLight && Input.GetKeyUp(KeyCode.F))
             {
-                //unlitFlashLight.gameObject.SetActive(false);
                 usingFlashLight = true;
-                //litFlashLight.gameObject.SetActive(true);
                 PlayFlashLightClickSFX();
                 flashLightObject.SetActive(true);
             }
             else if (usingFlashLight == true && Input.GetKeyUp(KeyCode.F))
             {
-                //unlitFlashLight.gameObject.SetActive(true);
                 usingFlashLight = false;
-                //litFlashLight.gameObject.SetActive(false);
                 PlayFlashLightClickSFX();
                 flashLightObject.SetActive(false);
             }
@@ -207,16 +202,12 @@ public class PlayerMove : MonoBehaviour
             {
                 uiBook.gameObject.SetActive(true);
                 usingBook = true;
-                //closeBook.gameObject.SetActive(false);
-                //openBook.gameObject.SetActive(true);
                 saveTheBladeBool.tutorialText = true;
             }
             else if (usingBook == true && Input.GetKeyDown(KeyCode.M))
             {
                 uiBook.gameObject.SetActive(false);
                 usingBook = false;
-                //openBook.gameObject.SetActive(false);
-                //closeBook.gameObject.SetActive(true);
             }
         }
 
