@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class KitchenDoor : MonoBehaviour
 {
-    Rigidbody2D childsRigidbody;
+    //Rigidbody2D childsRigidbody;
     GameSession gameSession;
 
     private void Start()
     {
-        childsRigidbody = GetComponentInChildren<Rigidbody2D>();
+        //childsRigidbody = GetComponentInChildren<Rigidbody2D>();
         gameSession = FindObjectOfType<GameSession>();
     }
 
@@ -17,6 +17,7 @@ public class KitchenDoor : MonoBehaviour
     {
         if (gameSession.zapPuzzleKeyGained == true)
         {
+            gameObject.transform.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             //childsRigidbody.bodyType;
         }
     }
