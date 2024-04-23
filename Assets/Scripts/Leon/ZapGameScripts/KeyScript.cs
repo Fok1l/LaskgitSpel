@@ -8,13 +8,16 @@ public class KeyScript : MonoBehaviour
     [SerializeField] BoxCollider2D myBoxCollider;
     [SerializeField] Rigidbody2D myRigidbody;
     [SerializeField] float deathCooldown;
+    [SerializeField] float winCooldown;
     [SerializeField] float speed;
 
+    Canvas winCanvas;
     SceneLoader sceneLoader;
     GameSession gameSession;
 
     public bool isAlive = true;
-
+     
+    public Canvas InvCanvas;
     public List<GameObject> blixtar;
 
     private float moveVertical;
@@ -28,7 +31,7 @@ public class KeyScript : MonoBehaviour
         gameSession = FindObjectOfType<GameSession>();
     }
 
-    void Update()
+    private void Update()
     {
         if (isAlive == true)
         {
@@ -38,10 +41,13 @@ public class KeyScript : MonoBehaviour
 
         if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Resistance"))) // To win and load next Scene
         {
-            hasCompletedLevel = true;
-
-            gameSession.zapPuzzleKeyGained = true;
             sceneLoader.LoadNextScene();
+        }
+
+        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Win")))
+        {
+            StartCoroutine(WinRoutine());
+            FreezeMovement();
         }
     }
 
@@ -51,10 +57,19 @@ public class KeyScript : MonoBehaviour
         {
             isAlive = false;
 
-            DeathMovement();
+            FreezeMovement();
             randomSpriteTrigger();
             StartCoroutine(DeathRoutine());
         }
+    }
+
+    IEnumerator WinRoutine()
+    {
+        InvCanvas.enabled = true;
+        gameSession.zapPuzzleKeyGained = true;
+        hasCompletedLevel = true;
+
+        yield return new WaitForSeconds(deathCooldown);
     }
 
     IEnumerator DeathRoutine()
@@ -79,7 +94,7 @@ public class KeyScript : MonoBehaviour
         myRigidbody.velocity = new Vector2(moveHorizontal * speed, myRigidbody.velocity.x);
     }
 
-    public void DeathMovement()
+    public void FreezeMovement()
     {
         moveVertical = Input.GetAxis("Vertical");
         myRigidbody.velocity = new Vector2(0, 0); // To fix freeze movement when dead
