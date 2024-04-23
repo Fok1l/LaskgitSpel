@@ -9,7 +9,7 @@ public class CollectiblePopUp : MonoBehaviour
 
     private void Update()
     {
-        if (SquareCollected = true)
+        if (SquareCollected == true)
         {
 
         }
