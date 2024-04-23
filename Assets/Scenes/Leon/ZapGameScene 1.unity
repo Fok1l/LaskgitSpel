@@ -731,6 +731,7 @@ MonoBehaviour:
   zapPuzzleKeyGained: 0
   tidningGained: 1
   PauseCanvas: {fileID: 0}
+  spawnTheBookPuzzleJar: 0
 --- !u!4 &135425053
 Transform:
   m_ObjectHideFlags: 0
@@ -4540,8 +4541,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.08275, y: -2.0196, z: 0}
-    m_Extent: {x: 7.26495, y: 4.849, z: 0}
+    m_Center: {x: 2.0827003, y: -2.0195003, z: 0}
+    m_Extent: {x: 7.2652, y: 4.8486, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6852,8 +6853,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -5.97625, y: 3.0899, z: 0}
-    m_Extent: {x: 8.02525, y: 5.0752, z: 0}
+    m_Center: {x: -5.9764, y: 3.09005, z: 0}
+    m_Extent: {x: 8.0256, y: 5.07555, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8030,6 +8031,63 @@ MonoBehaviour:
   - {fileID: 2126646181}
   - {fileID: 354231415}
   - {fileID: 1337420556}
+--- !u!1001 &1571265088
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1003943084086316709, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_Name
+      value: CutsceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.610037
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.412486
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.154505
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761593921959477614, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab8429c9baba3a34a9cba95abdda41a0, type: 3}
 --- !u!1 &1586911719
 GameObject:
   m_ObjectHideFlags: 0
@@ -10051,3 +10109,4 @@ SceneRoots:
   - {fileID: 1722214195}
   - {fileID: 1223273675}
   - {fileID: 1364324623}
+  - {fileID: 1571265088}

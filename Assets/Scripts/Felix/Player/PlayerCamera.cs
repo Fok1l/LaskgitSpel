@@ -18,7 +18,7 @@ public class PlayerCamera : MonoBehaviour
     private void Start()
     {
        mainCam = GetComponent<Camera>();
-       CutsceneManager = GameObject.FindObjectOfType<CutsceneManager>();
+        CutsceneManager = GameObject.FindObjectOfType<CutsceneManager>();
     }
 
     void FixedUpdate()
