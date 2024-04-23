@@ -42,7 +42,7 @@ public class Bookshelf : MonoBehaviour
             spawnAJar = true;
         }
 
-        if (BookStay == true && EPromptCanvas.enabled == true && Input.GetKey(KeyCode.Escape))
+        if (BookStay == true && InvCanvas.enabled == true && Input.GetKey(KeyCode.Escape))
         {
             CloseMenuButStay();
         }
