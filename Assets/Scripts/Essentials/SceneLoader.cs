@@ -102,6 +102,11 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void LoadEndingScene()
     {
         SceneManager.LoadScene(8);
