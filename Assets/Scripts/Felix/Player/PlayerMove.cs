@@ -198,13 +198,13 @@ public class PlayerMove : MonoBehaviour
 
         void AccessQuestBook()
         {
-            if (!usingBook && Input.GetKeyDown(KeyCode.M))
+            if (!usingBook && Input.GetKeyDown(KeyCode.T))
             {
                 uiBook.gameObject.SetActive(true);
                 usingBook = true;
                 saveTheBladeBool.tutorialText = true;
             }
-            else if (usingBook == true && Input.GetKeyDown(KeyCode.M))
+            else if (usingBook == true && Input.GetKeyDown(KeyCode.T))
             {
                 uiBook.gameObject.SetActive(false);
                 usingBook = false;
