@@ -2157,7 +2157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.61960787}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.18431373}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4169,8 +4169,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12125003, y: -0.8249999, z: 0}
-    m_Extent: {x: 1.80485, y: 2.9906, z: 0}
+    m_Center: {x: 0.12115002, y: -0.82515, z: 0}
+    m_Extent: {x: 1.80485, y: 2.98985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8325,8 +8325,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.0018499, y: 0.3706, z: 0}
-    m_Extent: {x: 1.80565, y: 2.9917, z: 0}
+    m_Center: {x: 1.0011001, y: 0.37115002, z: 0}
+    m_Extent: {x: 1.8048999, y: 2.99145, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -13114,8 +13114,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.20929998, y: -0.0794, z: 0}
-    m_Extent: {x: 1.6410999, y: 1.1798, z: 0}
+    m_Center: {x: -0.21020001, y: -0.080249965, z: 0}
+    m_Extent: {x: 1.6396, y: 1.1795499, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -13773,8 +13773,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.025849998, y: -0.62584996, z: 0}
-    m_Extent: {x: 0.75925, y: 1.36685, z: 0}
+    m_Center: {x: 0.026649982, y: -0.62595, z: 0}
+    m_Extent: {x: 0.75985, y: 1.36605, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -13855,8 +13855,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.039300025, y: -0.70715, z: 0}
-    m_Extent: {x: 1.7476001, y: 2.78265, z: 0}
+    m_Center: {x: -0.039200008, y: -0.70659995, z: 0}
+    m_Extent: {x: 1.7472999, y: 2.7834, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -17838,8 +17838,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.20915002, y: -0.079799995, z: 0}
-    m_Extent: {x: 0.69975, y: 0.2404, z: 0}
+    m_Center: {x: -0.20889999, y: -0.080299996, z: 0}
+    m_Extent: {x: 0.6998, y: 0.2399, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -18078,7 +18078,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1500, y: 300}
+  m_SizeDelta: {x: 1500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802262660
 MonoBehaviour:
@@ -18110,7 +18110,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.6289307, g: 0.6289307, b: 0.6289307, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
