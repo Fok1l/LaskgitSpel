@@ -7,20 +7,24 @@ public class SceneLoader : MonoBehaviour
 {
 
     [SerializeField] GameSession gameSession;
-    [SerializeField] GameObject player;
+    [SerializeField] public GameObject player;
     public Animator animator;
     private int leveltoload;
     [SerializeField]int knives;
+    [SerializeField] int playerCount;
     public Canvas transitionCanvas;
 
     GameObject soundObject; // Needed for UI click sounds
     AudioSource soundSource; // Needed for UI click sounds
     SaveTheBladeBool saveTheBladeBool;
+    public bool dontActivateTimer;
+
     private void Start()
     {
-
+        playerCount = GameObject.FindGameObjectsWithTag("Player").Length;
         gameSession = FindObjectOfType<GameSession>();
         Debug.Log("Sceneloader Found GameSesh");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
    
@@ -38,11 +42,43 @@ public class SceneLoader : MonoBehaviour
 
     private void Update()
     {
-        // WORK IN PROGRESS!
-      //  if (gameSession.zapPuzzleKeyGained == true && saveTheBladeBool.theBladeTestIsCompleted == false)
-      //  {
-         //   player.transform.position = new Vector3(16.74797f, 2.618468f, 0f);
-       // }
+        //if (playerCount > 0 && gameSession.zapPuzzleKeyGained == true)
+        //{
+        //    if (saveTheBladeBool == false)
+        //    {
+        //        StartCoroutine(ZapPuzzleSpawn());
+        //    }
+        //}
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentSceneIndex == 3)
+        {
+            StartCoroutine(ZapPuzzleSpawn());
+        }
+    }
+
+    public IEnumerator ZapPuzzleSpawn()
+    {
+        if (dontActivateTimer == true)
+        {
+            yield break;
+        }
+        else
+        {
+            dontActivateTimer = false;
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            yield return new WaitForSeconds(0.1f);
+
+            if (currentSceneIndex == 3)
+            {
+                dontActivateTimer = true;
+                //W.I.P Håkan
+                //player.transform.position = gameSession.playerSpawnPosition;
+            }
+            else
+            {
+                StartCoroutine(ZapPuzzleSpawn());
+            }
+        }
     }
 
     public void Teleporters(int teleportToLocation)
