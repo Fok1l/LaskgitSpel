@@ -26,7 +26,7 @@ public class BookshelfPuzzle : MonoBehaviour
         }
     }
 
-    void AddShelfItem()
+    void AddShelfItem() // Makes sure that no more than 1 jar will spawn and that you win
     {
         gameObject.SetActive(true);
         numberOfItems++;
@@ -38,11 +38,6 @@ public class BookshelfPuzzle : MonoBehaviour
         {
             numberOfItems--;
         }
-    }
-
-    void RemoveShelfItem()
-    {
-        numberOfItems--;
     }
 
     void RemoveComponent(Transform child)
