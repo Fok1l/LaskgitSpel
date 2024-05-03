@@ -9,22 +9,16 @@ public class Dialouge : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     private int index;
-
+    CutsceneManager manager;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-            }
-        }
+            SkipThroughDialouge(); 
+    }
+
+    private void Start()
+    {
+        manager = FindObjectOfType<CutsceneManager>();
     }
     void StartDialouge()
     {
@@ -52,6 +46,22 @@ public class Dialouge : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    void SkipThroughDialouge()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (textComponent.text == lines[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
         }
     }
 }
