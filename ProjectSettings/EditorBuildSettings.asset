@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Leon/ZapGameScene 2.unity
     guid: fcc6d85101c90e74c9acb5442be037bd
   - enabled: 1
-    path: Assets/Scenes/Demo.unity
+    path: Assets/Scenes/TestScene/Demo.unity
     guid: ade77d00cad5cc343ae90bba66c49c39
   - enabled: 1
     path: "Assets/Scenes/H\xE5kan/BladePuzzleObjects.unity"
