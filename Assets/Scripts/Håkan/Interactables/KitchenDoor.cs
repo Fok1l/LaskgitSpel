@@ -8,6 +8,7 @@ public class KitchenDoor : MonoBehaviour
     GameSession gameSession;
     [SerializeField] GameObject lockedDoor;
     [SerializeField] GameObject unlockedDoor;
+    [SerializeField] GameObject wontBudgeCanvi;
 
     private void Start()
     {
@@ -19,12 +20,20 @@ public class KitchenDoor : MonoBehaviour
     {
         if (gameSession.zapPuzzleKeyGained == true)
         {
-            //gameObject.transform.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            //childsRigidbody.bodyType;
-            lockedDoor.SetActive(false);
-            unlockedDoor.SetActive(true);
+            gameObject.transform.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D enterDoor)
+    {
+        if (gameSession.zapPuzzleKeyGained == false)
+        {
+            wontBudgeCanvi.SetActive(true);
+        }
+    }
 
+    private void OnTriggerExit2D(Collider2D exitDoor)
+    {
+        wontBudgeCanvi.SetActive(false);
+    }
 }

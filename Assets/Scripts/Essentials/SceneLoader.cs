@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
 
     [SerializeField] GameSession gameSession;
+    [SerializeField] GameObject player;
     public Animator animator;
     private int leveltoload;
     [SerializeField]int knives;
@@ -14,6 +15,7 @@ public class SceneLoader : MonoBehaviour
 
     GameObject soundObject; // Needed for UI click sounds
     AudioSource soundSource; // Needed for UI click sounds
+    SaveTheBladeBool saveTheBladeBool;
     private void Start()
     {
 
@@ -32,6 +34,15 @@ public class SceneLoader : MonoBehaviour
             DontDestroyOnLoad(soundObject);
             soundSource = soundObject.AddComponent<AudioSource>(); // Unimplemented
         }
+    }
+
+    private void Update()
+    {
+        // WORK IN PROGRESS!
+      //  if (gameSession.zapPuzzleKeyGained == true && saveTheBladeBool.theBladeTestIsCompleted == false)
+      //  {
+         //   player.transform.position = new Vector3(16.74797f, 2.618468f, 0f);
+       // }
     }
 
     public void Teleporters(int teleportToLocation)
@@ -98,13 +109,18 @@ public class SceneLoader : MonoBehaviour
         knives++;
         if (knives == 5)
         {
-            SceneManager.LoadScene(11);
+            SceneManager.LoadScene(3);
         }
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public void LoadEndingScene()
     {
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(5);
     }
 
 
