@@ -39,10 +39,10 @@ public class SceneLoader : MonoBehaviour
     private void Update()
     {
         // WORK IN PROGRESS!
-        if (gameSession.zapPuzzleKeyGained == true && saveTheBladeBool.theBladeTestIsCompleted == false)
-        {
-            player.transform.position = new Vector3(16.74797f, 2.618468f, 0f);
-        }
+      //  if (gameSession.zapPuzzleKeyGained == true && saveTheBladeBool.theBladeTestIsCompleted == false)
+      //  {
+         //   player.transform.position = new Vector3(16.74797f, 2.618468f, 0f);
+       // }
     }
 
     public void Teleporters(int teleportToLocation)
