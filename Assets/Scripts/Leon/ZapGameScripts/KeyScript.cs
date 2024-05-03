@@ -69,6 +69,7 @@ public class KeyScript : MonoBehaviour
         gameSession.zapPuzzleKeyGained = true;
         hasCompletedLevel = true;
 
+        StartCoroutine(sceneLoader.ZapPuzzleSpawn());
         yield return new WaitForSeconds(deathCooldown);
     }
 

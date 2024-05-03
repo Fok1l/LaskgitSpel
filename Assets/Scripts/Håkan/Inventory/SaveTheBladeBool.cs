@@ -8,6 +8,7 @@ public class SaveTheBladeBool : MonoBehaviour
     
     public bool theBladeTestIsCompleted = false;
     public bool tutorialText = false;
+    public bool stopFirstTimeSpawn = false;
 
     private void Awake()
     {
