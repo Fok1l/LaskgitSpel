@@ -14,11 +14,11 @@ public class KeyScript : MonoBehaviour
     Canvas winCanvas;
     SceneLoader sceneLoader;
     GameSession gameSession;
-
-    public bool isAlive = true;
      
     public Canvas InvCanvas;
     public List<GameObject> blixtar;
+
+    public bool isAlive = true;
 
     private float moveVertical;
     private float moveHorizontal;
@@ -39,12 +39,12 @@ public class KeyScript : MonoBehaviour
             MoveHorizontal();
         }
 
-        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Resistance"))) // To win and load next Scene
+        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Resistance"))) // To get checkpoint and load next Scene
         {
             sceneLoader.LoadNextScene();
         }
 
-        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Win")))
+        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Win"))) // To win + movement while in win screen
         {
             StartCoroutine(WinRoutine());
             FreezeMovement();
