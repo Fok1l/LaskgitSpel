@@ -39,15 +39,6 @@ public class GameSession : MonoBehaviour
            loader = FindObjectOfType<SceneLoader>();
         upperBladeTest = FindObjectOfType<UpperBladeTest>();
         saveTheBladeBool = GetComponent<SaveTheBladeBool>();
-
-        //if (pauseMenuCanvas == null)
-       // {
-        //    Debug.LogError("PauseMenu_Canvas not found!");
-     //   }
-      //  if (pauseMenuCanvas == null)
-       // {
-       //     Debug.LogError("PauseMenu_Canvas not found!");
-       // }
     }
 
     public void ResetGame()
@@ -55,13 +46,12 @@ public class GameSession : MonoBehaviour
         Destroy(gameObject);
     }
 
-   // private void Update()
-  //  {
-  //      if (Input.GetKeyDown(KeyCode.Escape))
-    //    {
-    //        PauseOveride = true;
-     //       pauseMenuCanvas.enabled = true;
-    //        Time.timeScale = 0f;
-     //   }
-    //}
+    public void HoldPlayerSpawn()
+    {
+        StartCoroutine(loader.ZapPuzzleSpawn());
+        if (saveTheBladeBool.stopFirstTimeSpawn == true)
+        {
+            saveTheBladeBool.stopFirstTimeSpawn = false;
+        }
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSpawner : MonoBehaviour
 {
     SaveTheBladeBool saveTheBladeBool;
+    GameSession gameSession;
 
     [Header("spawn positions")]
     public Vector2 playerSpawnPosition;
@@ -17,6 +18,7 @@ public class PlayerSpawner : MonoBehaviour
     void Start()
     {
         saveTheBladeBool = FindObjectOfType<SaveTheBladeBool>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
     // Update is called once per frame

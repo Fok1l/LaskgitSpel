@@ -65,7 +65,6 @@ public class SceneLoader : MonoBehaviour
             if (currentSceneIndex == 3 && playerSpawner.spawnAtZapPuzzle == true)
             {
                 playerSpawner.dontActivateSpawnTimer = true;
-                playerSpawner.playerSpawnPosition = new Vector3(16.90145f, 2.37239f, 0f);
                 player.transform.position = playerSpawner.playerSpawnPosition;
             }
             else
@@ -139,30 +138,7 @@ public class SceneLoader : MonoBehaviour
         knives++;
         if (knives == 5)
         {
-            StartCoroutine(SpawnAtBladePuzzle());
             SceneManager.LoadScene(3);
-        }
-    }
-
-    public IEnumerator SpawnAtBladePuzzle()
-    {
-        if(playerSpawner.dontSpawnBladePuzzle == true)
-        {
-            yield break;
-        }
-        else if (playerSpawner.spawnBladePuzzle == true)
-        {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            yield return new WaitForSeconds(0.1f);
-            if (currentSceneIndex == 3 && saveTheBladeBool.theBladeTestIsCompleted == true)
-            {
-                playerSpawner.playerSpawnPosition = new Vector3(-1.320004f, 10.15893f, 0f);
-                player.transform.position = playerSpawner.playerSpawnPosition;
-            }
-            else
-            {
-                StartCoroutine(SpawnAtBladePuzzle());
-            }
         }
     }
 

@@ -72,6 +72,7 @@ public class KeyScript : MonoBehaviour
         playerSpawner.spawnAtZapPuzzle = true;
         hasCompletedLevel = true;
 
+        playerSpawner.playerSpawnPosition = new Vector3(16.90145f, 2.37239f, 0f);
         StartCoroutine(sceneLoader.ZapPuzzleSpawn());
         yield return new WaitForSeconds(deathCooldown);
     }

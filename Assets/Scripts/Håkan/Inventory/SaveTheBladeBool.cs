@@ -11,7 +11,14 @@ public class SaveTheBladeBool : MonoBehaviour
     public bool stopFirstTimeSpawn = false;
 
     SceneLoader loader;
+    PlayerSpawner spawner;
+    GameSession gameSession;
 
+    private void Start()
+    {
+        spawner = FindObjectOfType<PlayerSpawner>();
+        gameSession = FindObjectOfType<GameSession>();
+    }
     private void Awake()
     {
         // start of new code
@@ -28,9 +35,13 @@ public class SaveTheBladeBool : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("Checking complesion");
         if(theBladeTestIsCompleted == true)
         {
-            StartCoroutine(loader.SpawnAtBladePuzzle());
+            Debug.Log("Completed puzzle");
+            spawner.dontActivateSpawnTimer = false;
+            spawner.playerSpawnPosition = new Vector3(-1.320004f, 10.15893f, 0f);
+            gameSession.HoldPlayerSpawn();
         }
     }
 }
