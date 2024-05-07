@@ -6,7 +6,11 @@ public class UIHover : MonoBehaviour
 {
     [SerializeField] private Button currentButton;
     [SerializeField] private Image currentOutline;
-    [SerializeField] private TextMeshPro currentText;
+
+    [SerializeField] TextMeshProUGUI playButtonText;
+    [SerializeField] TextMeshProUGUI settingsButtonText;
+    [SerializeField] TextMeshProUGUI quitButtonText;
+
 
     private AudioSource audioSource;
     public AudioClip hoverSound;
@@ -14,17 +18,18 @@ public class UIHover : MonoBehaviour
     {
         currentButton = null;
         currentOutline = null;
-        currentText = null;
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
     }
 
-    public void MouseEnter(Button button)
+
+    //Fix this by saying stuff like for example, if the currentButton is startbutton. Then do the text size thing for startButtonText.
+    public void MouseEnter(Button button) 
     {
         currentButton = button;
         currentOutline = button.GetComponentInChildren<Image>();
         currentOutline.enabled = true;
-        currentText = button.GetComponentInChildren<TextMeshPro>();
+
         if (hoverSound != null)
         {
             audioSource.clip = hoverSound;
@@ -38,28 +43,27 @@ public class UIHover : MonoBehaviour
     {
         currentOutline.enabled = false;
         currentOutline = null;
-        currentText = null;
         currentButton = null;
         MakeTextNormal();
     }
 
     void MakeTextBig()
     {
-        if (currentText != null)
+        if (playButtonText != null)
         {
-            Vector3 scale = currentText.transform.localScale;
+            Vector3 scale = playButtonText.transform.localScale;
             scale *= 1.2f;
-            currentText.transform.localScale = scale;
+            playButtonText.transform.localScale = scale;
         }
     }
 
     void MakeTextNormal()
     {
-        if (currentText != null)
+        if (playButtonText != null)
         {
-            Vector3 scale = currentText.transform.localScale;
+            Vector3 scale = playButtonText.transform.localScale;
             scale /= 1.2f;
-            currentText.transform.localScale = scale;
+            playButtonText.transform.localScale = scale;
         }
     }
 }
