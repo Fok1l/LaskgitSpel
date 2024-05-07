@@ -10,6 +10,8 @@ public class SaveTheBladeBool : MonoBehaviour
     public bool tutorialText = false;
     public bool stopFirstTimeSpawn = false;
 
+    SceneLoader loader;
+
     private void Awake()
     {
         // start of new code
@@ -22,5 +24,13 @@ public class SaveTheBladeBool : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        if(theBladeTestIsCompleted == true)
+        {
+            StartCoroutine(loader.SpawnAtBladePuzzle());
+        }
     }
 }

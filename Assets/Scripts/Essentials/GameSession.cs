@@ -15,12 +15,8 @@ public class GameSession : MonoBehaviour
     bool PauseOveride;
 
 
-    [Header("spawn positions")]
-    public Vector2 playerSpawnPosition;
-
     private void Awake()
     {
-        FirstSpawn();
         int gameSessionCount = FindObjectsOfType<GameSession>().Length;
         Debug.Log("gameSession found it self");
         //pauseMenuCanvas.enabled = false;
@@ -68,14 +64,4 @@ public class GameSession : MonoBehaviour
     //        Time.timeScale = 0f;
      //   }
     //}
-
-    //W.I.P Håkan
-    void FirstSpawn()
-    {
-        if (saveTheBladeBool.stopFirstTimeSpawn == false)
-        {
-            playerSpawnPosition = new Vector2(7.902787f, -8.278445f);
-            saveTheBladeBool.stopFirstTimeSpawn = true;
-        }
-    }
 }
