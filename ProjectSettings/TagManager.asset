@@ -8,6 +8,7 @@ TagManager:
   - Hazard
   - Key
   - EnteringTrigger
+  - Win
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Hazard
   - Key
   - Resistance
-  - 
+  - Win
   - 
   - 
   - 
@@ -56,4 +57,7 @@ TagManager:
     locked: 0
   - name: Resistance
     uniqueID: 2845992341
+    locked: 0
+  - name: Win
+    uniqueID: 284405389
     locked: 0

@@ -23,12 +23,7 @@ public class Bookshelf : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (BookStay == true && Input.GetKey(KeyCode.E)) 
-        {
-            InvCanvas.enabled = true;
-            EPromptCanvas.enabled = false;
-            spawnAJar = true;
-        }
+        ExitOrEnterByKey();
     }
 
     public void CloseMenuButStay()
@@ -36,6 +31,21 @@ public class Bookshelf : MonoBehaviour
         InvCanvas.enabled = false;
         EPromptCanvas.enabled = true;
         spawnAJar = false;
+    }
+
+    public void ExitOrEnterByKey()
+    {
+        if (BookStay == true && Input.GetKey(KeyCode.E))
+        {
+            InvCanvas.enabled = true;
+            EPromptCanvas.enabled = false;
+            spawnAJar = true;
+        }
+
+        if (BookStay == true && InvCanvas.enabled == true && Input.GetKey(KeyCode.Escape))
+        {
+            CloseMenuButStay();
+        }
     }
 
   

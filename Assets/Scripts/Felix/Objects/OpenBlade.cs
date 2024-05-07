@@ -30,6 +30,8 @@ public class OpenBlade : MonoBehaviour
     {
         if (AtBladeTable == true && Input.GetKey(KeyCode.E))
         {
+            gameSession.playerSpawnPosition = loader.player.transform.position;
+            loader.dontActivateTimer = false;
             loader.Teleporters(teleportTo);
         }
     }

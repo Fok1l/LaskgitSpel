@@ -4,86 +4,36 @@ using UnityEngine;
 
 public class KitchenDoor : MonoBehaviour
 {
-    [SerializeField] int teleportTo;
-    [SerializeField] SceneLoader loader;
-    public Canvas EPromptCanvas;
-    bool AtTheDoor = false;
-    [SerializeField] AudioClip doorSound;
-    [SerializeField] AudioClip doorLockedSound;
-
-
+    //Rigidbody2D childsRigidbody;
     GameSession gameSession;
-    PlayerMove player;
-    GameObject soundObject; // Reference to the persistent sound object
-    AudioSource soundSource; // Reference to the AudioSource component
+    [SerializeField] GameObject lockedDoor;
+    [SerializeField] GameObject unlockedDoor;
+    [SerializeField] GameObject wontBudgeCanvi;
 
-    void Awake()
+    private void Start()
     {
-        // Create the persistent sound object if it doesn't exist
-        if (soundObject == null)
-        {
-            soundObject = new GameObject("DoorSoundObject");
-            DontDestroyOnLoad(soundObject);
-            soundSource = soundObject.AddComponent<AudioSource>();
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D EnteringTrigger)
-    {
-        if (EnteringTrigger.tag == "Player")
-        {
-            AtTheDoor = true;
-            EPromptCanvas.enabled = true;
-        }
-    }
-
-    public void Start()
-    {
-        loader = FindObjectOfType<SceneLoader>();
+        //childsRigidbody = GetComponentInChildren<Rigidbody2D>();
         gameSession = FindObjectOfType<GameSession>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (AtTheDoor && Input.GetKey(KeyCode.E) && gameSession.zapPuzzleKeyGained == true)
+        if (gameSession.zapPuzzleKeyGained == true)
         {
-            PlayDoorSFX();
-            loader.Teleporters(teleportTo);
-        }
-        else if (AtTheDoor && Input.GetKeyDown(KeyCode.E))
-        {
-            PlayDoorLockedSFX();
-        }
-    }
-    private void OnTriggerExit2D(Collider2D ExitTrigger)
-    {
-        if (ExitTrigger.tag == "Player")
-        {
-            Debug.Log("Player Leave Door");
-            AtTheDoor = false;
-            EPromptCanvas.enabled = false;
+            gameObject.transform.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
-    void PlayDoorSFX()
+    private void OnTriggerEnter2D(Collider2D enterDoor)
     {
-        soundSource.PlayOneShot(doorSound);
+        if (gameSession.zapPuzzleKeyGained == false)
+        {
+            wontBudgeCanvi.SetActive(true);
+        }
     }
 
-    void PlayDoorLockedSFX()
+    private void OnTriggerExit2D(Collider2D exitDoor)
     {
-        soundSource.PlayOneShot(doorLockedSound);
+        wontBudgeCanvi.SetActive(false);
     }
-    //private void OnTriggerStay2D(Collider2D Ent
-    //private void OnTriggerStay2D(Collider2D EnteringTrigger)
-    // {
-    //     if (gameSession.zapPuzzleKeyGained == true && gameObject == kitchenDoor && Input.GetKeyUp(KeyCode.E))
-    //     {
-    //        loader.LoadKitchen();
-    //    }
-    //   else if (EnteringTrigger.tag == "Player" && Input.GetKeyUp(KeyCode.E) && gameObject == unlockedDoor)
-    //   {
-    //       loader.Teleporters(teleportTo);
-    //   }
-    // }
 }
