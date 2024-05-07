@@ -15,12 +15,8 @@ public class GameSession : MonoBehaviour
     bool PauseOveride;
 
 
-    [Header("spawn positions")]
-    public Vector2 playerSpawnPosition;
-
     private void Awake()
     {
-        FirstSpawn();
         int gameSessionCount = FindObjectsOfType<GameSession>().Length;
         Debug.Log("gameSession found it self");
         //pauseMenuCanvas.enabled = false;
@@ -43,15 +39,6 @@ public class GameSession : MonoBehaviour
            loader = FindObjectOfType<SceneLoader>();
         upperBladeTest = FindObjectOfType<UpperBladeTest>();
         saveTheBladeBool = GetComponent<SaveTheBladeBool>();
-
-        //if (pauseMenuCanvas == null)
-       // {
-        //    Debug.LogError("PauseMenu_Canvas not found!");
-     //   }
-      //  if (pauseMenuCanvas == null)
-       // {
-       //     Debug.LogError("PauseMenu_Canvas not found!");
-       // }
     }
 
     public void ResetGame()
@@ -59,23 +46,12 @@ public class GameSession : MonoBehaviour
         Destroy(gameObject);
     }
 
-   // private void Update()
-  //  {
-  //      if (Input.GetKeyDown(KeyCode.Escape))
-    //    {
-    //        PauseOveride = true;
-     //       pauseMenuCanvas.enabled = true;
-    //        Time.timeScale = 0f;
-     //   }
-    //}
-
-    //W.I.P Håkan
-    void FirstSpawn()
+    public void HoldPlayerSpawn()
     {
-        if (saveTheBladeBool.stopFirstTimeSpawn == false)
+        StartCoroutine(loader.ZapPuzzleSpawn());
+        if (saveTheBladeBool.stopFirstTimeSpawn == true)
         {
-            playerSpawnPosition = new Vector2(7.902787f, -8.278445f);
-            saveTheBladeBool.stopFirstTimeSpawn = true;
+            saveTheBladeBool.stopFirstTimeSpawn = false;
         }
     }
 }

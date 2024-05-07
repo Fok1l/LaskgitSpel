@@ -30,7 +30,6 @@ public class OpenKey : MonoBehaviour
     {
         if (AtKeyTable == true && Input.GetKey(KeyCode.E))
         {
-            gameSession.playerSpawnPosition = loader.player.transform.position;
             loader.dontActivateTimer = false;
             loader.Teleporters(teleportTo);
         }

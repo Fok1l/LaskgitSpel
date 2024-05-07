@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-
+    PlayerSpawner playerSpawner;
     [SerializeField] GameSession gameSession;
     [SerializeField] public GameObject player;
     public Animator animator;
@@ -13,14 +13,15 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]int knives;
     [SerializeField] int playerCount;
     public Canvas transitionCanvas;
+    public bool dontActivateTimer;
 
     GameObject soundObject; // Needed for UI click sounds
     AudioSource soundSource; // Needed for UI click sounds
     SaveTheBladeBool saveTheBladeBool;
-    public bool dontActivateTimer;
 
     private void Start()
     {
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
         playerCount = GameObject.FindGameObjectsWithTag("Player").Length;
         gameSession = FindObjectOfType<GameSession>();
         Debug.Log("Sceneloader Found GameSesh");
@@ -42,15 +43,8 @@ public class SceneLoader : MonoBehaviour
 
     private void Update()
     {
-        //if (playerCount > 0 && gameSession.zapPuzzleKeyGained == true)
-        //{
-        //    if (saveTheBladeBool == false)
-        //    {
-        //        StartCoroutine(ZapPuzzleSpawn());
-        //    }
-        //}
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex == 3)
+        if (currentSceneIndex == 3 && playerSpawner.dontActivateSpawnTimer == false)
         {
             StartCoroutine(ZapPuzzleSpawn());
         }
@@ -58,21 +52,20 @@ public class SceneLoader : MonoBehaviour
 
     public IEnumerator ZapPuzzleSpawn()
     {
-        if (dontActivateTimer == true)
+        if (playerSpawner.dontActivateSpawnTimer == true)
         {
             yield break;
         }
         else
         {
-            dontActivateTimer = false;
+            playerSpawner.dontActivateSpawnTimer = false;
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             yield return new WaitForSeconds(0.1f);
 
-            if (currentSceneIndex == 3)
+            if (currentSceneIndex == 3 && playerSpawner.spawnAtZapPuzzle == true)
             {
-                dontActivateTimer = true;
-                //W.I.P Håkan
-                //player.transform.position = gameSession.playerSpawnPosition;
+                playerSpawner.dontActivateSpawnTimer = true;
+                player.transform.position = playerSpawner.playerSpawnPosition;
             }
             else
             {
