@@ -1,19 +1,20 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIHover : MonoBehaviour
 {
- [SerializeField] private Button currentButton;
-  [SerializeField] private Image currentOutline; 
+    [SerializeField] private Button currentButton;
+    [SerializeField] private Image currentOutline;
+    [SerializeField] private TextMeshPro currentText;
 
     private AudioSource audioSource;
     public AudioClip hoverSound;
-    public Canvas PauseCanvas;
-    PlayerCamera cam;
     private void Start()
     {
         currentButton = null;
         currentOutline = null;
+        currentText = null;
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
     }
@@ -21,27 +22,44 @@ public class UIHover : MonoBehaviour
     public void MouseEnter(Button button)
     {
         currentButton = button;
-        currentOutline = button.GetComponentInChildren<Image>(); 
-        currentOutline.enabled = true; 
+        currentOutline = button.GetComponentInChildren<Image>();
+        currentOutline.enabled = true;
+        currentText = button.GetComponentInChildren<TextMeshPro>();
         if (hoverSound != null)
         {
-            audioSource.clip = hoverSound; 
-            audioSource.Play(); 
+            audioSource.clip = hoverSound;
+            audioSource.Play();
         }
+        MakeTextBig();
     }
-    
- 
+
+
     public void MouseLeave()
     {
         currentOutline.enabled = false;
-        currentOutline = null; 
-        currentButton = null; 
+        currentOutline = null;
+        currentText = null;
+        currentButton = null;
+        MakeTextNormal();
     }
 
-    public void ResumeGame()
+    void MakeTextBig()
     {
-        PauseCanvas.enabled = false;
-        Time.timeScale = 1.0f;
+        if (currentText != null)
+        {
+            Vector3 scale = currentText.transform.localScale;
+            scale *= 1.2f;
+            currentText.transform.localScale = scale;
+        }
     }
 
+    void MakeTextNormal()
+    {
+        if (currentText != null)
+        {
+            Vector3 scale = currentText.transform.localScale;
+            scale /= 1.2f;
+            currentText.transform.localScale = scale;
+        }
+    }
 }
