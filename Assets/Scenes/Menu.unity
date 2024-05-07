@@ -410,6 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theBladeTestIsCompleted: 0
   tutorialText: 0
+  stopFirstTimeSpawn: 0
 --- !u!4 &678744989
 Transform:
   m_ObjectHideFlags: 0
@@ -1425,7 +1426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TUTORIAL
+  m_text: S
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
   m_sharedMaterial: {fileID: -5131586050574193111, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
