@@ -9,9 +9,11 @@ public class GameSession : MonoBehaviour
     public bool tidningGained = true;
     SceneLoader loader;
     UpperBladeTest upperBladeTest;
+    SaveTheBladeBool saveTheBladeBool;
     public Canvas PauseCanvas;
     [SerializeField] public bool spawnTheBookPuzzleJar = false;
     bool PauseOveride;
+
 
     private void Awake()
     {
@@ -36,15 +38,7 @@ public class GameSession : MonoBehaviour
     {
            loader = FindObjectOfType<SceneLoader>();
         upperBladeTest = FindObjectOfType<UpperBladeTest>();
-
-        //if (pauseMenuCanvas == null)
-       // {
-        //    Debug.LogError("PauseMenu_Canvas not found!");
-     //   }
-      //  if (pauseMenuCanvas == null)
-       // {
-       //     Debug.LogError("PauseMenu_Canvas not found!");
-       // }
+        saveTheBladeBool = GetComponent<SaveTheBladeBool>();
     }
 
     public void ResetGame()
@@ -52,13 +46,12 @@ public class GameSession : MonoBehaviour
         Destroy(gameObject);
     }
 
-   // private void Update()
-  //  {
-  //      if (Input.GetKeyDown(KeyCode.Escape))
-    //    {
-    //        PauseOveride = true;
-     //       pauseMenuCanvas.enabled = true;
-    //        Time.timeScale = 0f;
-     //   }
-    //}
+    public void HoldPlayerSpawn()
+    {
+        StartCoroutine(loader.ZapPuzzleSpawn());
+        if (saveTheBladeBool.stopFirstTimeSpawn == true)
+        {
+            saveTheBladeBool.stopFirstTimeSpawn = false;
+        }
+    }
 }

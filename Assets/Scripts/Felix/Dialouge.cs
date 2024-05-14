@@ -9,22 +9,30 @@ public class Dialouge : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     private int index;
-
+    CutsceneManager manager;
+    AudioSource soundSource;
+    GameObject soundObject;
+    [SerializeField] AudioClip TextSound;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+            SkipThroughDialouge(); 
+    }
+
+    void Awake()
+    {
+        // Create the persistent sound object if it doesn't exist
+        if (soundObject == null)
         {
-            if (textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-            }
+            soundObject = new GameObject("DialougeSoundObject");
+            DontDestroyOnLoad(soundObject);
+            soundSource = soundObject.AddComponent<AudioSource>();
         }
+    }
+
+    private void Start()
+    {
+        manager = FindObjectOfType<CutsceneManager>();
     }
     void StartDialouge()
     {
@@ -38,6 +46,7 @@ public class Dialouge : MonoBehaviour
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
+            TypeSound();
         }
     }
 
@@ -53,5 +62,26 @@ public class Dialouge : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    void SkipThroughDialouge()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (textComponent.text == lines[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
+        }
+    }
+
+    void TypeSound()
+    {
+        soundSource.PlayOneShot(TextSound);
     }
 }

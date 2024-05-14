@@ -14,11 +14,12 @@ public class KeyScript : MonoBehaviour
     Canvas winCanvas;
     SceneLoader sceneLoader;
     GameSession gameSession;
+    PlayerSpawner playerSpawner;
+
+    public bool isAlive = true;
      
     public Canvas InvCanvas;
     public List<GameObject> blixtar;
-
-    public bool isAlive = true;
 
     private float moveVertical;
     private float moveHorizontal;
@@ -27,6 +28,7 @@ public class KeyScript : MonoBehaviour
 
     private void Start()
     {
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
         sceneLoader = FindObjectOfType<SceneLoader>();
         gameSession = FindObjectOfType<GameSession>();
     }
@@ -39,12 +41,12 @@ public class KeyScript : MonoBehaviour
             MoveHorizontal();
         }
 
-        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Resistance"))) // To get checkpoint and load next Scene
+        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Resistance"))) // To win and load next Scene
         {
             sceneLoader.LoadNextScene();
         }
 
-        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Win"))) // To win + movement while in win screen
+        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Win")))
         {
             StartCoroutine(WinRoutine());
             FreezeMovement();
@@ -67,8 +69,11 @@ public class KeyScript : MonoBehaviour
     {
         InvCanvas.enabled = true;
         gameSession.zapPuzzleKeyGained = true;
+        playerSpawner.spawnAtZapPuzzle = true;
         hasCompletedLevel = true;
 
+        playerSpawner.playerSpawnPosition = new Vector3(16.90145f, 2.37239f, 0f);
+        StartCoroutine(sceneLoader.ZapPuzzleSpawn());
         yield return new WaitForSeconds(deathCooldown);
     }
 

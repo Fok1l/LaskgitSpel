@@ -5,22 +5,27 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-
+    PlayerSpawner playerSpawner;
     [SerializeField] GameSession gameSession;
-    [SerializeField] GameObject player;
+    [SerializeField] public GameObject player;
     public Animator animator;
     private int leveltoload;
     [SerializeField]int knives;
+    [SerializeField] int playerCount;
     public Canvas transitionCanvas;
+    public bool dontActivateTimer;
 
     GameObject soundObject; // Needed for UI click sounds
     AudioSource soundSource; // Needed for UI click sounds
     SaveTheBladeBool saveTheBladeBool;
+
     private void Start()
     {
-
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
+        playerCount = GameObject.FindGameObjectsWithTag("Player").Length;
         gameSession = FindObjectOfType<GameSession>();
         Debug.Log("Sceneloader Found GameSesh");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
    
@@ -38,11 +43,35 @@ public class SceneLoader : MonoBehaviour
 
     private void Update()
     {
-        // WORK IN PROGRESS!
-      //  if (gameSession.zapPuzzleKeyGained == true && saveTheBladeBool.theBladeTestIsCompleted == false)
-      //  {
-         //   player.transform.position = new Vector3(16.74797f, 2.618468f, 0f);
-       // }
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentSceneIndex == 3 && playerSpawner.dontActivateSpawnTimer == false)
+        {
+            StartCoroutine(ZapPuzzleSpawn());
+        }
+    }
+
+    public IEnumerator ZapPuzzleSpawn()
+    {
+        if (playerSpawner.dontActivateSpawnTimer == true)
+        {
+            yield break;
+        }
+        else
+        {
+            playerSpawner.dontActivateSpawnTimer = false;
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            yield return new WaitForSeconds(0.1f);
+
+            if (currentSceneIndex == 3 && playerSpawner.spawnAtZapPuzzle == true)
+            {
+                playerSpawner.dontActivateSpawnTimer = true;
+                player.transform.position = playerSpawner.playerSpawnPosition;
+            }
+            else
+            {
+                StartCoroutine(ZapPuzzleSpawn());
+            }
+        }
     }
 
     public void Teleporters(int teleportToLocation)

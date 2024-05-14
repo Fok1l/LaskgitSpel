@@ -30,6 +30,7 @@ public class OpenKey : MonoBehaviour
     {
         if (AtKeyTable == true && Input.GetKey(KeyCode.E))
         {
+            loader.dontActivateTimer = false;
             loader.Teleporters(teleportTo);
         }
     }

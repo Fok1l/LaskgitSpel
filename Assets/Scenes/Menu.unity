@@ -410,6 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theBladeTestIsCompleted: 0
   tutorialText: 0
+  stopFirstTimeSpawn: 0
 --- !u!4 &678744989
 Transform:
   m_ObjectHideFlags: 0
@@ -437,7 +438,7 @@ GameObject:
   - component: {fileID: 1152011045}
   - component: {fileID: 1152011044}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: QuitButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,7 +618,7 @@ GameObject:
   - component: {fileID: 1345108471}
   - component: {fileID: 1345108470}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PlayButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1380,7 +1381,7 @@ GameObject:
   - component: {fileID: 1911972248}
   - component: {fileID: 1911972247}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SettingButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1425,7 +1426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TUTORIAL
+  m_text: S
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
   m_sharedMaterial: {fileID: -5131586050574193111, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
@@ -2028,6 +2029,18 @@ PrefabInstance:
       propertyPath: hoverSound
       value: 
       objectReference: {fileID: 8300000, guid: f690763e7614cb04aa741dff7476c4f5, type: 3}
+    - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: playButtonText
+      value: 
+      objectReference: {fileID: 1345108470}
+    - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: quitButtonText
+      value: 
+      objectReference: {fileID: 1152011044}
+    - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: settingsButtonText
+      value: 
+      objectReference: {fileID: 1911972247}
     - target: {fileID: 3997499397803905245, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
       propertyPath: m_audioClip
       value: 

@@ -30,6 +30,7 @@ public class OpenBlade : MonoBehaviour
     {
         if (AtBladeTable == true && Input.GetKey(KeyCode.E))
         {
+            loader.dontActivateTimer = false;
             loader.Teleporters(teleportTo);
         }
     }

@@ -8,7 +8,7 @@ public class NoteSystem : MonoBehaviour
     PlayerMove player;
     [SerializeField] AudioClip paperSound;
     public Image[] noteImages; // Array of note UI Images
-    bool[] isOpen; // Array of boolean flags to track if a note is open
+    bool[] isOpen; // Array of bools to track if a note is open
 
     [SerializeField] GameObject[] papers; // Array of paper GameObjects
 
