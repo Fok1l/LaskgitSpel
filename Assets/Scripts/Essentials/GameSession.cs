@@ -48,9 +48,9 @@ public class GameSession : MonoBehaviour
 
     public void HoldPlayerSpawn()
     {
-        StartCoroutine(loader.ZapPuzzleSpawn());
         if (saveTheBladeBool.stopFirstTimeSpawn == true)
         {
+            StartCoroutine(loader.ZapPuzzleSpawn());
             saveTheBladeBool.stopFirstTimeSpawn = false;
         }
     }
