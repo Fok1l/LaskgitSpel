@@ -35,7 +35,6 @@ public class SaveTheBladeBool : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Checking complesion");
         if(theBladeTestIsCompleted == true)
         {
             Debug.Log("Completed puzzle");
