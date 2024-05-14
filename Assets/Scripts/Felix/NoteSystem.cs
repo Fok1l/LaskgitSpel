@@ -9,7 +9,6 @@ public class NoteSystem : MonoBehaviour
     [SerializeField] AudioClip paperSound;
     public Image[] noteImages; // Array of note UI Images
     bool[] isOpen; // Array of bools to track if a note is open
-
     [SerializeField] GameObject[] papers; // Array of paper GameObjects
 
     void Start()
@@ -87,12 +86,10 @@ public class NoteSystem : MonoBehaviour
 
         if (isOpen[paperIndex])
         {
-            // Implement the logic to open the UI for the respective paper
             Debug.Log("Opening UI for Paper " + paperIndex);
         }
         else
         {
-            // Implement the logic to close the UI for the respective paper
             Debug.Log("Closing UI for Paper " + paperIndex);
         }
     }
