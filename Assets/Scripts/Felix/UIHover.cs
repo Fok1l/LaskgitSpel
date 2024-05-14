@@ -1,15 +1,21 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class UIHover : MonoBehaviour
 {
     [SerializeField] private Button currentButton;
     [SerializeField] private Image currentOutline;
 
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button settingsButton;
+    [SerializeField] private Button quitButton;
+
     [SerializeField] TextMeshProUGUI playButtonText;
     [SerializeField] TextMeshProUGUI settingsButtonText;
     [SerializeField] TextMeshProUGUI quitButtonText;
+    private Dictionary<Button, TextMeshProUGUI> buttonToText;
 
 
     private AudioSource audioSource;
@@ -18,8 +24,13 @@ public class UIHover : MonoBehaviour
     {
         currentButton = null;
         currentOutline = null;
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();  
         audioSource.playOnAwake = false;
+
+        buttonToText = new Dictionary<Button, TextMeshProUGUI>();
+        buttonToText.Add(playButton, playButtonText);
+        buttonToText.Add(settingsButton, settingsButtonText);
+        buttonToText.Add(quitButton, quitButtonText);
     }
 
 
@@ -42,28 +53,31 @@ public class UIHover : MonoBehaviour
     public void MouseLeave()
     {
         currentOutline.enabled = false;
+        MakeTextNormal();
         currentOutline = null;
         currentButton = null;
-        MakeTextNormal();
     }
 
     void MakeTextBig()
     {
-        if (playButtonText != null)
+        if (buttonToText.TryGetValue(currentButton, out TextMeshProUGUI buttonText))
         {
-            Vector3 scale = playButtonText.transform.localScale;
+            Debug.Log("Text Is Big");
+            Vector3 scale = buttonText.transform.localScale;
             scale *= 1.2f;
-            playButtonText.transform.localScale = scale;
+            buttonText.transform.localScale = scale;
         }
     }
 
+
     void MakeTextNormal()
     {
-        if (playButtonText != null)
+        if (currentButton != null && buttonToText.TryGetValue(currentButton, out TextMeshProUGUI buttonText))
         {
-            Vector3 scale = playButtonText.transform.localScale;
+            Debug.Log("Text Is Normal");
+            Vector3 scale = buttonText.transform.localScale;    
             scale /= 1.2f;
-            playButtonText.transform.localScale = scale;
+            buttonText.transform.localScale = scale;
         }
     }
 }
