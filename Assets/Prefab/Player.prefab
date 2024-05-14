@@ -100,16 +100,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20eaa71c57d0024da6e0f0a9adc9d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2.2
+  CutsceneManager: {fileID: 0}
   usingFlashLight: 0
   flashLightObject: {fileID: 0}
   uiBook: {fileID: 0}
+  tutorialText: {fileID: 0}
   usingBook: 0
   Inventory_Canvas: {fileID: 0}
-  PlayerCutSceneOveride: 0
   storedX: 0
   storedY: 0
   walkSound: {fileID: 8300000, guid: f4a254e52b88cfb44a02dfea2e081917, type: 3}
+  FlashLightClick: {fileID: 0}
 --- !u!50 &7776505853381894350
 Rigidbody2D:
   serializedVersion: 4

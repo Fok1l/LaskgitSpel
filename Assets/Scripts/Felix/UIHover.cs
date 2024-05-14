@@ -17,6 +17,7 @@ public class UIHover : MonoBehaviour
     [SerializeField] TextMeshProUGUI quitButtonText;
     private Dictionary<Button, TextMeshProUGUI> buttonToText;
 
+    Color TextHighlightColor = new Color(1, 1, 0); // Currently Useless for some reason???
 
     private AudioSource audioSource;
     public AudioClip hoverSound;
