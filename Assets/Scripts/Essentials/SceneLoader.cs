@@ -66,6 +66,7 @@ public class SceneLoader : MonoBehaviour
             {
                 playerSpawner.dontActivateSpawnTimer = true;
                 player.transform.position = playerSpawner.playerSpawnPosition;
+                playerSpawner.playerCamera.transform.position = playerSpawner.playerSpawnPosition;
             }
             else
             {
