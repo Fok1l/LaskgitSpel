@@ -389,8 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598d47d0437276b4b8a6ddd7c464ddb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SwitchCount: 4
   winText: {fileID: 483944040}
+  SwitchCount: 4
 --- !u!212 &391949559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -432,7 +432,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e10d3e149e446bf4ea52c6d92bc50345, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f1aec7e89e8640449aa85da07a77a7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
