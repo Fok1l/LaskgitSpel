@@ -20,7 +20,7 @@ public class GameSession : MonoBehaviour
 
     private void Awake()
     {
-        FirstSpawn();
+ 
         int gameSessionCount = FindObjectsOfType<GameSession>().Length;
         Debug.Log("gameSession found it self");
         //pauseMenuCanvas.enabled = false;
@@ -40,7 +40,8 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
-           loader = FindObjectOfType<SceneLoader>();
+        FirstSpawn();
+        loader = FindObjectOfType<SceneLoader>();
         upperBladeTest = FindObjectOfType<UpperBladeTest>();
         saveTheBladeBool = GetComponent<SaveTheBladeBool>();
 
