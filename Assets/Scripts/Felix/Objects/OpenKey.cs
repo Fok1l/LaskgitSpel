@@ -37,10 +37,14 @@ public class OpenKey : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D ExitTrigger)
     {
-        if (ExitTrigger.tag == "Player")
+        if (ExitTrigger.tag == "Player" && EPromptCanvas != null)
         {
             AtKeyTable = false;
             EPromptCanvas.enabled = false;
+        }
+        else if (ExitTrigger.tag == "Player")
+        {
+            AtKeyTable = false;
         }
 
     }
