@@ -14,6 +14,7 @@ public class KeyScript : MonoBehaviour
     Canvas winCanvas;
     SceneLoader sceneLoader;
     GameSession gameSession;
+    PlayerSpawner playerSpawner;
 
     public bool isAlive = true;
      
@@ -27,6 +28,7 @@ public class KeyScript : MonoBehaviour
 
     private void Start()
     {
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
         sceneLoader = FindObjectOfType<SceneLoader>();
         gameSession = FindObjectOfType<GameSession>();
     }
@@ -67,8 +69,10 @@ public class KeyScript : MonoBehaviour
     {
         InvCanvas.enabled = true;
         gameSession.zapPuzzleKeyGained = true;
+        playerSpawner.spawnAtZapPuzzle = true;
         hasCompletedLevel = true;
 
+        playerSpawner.playerSpawnPosition = new Vector3(16.90145f, 2.37239f, 0f);
         StartCoroutine(sceneLoader.ZapPuzzleSpawn());
         yield return new WaitForSeconds(deathCooldown);
     }

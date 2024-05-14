@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KitchenDoor : MonoBehaviour
 {
-    //Rigidbody2D childsRigidbody;
+    PlayerSpawner playerSpawner;
     GameSession gameSession;
     [SerializeField] GameObject lockedDoor;
     [SerializeField] GameObject unlockedDoor;
@@ -12,8 +12,8 @@ public class KitchenDoor : MonoBehaviour
 
     private void Start()
     {
-        //childsRigidbody = GetComponentInChildren<Rigidbody2D>();
         gameSession = FindObjectOfType<GameSession>();
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
     }
 
     private void FixedUpdate()

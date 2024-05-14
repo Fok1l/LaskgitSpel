@@ -138,7 +138,6 @@ public class PlayerMove : MonoBehaviour
 
         void TeleportPlayerToStoredPosition() // Big ass function to be able to teleport the player on demand
         {
-
             positionManager = FindObjectOfType<PlayerPositionManager>();
             characterTransform = transform;
 
