@@ -64,7 +64,7 @@ public class UIHover : MonoBehaviour
         if (buttonToText.TryGetValue(currentButton, out TextMeshProUGUI buttonText))
         {
             Debug.Log("Text Is Big");
-            buttonText.color = Color.green;
+            buttonText.color = Color.grey;
             Vector3 scale = buttonText.transform.localScale;
             scale *= 1.2f;
             buttonText.transform.localScale = scale;
