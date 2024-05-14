@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
+
+    // Move this out of my folder, everyones already modifed this.
+
     private float horizontal;
     private float vertical;
     [SerializeField] private float speed = 8f;
