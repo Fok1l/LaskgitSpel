@@ -7,6 +7,7 @@ public class Wire : MonoBehaviour
 {
     public SpriteRenderer wires_end;
     public GameObject lightOn;
+
     Vector3 startPoint;
     Vector3 startPosition;  
 

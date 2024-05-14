@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Main : MonoBehaviour
 {
     static public Main Instance;
+    public GameObject winText;
 
     public int SwitchCount;
-    public GameObject winText;
     private int onCount = 0;
 
     private void Awake()
@@ -21,9 +19,5 @@ public class Main : MonoBehaviour
         {
             winText.SetActive(true);
         }
-    
-    
-    
-    
     }
 }
