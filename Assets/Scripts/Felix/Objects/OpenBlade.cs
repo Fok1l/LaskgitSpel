@@ -37,10 +37,14 @@ public class OpenBlade : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D ExitTrigger)
     {
-        if (ExitTrigger.tag == "Player")
+        if (ExitTrigger.tag == "Player" && EPromptCanvas != null)
         {
             AtBladeTable = false;
             EPromptCanvas.enabled = false;
+        }
+        else if (ExitTrigger.tag == "Player")
+        {
+            AtBladeTable = false;
         }
 
     }
