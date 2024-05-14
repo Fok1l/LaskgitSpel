@@ -34,6 +34,9 @@ public class KitchenDoor : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D exitDoor)
     {
-        wontBudgeCanvi.SetActive(false);
+        if (wontBudgeCanvi != null)
+        {
+            wontBudgeCanvi.SetActive(false);
+        }
     }
 }
