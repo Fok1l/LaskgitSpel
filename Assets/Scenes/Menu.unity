@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: S
+  m_text: Tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
   m_sharedMaterial: {fileID: -5131586050574193111, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
@@ -2030,6 +2030,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: f690763e7614cb04aa741dff7476c4f5, type: 3}
     - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: playButton
+      value: 
+      objectReference: {fileID: 1844883058}
+    - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: quitButton
+      value: 
+      objectReference: {fileID: 1748555772}
+    - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
       propertyPath: playButtonText
       value: 
       objectReference: {fileID: 1345108470}
@@ -2037,6 +2045,10 @@ PrefabInstance:
       propertyPath: quitButtonText
       value: 
       objectReference: {fileID: 1152011044}
+    - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: settingsButton
+      value: 
+      objectReference: {fileID: 2025662098}
     - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
       propertyPath: settingsButtonText
       value: 
