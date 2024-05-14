@@ -34,7 +34,8 @@ public class UIHover : MonoBehaviour
     }
 
 
-    //Fix this by saying stuff like for example, if the currentButton is startbutton. Then do the text size thing for startButtonText.
+    //Fix this by saying stuff like for example, if the currentButton is startbutton. Then do the text size thing for startButtonText. // COMPLETED
+    // My idea worked :)
     public void MouseEnter(Button button) 
     {
         currentButton = button;
