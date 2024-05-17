@@ -444,7 +444,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.81
   m_Color: {r: 0.1764706, g: 0.9803922, b: 0.9960785, a: 1}
-  m_Intensity: 3.71
+  m_Intensity: 2.4
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 4ff7130000000000b500f6947763c46b9565a2a98daef310
@@ -461,8 +461,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.13349998, y: 0.45610002, z: 0}
-    m_Extent: {x: 1.3418, y: 1.3818, z: 0}
+    m_Center: {x: 0.13319999, y: 0.45495, z: 0}
+    m_Extent: {x: 1.3425, y: 1.38145, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.33
   m_Color: {r: 0, g: 0.76606274, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.71
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 4ff7130000000000b500f6947763c46b9565a2a98daef310
@@ -1703,7 +1703,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.56
+  m_Intensity: 0.37
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 4ff7130000000000b500f6947763c46b9565a2a98daef310
@@ -1989,9 +1989,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 923c7cd0d02415045806ccd1c71c758e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.305
+  m_Volume: 0.184
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2122,7 +2122,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.33
   m_Color: {r: 1, g: 0.6396745, b: 0, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.68
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 4ff7130000000000b500f6947763c46b9565a2a98daef310
