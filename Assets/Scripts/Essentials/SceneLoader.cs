@@ -10,10 +10,11 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] public GameObject player;
     public Animator animator;
     private int leveltoload;
-    [SerializeField]int knives;
+    public int knives;
     [SerializeField] int playerCount;
     public Canvas transitionCanvas;
     public bool dontActivateTimer;
+    bool stopZapPuzzleSpawning = false;
 
     GameObject soundObject; // Needed for UI click sounds
     AudioSource soundSource; // Needed for UI click sounds
@@ -66,11 +67,34 @@ public class SceneLoader : MonoBehaviour
             {
                 playerSpawner.dontActivateSpawnTimer = true;
                 player.transform.position = playerSpawner.playerSpawnPosition;
-                playerSpawner.playerCamera.transform.position = playerSpawner.playerSpawnPosition;
             }
             else
             {
                 StartCoroutine(ZapPuzzleSpawn());
+            }
+        }
+    }
+
+    public IEnumerator BladePuzzleSpawn()
+    {
+        if (stopZapPuzzleSpawning == true)
+        {
+            yield break;
+        }
+        else
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            yield return new WaitForSeconds(0.1f);
+
+            if (currentSceneIndex == 3 && saveTheBladeBool.theBladeTestIsCompleted == true)
+            {
+                stopZapPuzzleSpawning = true;
+                player.transform.position = playerSpawner.playerSpawnPosition;
+                playerSpawner.playerCamera.transform.position = playerSpawner.playerSpawnPosition;
+            }
+            else
+            {
+                StartCoroutine(BladePuzzleSpawn());
             }
         }
     }

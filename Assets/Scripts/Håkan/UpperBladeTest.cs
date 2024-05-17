@@ -47,7 +47,6 @@ public class UpperBladeTest : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Clicked on the game object: " + gameObject.name);
             ifollow = true;
 
     }

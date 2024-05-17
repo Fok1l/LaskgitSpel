@@ -17,6 +17,7 @@ public class UIHover : MonoBehaviour
     [SerializeField] TextMeshProUGUI quitButtonText;
     private Dictionary<Button, TextMeshProUGUI> buttonToText;
 
+    Color TextHighlightColor = new Color(1, 1, 0); // Currently Useless for some reason???
 
     private AudioSource audioSource;
     public AudioClip hoverSound;
@@ -64,6 +65,7 @@ public class UIHover : MonoBehaviour
         if (buttonToText.TryGetValue(currentButton, out TextMeshProUGUI buttonText))
         {
             Debug.Log("Text Is Big");
+            buttonText.color = Color.grey;
             Vector3 scale = buttonText.transform.localScale;
             scale *= 1.2f;
             buttonText.transform.localScale = scale;
@@ -76,6 +78,7 @@ public class UIHover : MonoBehaviour
         if (currentButton != null && buttonToText.TryGetValue(currentButton, out TextMeshProUGUI buttonText))
         {
             Debug.Log("Text Is Normal");
+            buttonText.color = Color.white;
             Vector3 scale = buttonText.transform.localScale;    
             scale /= 1.2f;
             buttonText.transform.localScale = scale;

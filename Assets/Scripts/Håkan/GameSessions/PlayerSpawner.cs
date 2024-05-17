@@ -38,10 +38,4 @@ public class PlayerSpawner : MonoBehaviour
             saveTheBladeBool.stopFirstTimeSpawn = true;
         }
     }
-
-    //            else if (currentSceneIndex == 3 && playerSpawner.spawnAtZapPuzzle == true && saveTheBladeBool.theBladeTestIsCompleted == true)
-    //        {
-    //            dontActivateTimer = true;
-    //            
-            //}
 }

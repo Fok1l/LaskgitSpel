@@ -9,6 +9,7 @@ public class SaveTheBladeBool : MonoBehaviour
     public bool theBladeTestIsCompleted = false;
     public bool tutorialText = false;
     public bool stopFirstTimeSpawn = false;
+    bool stopBladeSpawnSpam = false;
 
     SceneLoader loader;
     PlayerSpawner spawner;
@@ -18,6 +19,7 @@ public class SaveTheBladeBool : MonoBehaviour
     {
         spawner = FindObjectOfType<PlayerSpawner>();
         gameSession = FindObjectOfType<GameSession>();
+        loader = FindObjectOfType<SceneLoader>();
     }
     private void Awake()
     {
@@ -35,12 +37,17 @@ public class SaveTheBladeBool : MonoBehaviour
 
     private void Update()
     {
-        if(theBladeTestIsCompleted == true)
+        if(theBladeTestIsCompleted == true && stopBladeSpawnSpam == false && loader.knives == 5)
         {
-            Debug.Log("Completed puzzle");
             spawner.dontActivateSpawnTimer = false;
             spawner.playerSpawnPosition = new Vector3(-1.320004f, 10.15893f, 0f);
-            gameSession.HoldPlayerSpawn();
+            //gameSession.HoldPlayerSpawn();
+            stopBladeSpawnSpam = true;
+            StartCoroutine(loader.BladePuzzleSpawn());
+        }
+        else
+        {
+            return;
         }
     }
 }
