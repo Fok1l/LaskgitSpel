@@ -461,8 +461,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.13270003, y: 0.45485, z: 0}
-    m_Extent: {x: 1.3417001, y: 1.38205, z: 0}
+    m_Center: {x: 0.13194996, y: 0.45549998, z: 0}
+    m_Extent: {x: 1.3419499, y: 1.382, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2352,7 +2352,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TUTORIAL
+  m_text: SETTINGS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
   m_sharedMaterial: {fileID: -5131586050574193111, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
