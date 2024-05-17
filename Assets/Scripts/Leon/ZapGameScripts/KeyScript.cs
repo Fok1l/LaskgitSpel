@@ -74,7 +74,8 @@ public class KeyScript : MonoBehaviour
 
         playerSpawner.playerSpawnPosition = new Vector3(16.90145f, 2.37239f, 0f);
         StartCoroutine(sceneLoader.ZapPuzzleSpawn());
-        yield return new WaitForSeconds(deathCooldown);
+        //yield return new WaitForSeconds(deathCooldown);
+        return null;
     }
 
     IEnumerator DeathRoutine()
