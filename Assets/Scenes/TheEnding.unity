@@ -539,6 +539,14 @@ PrefabInstance:
       propertyPath: hoverSound
       value: 
       objectReference: {fileID: 8300000, guid: f690763e7614cb04aa741dff7476c4f5, type: 3}
+    - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: quitButton
+      value: 
+      objectReference: {fileID: 1471855542}
+    - target: {fileID: 2684897353797064809, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: quitButtonText
+      value: 
+      objectReference: {fileID: 440916046}
     - target: {fileID: 3997499397803905245, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
       propertyPath: m_audioClip
       value: 
