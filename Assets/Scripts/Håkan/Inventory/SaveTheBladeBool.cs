@@ -14,12 +14,14 @@ public class SaveTheBladeBool : MonoBehaviour
     SceneLoader loader;
     PlayerSpawner spawner;
     GameSession gameSession;
+    PlayerSpawner playerSpawner;
 
     private void Start()
     {
         spawner = FindObjectOfType<PlayerSpawner>();
         gameSession = FindObjectOfType<GameSession>();
         loader = FindObjectOfType<SceneLoader>();
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
     }
     private void Awake()
     {
@@ -43,7 +45,6 @@ public class SaveTheBladeBool : MonoBehaviour
             spawner.playerSpawnPosition = new Vector3(-1.320004f, 10.15893f, 0f);
             //gameSession.HoldPlayerSpawn();
             stopBladeSpawnSpam = true;
-            StartCoroutine(loader.BladePuzzleSpawn());
         }
         else
         {

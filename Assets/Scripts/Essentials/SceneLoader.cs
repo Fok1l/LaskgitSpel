@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -14,22 +13,25 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] int playerCount;
     public Canvas transitionCanvas;
     public bool dontActivateTimer;
-    bool stopZapPuzzleSpawning = false;
 
     GameObject soundObject; // Needed for UI click sounds
     AudioSource soundSource; // Needed for UI click sounds
     SaveTheBladeBool saveTheBladeBool;
 
-    private void Start()
+    [SerializeField] Vector2 bladeSpawnPosition;
+
+    SaveAndLoadPosition saveAndLoad;
+
+    void Start()
     {
+        saveAndLoad = FindObjectOfType<SaveAndLoadPosition>();
+
         playerSpawner = FindObjectOfType<PlayerSpawner>();
         playerCount = GameObject.FindGameObjectsWithTag("Player").Length;
         gameSession = FindObjectOfType<GameSession>();
         Debug.Log("Sceneloader Found GameSesh");
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
-   
 
     void Awake()  // Needed for UI click sounds
     {
@@ -45,6 +47,7 @@ public class SceneLoader : MonoBehaviour
     private void Update()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         if (currentSceneIndex == 3 && playerSpawner.dontActivateSpawnTimer == false)
         {
             StartCoroutine(ZapPuzzleSpawn());
@@ -66,7 +69,12 @@ public class SceneLoader : MonoBehaviour
             if (currentSceneIndex == 3 && playerSpawner.spawnAtZapPuzzle == true)
             {
                 playerSpawner.dontActivateSpawnTimer = true;
+                playerSpawner.stopZapPuzzleSpawning = false;
                 player.transform.position = playerSpawner.playerSpawnPosition;
+                yield return new WaitForSeconds(0.1f);
+                playerSpawner.spawnAtZapPuzzle = false;
+                yield return new WaitForSeconds(0.1f);
+                playerSpawner.dontActivateSpawnTimer = false;
             }
             else
             {
@@ -77,25 +85,43 @@ public class SceneLoader : MonoBehaviour
 
     public IEnumerator BladePuzzleSpawn()
     {
-        if (stopZapPuzzleSpawning == true)
+        if (playerSpawner.stopZapPuzzleSpawning == true)
         {
             yield break;
         }
         else
         {
+            playerSpawner.dontActivateSpawnTimer = false;
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             yield return new WaitForSeconds(0.1f);
 
-            if (currentSceneIndex == 3 && saveTheBladeBool.theBladeTestIsCompleted == true)
+            if (currentSceneIndex == 3 && saveTheBladeBool.theBladeTestIsCompleted == true && playerSpawner.stopZapPuzzleSpawning == false)
             {
-                stopZapPuzzleSpawning = true;
-                player.transform.position = playerSpawner.playerSpawnPosition;
-                playerSpawner.playerCamera.transform.position = playerSpawner.playerSpawnPosition;
+                playerSpawner.stopZapPuzzleSpawning = true;
+                player.transform.position = bladeSpawnPosition;
             }
             else
             {
                 StartCoroutine(BladePuzzleSpawn());
             }
+        }
+    }
+
+    public void SavePlayerPositionAndLoadScene(int sceneIndex)
+    {
+        // Save the player's position before changing the scene
+        playerSpawner.SavePlayerPosition(player.transform.position);
+        // Load the new scene
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Check if we are back in the original scene
+        if (scene.buildIndex == 3)
+        {
+            // Restore the player's position
+            player.transform.position = playerSpawner.LoadPlayerPosition();
         }
     }
 
@@ -114,32 +140,23 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
     public void OnFadeComplete()    
     {
         SceneManager.LoadScene(leveltoload);
     }
 
-
-
-    
-  //  private void Update()
-  //  {
- //       if (Input.GetKey(KeyCode.Space)){
-//            animator.SetTrigger("FadeOut");
-        //}
-  //  }
-
-
     // Everything below this might be completely useless, but I'm saving it just incase.
-
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadSceneAsync(currentSceneIndex + 1);
-        Debug.Log("Next Scene Loaded");
+        SceneManager.LoadScene(currentSceneIndex + 1);
+
+        if (currentSceneIndex == 4)
+        {
+            playerSpawner.playerPosition.position = player.transform.position;
+        }
     }
-
-
 
     public void LoadPreviousScene()
     {
@@ -148,8 +165,6 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Prev Scene Loaded");
     }
 
-
-   
     public void QuitGame()
     {
         // Only works in built version of game, not in editor
@@ -157,13 +172,15 @@ public class SceneLoader : MonoBehaviour
         Application.Quit(3);
     }
 
-
     public void BladePuzzleComplete()
     {
         knives++;
+
         if (knives == 5)
         {
             SceneManager.LoadScene(3);
+            saveAndLoad = FindObjectOfType<SaveAndLoadPosition>();
+            saveAndLoad.ResetPosition();
         }
     }
 
@@ -176,6 +193,4 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }
-
-
 }

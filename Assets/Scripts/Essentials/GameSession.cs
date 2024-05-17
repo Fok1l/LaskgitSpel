@@ -10,9 +10,11 @@ public class GameSession : MonoBehaviour
     SceneLoader loader;
     UpperBladeTest upperBladeTest;
     SaveTheBladeBool saveTheBladeBool;
+    PlayerMove playerMove;
     public Canvas PauseCanvas;
     [SerializeField] public bool spawnTheBookPuzzleJar = false;
     bool PauseOveride;
+    bool firstPlayerSpawn = false;
 
 
     private void Awake()
@@ -39,6 +41,17 @@ public class GameSession : MonoBehaviour
            loader = FindObjectOfType<SceneLoader>();
         upperBladeTest = FindObjectOfType<UpperBladeTest>();
         saveTheBladeBool = GetComponent<SaveTheBladeBool>();
+
+        playerMove = FindObjectOfType<PlayerMove>();
+    }
+    
+    void Update()
+    {
+        if(firstPlayerSpawn == false)
+        {
+            playerMove.transform.position = new Vector2(7.902787f, -8.278445f);
+            firstPlayerSpawn = true;
+        }
     }
 
     public void ResetGame()

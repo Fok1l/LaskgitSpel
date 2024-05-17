@@ -11,6 +11,15 @@ public class OpenBlade : MonoBehaviour
 
     GameSession gameSession;
 
+    SaveAndLoadPosition saveAndLoad;
+
+    public void Start()
+    {
+        saveAndLoad = FindObjectOfType<SaveAndLoadPosition>();
+
+        loader = FindObjectOfType<SceneLoader>();
+        gameSession = FindObjectOfType<GameSession>();
+    }
 
     void OnTriggerEnter2D(Collider2D EnteringTrigger)
     {
@@ -20,18 +29,14 @@ public class OpenBlade : MonoBehaviour
             EPromptCanvas.enabled = true;
         }
     }
-    public void Start()
-    {
-        loader = FindObjectOfType<SceneLoader>();
-        gameSession = FindObjectOfType<GameSession>();
-    }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (AtBladeTable == true && Input.GetKey(KeyCode.E))
         {
             loader.dontActivateTimer = false;
-            loader.Teleporters(teleportTo);
+            saveAndLoad.SavePosition();
+            loader.LoadNextScene();
         }
     }
 
