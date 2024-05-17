@@ -138,25 +138,6 @@ public class PlayerMove : MonoBehaviour
                 else { audioSource.enabled = false; }
             }
         }
-
-        void TeleportPlayerToStoredPosition() // Big ass function to be able to teleport the player on demand
-        {
-            positionManager = FindObjectOfType<PlayerPositionManager>();
-            characterTransform = transform;
-
-            // Check if there is a stored position
-            Vector3 storedPosition = positionManager.RetrievePosition();
-            if (storedPosition != Vector3.zero)
-            {
-                // Teleport player to stored position
-                characterTransform.position = storedPosition;
-
-                // Clear stored position
-                positionManager.StorePosition(Vector3.zero);
-
-            }
-
-        }
         // private void FetchPlayerPosition()
         // {
         //     Vector3 currentPlayerPosition = characterTransform.position;
@@ -228,13 +209,5 @@ public class PlayerMove : MonoBehaviour
             //    invActive = false;
             //}
         //}
-
-        void DestroyTheTutorialText()
-        {
-            if(saveTheBladeBool.tutorialText == true)
-            {
-                Destroy(tutorialText);
-            }
-        }
     }
 }
