@@ -5,7 +5,7 @@ using UnityEngine;
 public class SaveTheBladeBool : MonoBehaviour
 {
     public static SaveTheBladeBool Instance;
-    
+
     public bool theBladeTestIsCompleted = false;
     public bool tutorialText = false;
     public bool stopFirstTimeSpawn = false;
@@ -39,7 +39,7 @@ public class SaveTheBladeBool : MonoBehaviour
 
     private void Update()
     {
-        if(theBladeTestIsCompleted == true && stopBladeSpawnSpam == false && loader.knives == 5)
+        if (theBladeTestIsCompleted == true && stopBladeSpawnSpam == false && loader.knives == 5)
         {
             spawner.dontActivateSpawnTimer = false;
             spawner.playerSpawnPosition = new Vector3(-1.320004f, 10.15893f, 0f);
