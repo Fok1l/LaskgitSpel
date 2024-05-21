@@ -35,7 +35,7 @@ public class OpenBlade : MonoBehaviour
         if (AtBladeTable == true && Input.GetKey(KeyCode.E))
         {
             loader.dontActivateTimer = false;
-            saveAndLoad.SavePosition();
+            //saveAndLoad.SavePosition();
             loader.LoadNextScene();
         }
     }
