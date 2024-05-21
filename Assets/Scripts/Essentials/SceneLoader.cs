@@ -179,8 +179,8 @@ public class SceneLoader : MonoBehaviour
         if (knives == 5)
         {
             SceneManager.LoadScene(3);
-            saveAndLoad = FindObjectOfType<SaveAndLoadPosition>();
-            saveAndLoad.ResetPosition();
+            //saveAndLoad = FindObjectOfType<SaveAndLoadPosition>();
+            //saveAndLoad.ResetPosition();
         }
     }
 
