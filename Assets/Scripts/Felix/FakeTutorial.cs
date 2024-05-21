@@ -14,9 +14,7 @@ public class FakeTutorial : MonoBehaviour
 
     public void ShowFake()
     {
-        wait();
-        
-
+        FakeTutorial_Canvas.enabled = true;
     }
     IEnumerator wait()
     {
