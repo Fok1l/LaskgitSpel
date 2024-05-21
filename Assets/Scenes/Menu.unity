@@ -563,8 +563,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.13275003, y: 0.4557, z: 0}
-    m_Extent: {x: 1.34165, y: 1.3813, z: 0}
+    m_Center: {x: 0.13310003, y: 0.45540002, z: 0}
+    m_Extent: {x: 1.3421, y: 1.3824, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3337,6 +3337,10 @@ PrefabInstance:
       propertyPath: settingsButtonText
       value: 
       objectReference: {fileID: 1911972247}
+    - target: {fileID: 3997499397803905245, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3997499397803905245, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
       propertyPath: m_audioClip
       value: 
