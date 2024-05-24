@@ -9,6 +9,7 @@ TagManager:
   - Key
   - EnteringTrigger
   - Win
+  - Collectible1
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Key
   - Resistance
   - Win
-  - 
+  - SceneTransition
   - 
   - 
   - 
