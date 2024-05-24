@@ -193,4 +193,12 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }
+
+    public IEnumerator FadeInFadeOut()
+    {
+        animator.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(3);
+        animator.SetTrigger("FadeIn");
+    }
 }

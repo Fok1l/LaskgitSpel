@@ -563,8 +563,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.13284999, y: 0.45465, z: 0}
-    m_Extent: {x: 1.3422501, y: 1.38175, z: 0}
+    m_Center: {x: 0.13315004, y: 0.4557, z: 0}
+    m_Extent: {x: 1.3420501, y: 1.3812, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1197,7 +1197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 108, y: 15}
+  m_AnchoredPosition: {x: -17, y: -154}
   m_SizeDelta: {x: 700, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341382221
@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You'll Figure It Out
+  m_text: You'll Figure It Out :)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
   m_sharedMaterial: {fileID: -5131586050574193111, guid: 3951b74eb7a5c0e47b5d4844abe677e0, type: 2}
@@ -1247,8 +1247,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 120
-  m_fontSizeBase: 120
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1570,7 +1570,7 @@ PrefabInstance:
     - target: {fileID: 5471710856618569572, guid: 0021215653dc6b746b1fc72ace05c384, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1938157217}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2882,38 +2882,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 645237465539509489, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
     - {fileID: 3827024654599027816, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
+    - {fileID: 6297891588121963402, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6297891588121963402, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1938157217}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
---- !u!1 &1938157216 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6297891588121963402, guid: 66f0be89068b45a43927b3a6699f563c, type: 3}
-  m_PrefabInstance: {fileID: 1938157215}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1938157217
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938157216}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1983593914
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,6 +3309,10 @@ PrefabInstance:
       propertyPath: settingsButtonText
       value: 
       objectReference: {fileID: 1911972247}
+    - target: {fileID: 3997499397803905245, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3997499397803905245, guid: 6bc2f32f2a20cc147a6b06b3bf7cd096, type: 3}
       propertyPath: m_audioClip
       value: 
