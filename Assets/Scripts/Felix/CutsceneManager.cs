@@ -5,6 +5,6 @@ using UnityEngine;
 public class CutsceneManager : MonoBehaviour
 {
    public bool Overide = false;
-   public bool LightOveride = false;
+   public bool LiteOveride = false;
    public bool DialougeOveride = false;
 }

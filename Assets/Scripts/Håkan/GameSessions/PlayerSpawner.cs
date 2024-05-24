@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpawner : MonoBehaviour
 {
     SaveTheBladeBool saveTheBladeBool;
     GameSession gameSession;
+    SceneLoader sceneLoader;
 
     [Header("spawn positions")]
     public Vector2 playerSpawnPosition;
@@ -15,17 +17,30 @@ public class PlayerSpawner : MonoBehaviour
     public bool dontSpawnBladePuzzle;
     public bool spawnBladePuzzle;
     public bool spawnAtZapPuzzle = false;
+    public bool stopZapPuzzleSpawning = false;
     // Start is called before the first frame update
+    
+    
+    public Transform playerPosition;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         saveTheBladeBool = FindObjectOfType<SaveTheBladeBool>();
         gameSession = FindObjectOfType<GameSession>();
+        sceneLoader = FindObjectOfType<SceneLoader>();
+
+        playerPosition = FindObjectOfType<PlayerMove>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+      //  playerPosition = FindObjectOfType<PlayerMove>().transform;
     }
 
     //W.I.P Håkan
@@ -37,5 +52,15 @@ public class PlayerSpawner : MonoBehaviour
             playerCamera.transform.position = playerSpawnPosition;
             saveTheBladeBool.stopFirstTimeSpawn = true;
         }
+    }
+
+    public void SavePlayerPosition(Vector3 position)
+    {
+        playerPosition.position = position;
+    }
+
+    public Vector3 LoadPlayerPosition()
+    {
+        return playerPosition.position;
     }
 }

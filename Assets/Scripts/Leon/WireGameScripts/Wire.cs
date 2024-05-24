@@ -5,14 +5,17 @@ using UnityEngine.Rendering.Universal.Internal;
 
 public class Wire : MonoBehaviour
 {
-    public SpriteRenderer wires_end;
+    public SpriteRenderer wireEnd;
     public GameObject lightOn;
+
+    Main main;
 
     Vector3 startPoint;
     Vector3 startPosition;  
 
     void Start()
     {
+        main = FindObjectOfType<Main>();
         startPoint = transform.parent.position;
         startPosition = transform.position;
     }
@@ -75,6 +78,6 @@ public class Wire : MonoBehaviour
 
         // Update scale
         float dist = Vector2.Distance(startPoint, newPosition);
-        wires_end.size = new Vector2(dist, wires_end.size.y);
+        wireEnd.size = new Vector2(dist, wireEnd.size.y);
     }
 }

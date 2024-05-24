@@ -76,8 +76,8 @@ public class UIHover : MonoBehaviour
         if (currentButton != null && buttonToText.TryGetValue(currentButton, out TextMeshProUGUI buttonText))
         {
             Debug.Log("Text Is Normal");
-            Color customColor = new Color(0.85f, 0.84f, 0.84f);
-            buttonText.color = customColor;
+            Color defaultUIColor = new Color(0.85f, 0.84f, 0.84f);
+            buttonText.color = defaultUIColor;
             Vector3 scale = buttonText.transform.localScale;    
             scale /= 1.2f;
             buttonText.transform.localScale = scale;
