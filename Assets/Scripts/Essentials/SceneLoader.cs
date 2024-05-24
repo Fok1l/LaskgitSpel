@@ -21,16 +21,17 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] Vector2 bladeSpawnPosition;
 
     SaveAndLoadPosition saveAndLoad;
+    UpperBladeTest upperBladeTest;
 
     void Start()
     {
         saveAndLoad = FindObjectOfType<SaveAndLoadPosition>();
-
+        upperBladeTest = FindObjectOfType<UpperBladeTest>();
         playerSpawner = FindObjectOfType<PlayerSpawner>();
-        playerCount = GameObject.FindGameObjectsWithTag("Player").Length;
         gameSession = FindObjectOfType<GameSession>();
-        Debug.Log("Sceneloader Found GameSesh");
         player = GameObject.FindGameObjectWithTag("Player");
+        playerCount = GameObject.FindGameObjectsWithTag("Player").Length;
+        Debug.Log("Sceneloader Found GameSesh");
     }
 
     void Awake()  // Needed for UI click sounds
@@ -54,7 +55,7 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public IEnumerator ZapPuzzleSpawn()
+    public IEnumerator ZapPuzzleSpawn() // Makes sure that you spawn at the zap puzzle when done.
     {
         if (playerSpawner.dontActivateSpawnTimer == true)
         {
@@ -68,6 +69,7 @@ public class SceneLoader : MonoBehaviour
 
             if (currentSceneIndex == 3 && playerSpawner.spawnAtZapPuzzle == true)
             {
+                // If the condisions are true than set the player position and stop the IEnumerator
                 playerSpawner.dontActivateSpawnTimer = true;
                 playerSpawner.stopZapPuzzleSpawning = false;
                 player.transform.position = playerSpawner.playerSpawnPosition;
@@ -83,7 +85,7 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public IEnumerator BladePuzzleSpawn()
+    public IEnumerator BladePuzzleSpawn() //A test on blade puzzle spawn, works like zap puzzle spawn, a bit broken and does not work. Dont know if we should remove
     {
         if (playerSpawner.stopZapPuzzleSpawning == true)
         {
@@ -97,6 +99,7 @@ public class SceneLoader : MonoBehaviour
 
             if (currentSceneIndex == 3 && saveTheBladeBool.theBladeTestIsCompleted == true && playerSpawner.stopZapPuzzleSpawning == false)
             {
+                // If the condisions are true than set the player position and stop the IEnumerator
                 playerSpawner.stopZapPuzzleSpawning = true;
                 player.transform.position = bladeSpawnPosition;
             }
@@ -107,7 +110,7 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public void SavePlayerPositionAndLoadScene(int sceneIndex)
+    public void SavePlayerPositionAndLoadScene(int sceneIndex) // Supposed to save the players position and change scene
     {
         // Save the player's position before changing the scene
         playerSpawner.SavePlayerPosition(player.transform.position);
@@ -115,7 +118,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Change player position if a specific scene loads
     {
         // Check if we are back in the original scene
         if (scene.buildIndex == 3)
@@ -125,7 +128,7 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public void Teleporters(int teleportToLocation)
+    public void Teleporters(int teleportToLocation) // Custom scene loading so you dont need multiple voids for them
     {
         SceneManager.LoadScene(teleportToLocation);
     }
@@ -178,6 +181,7 @@ public class SceneLoader : MonoBehaviour
 
         if (knives == 5)
         {
+            //upperBladeTest.winPuzzleCanvas.enabled = true;
             SceneManager.LoadScene(3);
             //saveAndLoad = FindObjectOfType<SaveAndLoadPosition>();
             //saveAndLoad.ResetPosition();
