@@ -20,6 +20,7 @@ public class KeyScript : MonoBehaviour
      
     public Canvas InvCanvas;
     public List<GameObject> blixtar;
+    public GameObject blixtAnim;
 
     private float moveVertical;
     private float moveHorizontal;
@@ -31,6 +32,7 @@ public class KeyScript : MonoBehaviour
         playerSpawner = FindObjectOfType<PlayerSpawner>();
         sceneLoader = FindObjectOfType<SceneLoader>();
         gameSession = FindObjectOfType<GameSession>();
+       // blixtAnim.SetActive(true);
     }
 
     private void Update()
@@ -58,7 +60,7 @@ public class KeyScript : MonoBehaviour
         if (other.tag == "Hazard" && !hasCompletedLevel)
         {
             isAlive = false;
-
+            
             FreezeMovement();
             randomSpriteTrigger();
             StartCoroutine(DeathRoutine());
@@ -107,9 +109,12 @@ public class KeyScript : MonoBehaviour
 
     void randomSpriteTrigger() // To spawn a random lightning when dying
     {
-        random = Random.Range(0, blixtar.Count);
-        blixtar[random].SetActive(true);
-        blixtar[random].GetComponent<Transform>().position = transform.position + transform.up;
+       // random = Random.Range(0, blixtar.Count);
+       // blixtar[random].SetActive(true);
+       // blixtar[random].GetComponent<Transform>().position = transform.position + transform.up;
+        //blixtAnim.SetActive(false);
+
+        blixtAnim.SetActive(true);
     }
 }
 
