@@ -21,12 +21,12 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] Vector2 bladeSpawnPosition;
 
     SaveAndLoadPosition saveAndLoad;
-    UpperBladeTest upperBladeTest;
+    SpawnWinCanvas spawnWinCanvas;
 
     void Start()
     {
         saveAndLoad = FindObjectOfType<SaveAndLoadPosition>();
-        upperBladeTest = FindObjectOfType<UpperBladeTest>();
+        spawnWinCanvas = FindObjectOfType<SpawnWinCanvas>();
         playerSpawner = FindObjectOfType<PlayerSpawner>();
         gameSession = FindObjectOfType<GameSession>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -52,6 +52,12 @@ public class SceneLoader : MonoBehaviour
         if (currentSceneIndex == 3 && playerSpawner.dontActivateSpawnTimer == false)
         {
             StartCoroutine(ZapPuzzleSpawn());
+        }
+
+        if (knives == 5)
+        {
+            spawnWinCanvas.winPuzzleCanvas.SetActive(true);
+            knives = 0;
         }
     }
 
@@ -181,8 +187,8 @@ public class SceneLoader : MonoBehaviour
 
         if (knives == 5)
         {
-            //upperBladeTest.winPuzzleCanvas.enabled = true;
-            SceneManager.LoadScene(3);
+            
+            //SceneManager.LoadScene(3);
             //saveAndLoad = FindObjectOfType<SaveAndLoadPosition>();
             //saveAndLoad.ResetPosition();
         }

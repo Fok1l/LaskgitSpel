@@ -10,8 +10,6 @@ public class UpperBladeTest : MonoBehaviour
     [SerializeField] GameObject bladeSlot;
     [SerializeField] GameObject blade;
 
-    public Canvas winPuzzleCanvas;
-
     SaveTheBladeBool saveTheBladeBool;
 
     [Header("Slot position")]
