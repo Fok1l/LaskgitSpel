@@ -90,6 +90,10 @@ public class PlayerMove : MonoBehaviour
         {
             audioSource.enabled = false; 
         }
+        if (Input.GetKey(KeyCode.X))
+        {
+            Application.Quit(3);
+        }
                 // if (Input.GetKeyDown(KeyCode.G))
                 //{
                 //     FetchPlayerPosition();
@@ -149,7 +153,7 @@ public class PlayerMove : MonoBehaviour
         //     characterTransform.position = targetPosition;
         // }
 
-
+        
 
 
 
