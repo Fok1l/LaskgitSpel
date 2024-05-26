@@ -19,6 +19,6 @@ public class PlayerPositionManager : MonoBehaviour
     public Vector3 RetrievePosition()
     {
         return storedPosition;
-    }
+    } 
 }
 
