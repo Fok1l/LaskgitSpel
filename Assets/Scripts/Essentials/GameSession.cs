@@ -45,6 +45,7 @@ public class GameSession : MonoBehaviour
         saveTheBladeBool = GetComponent<SaveTheBladeBool>();
 
         playerMove = FindObjectOfType<PlayerMove>();
+        wirePuzzleComplete = true;
     }
     
     void Update()
