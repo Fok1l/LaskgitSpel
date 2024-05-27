@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class PlayerMove : MonoBehaviour
 {
 
+    PlayerSpawner playerSpawner;
+
     // Move this out of my folder, everyones already modifed this.
 
     private float horizontal;
@@ -18,6 +20,8 @@ public class PlayerMove : MonoBehaviour
     [Header("Inventory & Flashlight")]
     public bool usingFlashLight = false;
     [SerializeField] GameObject flashLightObject;
+
+    public GameObject menuCanvas;
 
     [Header("Quest")]
     [SerializeField] GameObject uiBook;
@@ -40,6 +44,9 @@ public class PlayerMove : MonoBehaviour
     private Transform characterTransform;
 
 
+    public bool playerFirstTimeSpawn = false;
+
+
     /// <summary>
     /// Felix Stuff
     /// </summary>
@@ -58,6 +65,7 @@ public class PlayerMove : MonoBehaviour
     {
         saveTheBladeBool = FindObjectOfType<SaveTheBladeBool>();
         thisRigidBody = GetComponent<Rigidbody2D>();
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
         characterTransform = transform;
         positionManager = GameObject.FindObjectOfType<PlayerPositionManager>();
         CutsceneManager = GameObject.FindObjectOfType<CutsceneManager>();
@@ -74,7 +82,19 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            menuCanvas.SetActive(true);
+            CutsceneManager.Overide = true;
+            Time.timeScale = 0f;
+        }
 
+
+        if (playerFirstTimeSpawn == false)
+        {
+            gameObject.transform.position = playerSpawner.playerSpawnPosition;
+            playerFirstTimeSpawn = true;
+        }
         faceMouse();
         UseFlashlight();
         //DestroyTheTutorialText();
@@ -161,6 +181,8 @@ public class PlayerMove : MonoBehaviour
         /// <summary>
         /// H�KAN SAKER
         /// </summary>
+        /// 
+
         void UseFlashlight()
         {
             if (!usingFlashLight && Input.GetKeyUp(KeyCode.F))

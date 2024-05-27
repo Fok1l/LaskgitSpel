@@ -16,6 +16,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] public bool spawnTheBookPuzzleJar = false;
     bool PauseOveride;
     bool firstPlayerSpawn = false;
+    public bool wirePuzzleComplete = false;
 
 
     private void Awake()
@@ -44,6 +45,7 @@ public class GameSession : MonoBehaviour
         saveTheBladeBool = GetComponent<SaveTheBladeBool>();
 
         playerMove = FindObjectOfType<PlayerMove>();
+        wirePuzzleComplete = true;
     }
     
     void Update()

@@ -9,6 +9,8 @@ public class UpperBladeTest : MonoBehaviour
     [SerializeField] Vector2 worldPosition;
     [SerializeField] GameObject bladeSlot;
     [SerializeField] GameObject blade;
+    public AudioClip pickupSound;
+    public AudioClip placeSound;
 
     SaveTheBladeBool saveTheBladeBool;
 
@@ -20,12 +22,14 @@ public class UpperBladeTest : MonoBehaviour
 
     PolygonCollider2D polygonCollider2D;
     SceneLoader loader;
+    private AudioSource audioSource;
 
 
     private Vector3 originalPosition;
     private Vector3 originalScale;
 
     private bool ifollow;
+    private bool playingSound = false;
 
     //public bool theBladeTestIsCompleted = false;
 
@@ -39,6 +43,7 @@ public class UpperBladeTest : MonoBehaviour
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         loader = FindObjectOfType<SceneLoader>();
         saveTheBladeBool = FindObjectOfType<SaveTheBladeBool>();
+        audioSource = GetComponent<AudioSource>();
 
         new Vector2(-1.3f, 7.2f);
 
@@ -56,6 +61,11 @@ public class UpperBladeTest : MonoBehaviour
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (ifollow == true)
         {
+            if (playingSound == false)
+            {
+                audioSource.PlayOneShot(pickupSound);
+                playingSound = true;
+            }
             Vector3 mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             mousePos.z = 0;
@@ -63,6 +73,8 @@ public class UpperBladeTest : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
             if (Input.GetMouseButtonUp(0))
             {
+                audioSource.PlayOneShot(placeSound);
+                playingSound = false;
                 ifollow = false;
                 transform.localScale = originalScale;
                 transform.position = originalPosition;
