@@ -82,7 +82,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             menuCanvas.SetActive(true);
             CutsceneManager.Overide = true;
@@ -111,12 +111,9 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            audioSource.enabled = false; 
+            audioSource.enabled = false;
         }
-        if (Input.GetKey(KeyCode.X))
-        {
-            Application.Quit(3);
-        }
+    }
                 // if (Input.GetKeyDown(KeyCode.G))
                 //{
                 //     FetchPlayerPosition();
@@ -238,5 +235,4 @@ public class PlayerMove : MonoBehaviour
             //    invActive = false;
             //}
         //}
-    }
 }
