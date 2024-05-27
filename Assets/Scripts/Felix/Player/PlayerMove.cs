@@ -89,6 +89,10 @@ public class PlayerMove : MonoBehaviour
             Time.timeScale = 0f;
         }
 
+        if (saveTheBladeBool.theBladeTestIsCompleted == true && gameObject.transform.position == new Vector3(16.90145f, 2.37239f))
+        {
+            gameObject.transform.position = new Vector3(-1.161062f, 10.27668f);
+        }
 
         if (playerFirstTimeSpawn == false)
         {

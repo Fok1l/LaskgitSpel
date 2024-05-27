@@ -43,13 +43,11 @@ public class PlayerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (saveTheBladeBool.stopFirstTimeSpawn == true && gameSession.wirePuzzleComplete == true && stopWireSpawning == false)
+        if (saveTheBladeBool.stopFirstTimeSpawn == false && gameSession.wirePuzzleComplete == false)
         {
-            playerSpawnPosition = new Vector2(6.538782f, 7.561572f);
+            playerSpawnPosition = new Vector2(7.902787f, -8.278445f);
             playerCamera.transform.position = playerSpawnPosition;
-            playerPosition.transform.position = playerSpawnPosition;
-            playerInGame.transform.position = playerSpawnPosition;
-            stopWireSpawning = true;
+            saveTheBladeBool.stopFirstTimeSpawn = true;
         }
     }
 
