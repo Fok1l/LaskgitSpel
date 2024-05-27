@@ -201,7 +201,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadEndingScene()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
 
     public IEnumerator FadeInFadeOut()

@@ -12,12 +12,14 @@ public class PlayerSpawner : MonoBehaviour
     [Header("spawn positions")]
     public Vector2 playerSpawnPosition;
     public GameObject playerCamera;
+    [SerializeField] GameObject playerInGame;
 
     public bool dontActivateSpawnTimer;
     public bool dontSpawnBladePuzzle;
     public bool spawnBladePuzzle;
     public bool spawnAtZapPuzzle = false;
     public bool stopZapPuzzleSpawning = false;
+    public bool stopWireSpawning = false;
     // Start is called before the first frame update
     
     
@@ -30,6 +32,7 @@ public class PlayerSpawner : MonoBehaviour
 
     void Start()
     {
+        playerSpawnPosition = new Vector2(7.902787f, -8.278445f);
         saveTheBladeBool = FindObjectOfType<SaveTheBladeBool>();
         gameSession = FindObjectOfType<GameSession>();
         sceneLoader = FindObjectOfType<SceneLoader>();
@@ -40,13 +43,20 @@ public class PlayerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  playerPosition = FindObjectOfType<PlayerMove>().transform;
+        if (saveTheBladeBool.stopFirstTimeSpawn == true && gameSession.wirePuzzleComplete == true && stopWireSpawning == false)
+        {
+            playerSpawnPosition = new Vector2(6.538782f, 7.561572f);
+            playerCamera.transform.position = playerSpawnPosition;
+            playerPosition.transform.position = playerSpawnPosition;
+            playerInGame.transform.position = playerSpawnPosition;
+            stopWireSpawning = true;
+        }
     }
 
     //W.I.P Håkan
     void FirstSpawn()
     {
-        if (saveTheBladeBool.stopFirstTimeSpawn == false)
+        if (saveTheBladeBool.stopFirstTimeSpawn == false && gameSession.wirePuzzleComplete == false)
         {
             playerSpawnPosition = new Vector2(7.902787f, -8.278445f);
             playerCamera.transform.position = playerSpawnPosition;

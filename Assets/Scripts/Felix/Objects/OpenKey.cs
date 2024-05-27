@@ -28,7 +28,7 @@ public class OpenKey : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (AtKeyTable == true && Input.GetKey(KeyCode.E))
+        if (AtKeyTable == true && Input.GetKey(KeyCode.E) && gameSession.wirePuzzleComplete == true)
         {
             loader.dontActivateTimer = false;
             loader.Teleporters(teleportTo);

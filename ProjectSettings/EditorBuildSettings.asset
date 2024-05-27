@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: "Assets/Scenes/H\xE5kan/BladePuzzleObjects.unity"
     guid: 880ee403ea9896947bf0b5b92af7d126
   - enabled: 1
+    path: Assets/Scenes/Leon/WireGameScene 1.unity
+    guid: c6e6b0cec724efb41b67645608735cc9
+  - enabled: 1
     path: Assets/Scenes/TheEnding.unity
     guid: 6c353de5025b08b4f8425187bc434738
   m_configObjects: {}
