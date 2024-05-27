@@ -659,7 +659,7 @@ MonoBehaviour:
   bladeSlot: {fileID: 1577468672}
   blade: {fileID: 204269333}
   pickupSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
-  placeSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
+  placeSound: {fileID: 8300000, guid: d36780d16330c0745924507b91978a93, type: 3}
   bladeSlotPosition: {x: 1.93, y: 0.14}
   slotName: LowerRightSlot
 --- !u!82 &204269339
@@ -1796,7 +1796,7 @@ MonoBehaviour:
   bladeSlot: {fileID: 410955804}
   blade: {fileID: 586341465}
   pickupSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
-  placeSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
+  placeSound: {fileID: 8300000, guid: d36780d16330c0745924507b91978a93, type: 3}
   bladeSlotPosition: {x: -1.68, y: 3.08}
   slotName: UpperLeftSlot
 --- !u!82 &586341470
@@ -2290,7 +2290,7 @@ MonoBehaviour:
   bladeSlot: {fileID: 1453661772}
   blade: {fileID: 845495526}
   pickupSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
-  placeSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
+  placeSound: {fileID: 8300000, guid: d36780d16330c0745924507b91978a93, type: 3}
   bladeSlotPosition: {x: 0.85, y: 2.17}
   slotName: MiddleSlot
 --- !u!82 &845495532
@@ -2721,7 +2721,7 @@ MonoBehaviour:
   bladeSlot: {fileID: 1074472625}
   blade: {fileID: 920628465}
   pickupSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
-  placeSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
+  placeSound: {fileID: 8300000, guid: d36780d16330c0745924507b91978a93, type: 3}
   bladeSlotPosition: {x: 1.47, y: 3.76}
   slotName: UpperRightSlot
 --- !u!82 &920628471
@@ -4274,7 +4274,7 @@ MonoBehaviour:
   bladeSlot: {fileID: 1862880005}
   blade: {fileID: 1529253392}
   pickupSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
-  placeSound: {fileID: 8300000, guid: 9fe0ebf99d5278d4e9b9b288bcf69e0e, type: 3}
+  placeSound: {fileID: 8300000, guid: d36780d16330c0745924507b91978a93, type: 3}
   bladeSlotPosition: {x: -1.05, y: 0.93}
   slotName: LowerLeftSlot
 --- !u!82 &1529253398
