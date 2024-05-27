@@ -21,6 +21,8 @@ public class KeyScript : MonoBehaviour
     public Canvas InvCanvas;
     public List<GameObject> blixtar;
     public GameObject blixtAnim;
+    public AudioClip blixtSound;
+    public AudioSource audioSource;
 
     private float moveVertical;
     private float moveHorizontal;
@@ -81,8 +83,12 @@ public class KeyScript : MonoBehaviour
 
     IEnumerator DeathRoutine()
     {
+        if (blixtSound != null)
+        {
+            audioSource.clip = blixtSound;
+            audioSource.Play();
+        }
         yield return new WaitForSeconds(deathCooldown);
-
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex); // Reloading the scene
     }
