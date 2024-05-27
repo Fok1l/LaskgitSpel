@@ -77,7 +77,6 @@ public class PlayerMove : MonoBehaviour
 
         faceMouse();
         UseFlashlight();
-        AccessQuestBook();
         //DestroyTheTutorialText();
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
