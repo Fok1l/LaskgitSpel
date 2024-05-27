@@ -11,9 +11,11 @@ public class NoteSystem : MonoBehaviour
     bool[] isOpen; // Array of bools to track if a note is open
     [SerializeField] GameObject[] papers; // Array of paper GameObjects
 
+    // Static variable to track collected papers
+    static bool[] papersCollected;
+
     void Start()
     {
-       // audioManager = GetComponent<AudioManager>(); 
         player = FindObjectOfType<PlayerMove>();
 
         // Disable all note images initially
@@ -23,6 +25,23 @@ public class NoteSystem : MonoBehaviour
         }
 
         isOpen = new bool[noteImages.Length];
+
+        // Initialize papersCollected array if not already initialized
+        if (papersCollected == null)
+        {
+            papersCollected = new bool[papers.Length];
+        }
+
+        // Load the state of collected papers within the current session
+        for (int i = 0; i < papers.Length; i++)
+        {
+            if (papersCollected[i])
+            {
+                papers[i].SetActive(false); // Deactivate collected papers
+                // Optionally destroy collected papers if you don't want them to exist in the scene at all
+                Destroy(papers[i]);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -45,6 +64,7 @@ public class NoteSystem : MonoBehaviour
                 isOpen[paperIndex] = true;
                 PlayPaperSFX();
                 papers[paperIndex].SetActive(false); // Deactivate the paper GameObject
+                papersCollected[paperIndex] = true; // Mark the paper as collected in the current session
                 Destroy(papers[paperIndex], 1f); // Destroy the paper GameObject after 1 second
             }
         }

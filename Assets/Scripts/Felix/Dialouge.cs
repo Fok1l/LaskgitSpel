@@ -14,9 +14,12 @@ public class Dialouge : MonoBehaviour
     GameObject soundObject;
     [SerializeField] AudioClip TextSound;
 
+    // Static variable to track if dialogue has been shown
+    private static bool dialougeShown = false;
+
     private void Update()
     {
-            SkipThroughDialouge(); 
+        SkipThroughDialouge();
     }
 
     void Awake()
@@ -33,7 +36,18 @@ public class Dialouge : MonoBehaviour
     private void Start()
     {
         manager = FindObjectOfType<CutsceneManager>();
+
+        // Check if dialogue has already been shown in this session
+        if (dialougeShown)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            StartDialouge();
+        }
     }
+
     void StartDialouge()
     {
         index = 0;
@@ -42,7 +56,7 @@ public class Dialouge : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray()) //Type shit by letter, (Done in the Dialouge box object)
+        foreach (char c in lines[index].ToCharArray()) // Type text by letter
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -52,15 +66,19 @@ public class Dialouge : MonoBehaviour
 
     void NextLine()
     {
-        if (index < lines.Length -1)
+        if (index < lines.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;
-            StartCoroutine (TypeLine());
+            StartCoroutine(TypeLine());
         }
         else
         {
-            gameObject.SetActive(false);
+            // Set static variable to mark dialogue as shown
+            dialougeShown = true;
+
+            // Destroy the dialogue box
+            Destroy(gameObject);
         }
     }
 
